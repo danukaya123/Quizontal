@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Text & Utility Tools | Quizontal - Word Counter, Case Converter, Text to Speech</title>
+  <meta name="description" content="Free online text tools: Word counter, case converter, text to speech, speech to text, space remover, and Lorem Ipsum generator. Perfect for bloggers, students, and developers.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      overflow-x: hidden;
+      background: #f8fafc;
+    }
+
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    section {
+      padding: 3rem 0;
+      width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+    }
+
+    /* ========== NAVIGATION ========== */
+    header {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .nav-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .nav-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 640px) {
+      .nav-logo {
+        height: 36px;
+        max-width: 150px;
+      }
+    }
+    
+    .desktop-nav {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      height: 44px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+      color: #7c3aed;
+    }
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #7c3aed;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .cta-button:hover {
+      background-color: #6d28d9;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 0.5rem;
+      background: transparent;
+      border: none;
+      color: #374151;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-menu-btn:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* ========== TOOLS HEADER ========== */
+    .tools-header {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tools-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 100%);
+      z-index: 0;
+    }
+    
+    .tools-header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* ========== TOOLS GRID ========== */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .tool-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: #7c3aed;
+    }
+    
+    .tool-card.active {
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    .tool-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .tool-icon i {
+      color: #7c3aed;
+    }
+    
+    .tool-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tool-description {
+      color: #6b7280;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    
+    /* ========== TOOL CONTAINER ========== */
+    .tool-container {
+      background: white;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tool-header {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .tool-title-large {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .tool-body {
+      padding: 1.5rem;
+    }
+    
+    /* ========== TEXT AREAS ========== */
+    .text-area {
+      width: 100%;
+      min-height: 200px;
+      padding: 1.25rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #374151;
+      background: white;
+      resize: vertical;
+      transition: all 0.2s ease;
+    }
+    
+    .text-area:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    /* ========== ACTION BUTTONS ========== */
+    .action-buttons {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .action-btn-primary {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+    }
+    
+    .action-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    .action-btn-secondary {
+      background: white;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .action-btn-secondary:hover {
+      border-color: #7c3aed;
+      color: #7c3aed;
+    }
+    
+    /* ========== STATS PANEL ========== */
+    .stats-panel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #7c3aed;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* ========== OPTIONS PANEL ========== */
+    .options-panel {
+      background: #f9fafb;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      margin-top: 1.5rem;
+    }
+    
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .option-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+      cursor: pointer;
+    }
+    
+    /* ========== VOICE TOOLS ========== */
+    .voice-panel {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-radius: 0.75rem;
+      padding: 2rem;
+      border: 1px solid #bae6fd;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    
+    .voice-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    /* ========== LOREM IPSUM ========== */
+    .lorem-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .control-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    .control-input {
+      padding: 0.75rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      color: #374151;
+      background: white;
+    }
+    
+    .control-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    /* ========== MOBILE MENU ========== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+      color: #7c3aed;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer-logo {
+      max-height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        max-height: 36px;
+        max-width: 140px;
+      }
+    }
+    
+    /* ========== NOTIFICATIONS ========== */
+    .notification {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      max-width: 350px;
+      transform: translateX(calc(100% + 1.5rem));
+      transition: transform 0.3s ease;
+    }
+    
+    .notification.show {
+      transform: translateX(0);
+    }
+    
+    .notification.success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+    
+    .notification.error {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+    }
+    
+    .notification.info {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 w-screen overflow-x-hidden">
+
+  <!-- Notifications Container -->
+  <div id="notifications-container"></div>
+
+  <!-- Fixed Navigation -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="nav-logo"
+          loading="eager"
+        >
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#tools" class="nav-link">
+          <span>All Tools</span>
+        </a>
+        <a href="#word-counter" class="nav-link">
+          <span>Word Counter</span>
+        </a>
+        <a href="#case-converter" class="nav-link">
+          <span>Case Converter</span>
+        </a>
+        
+        <button class="cta-button ml-2" onclick="scrollToTools()">
+          Try Free Tools
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-header">
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="h-10 w-auto max-w-[160px]"
+          loading="eager"
+        >
+      </a>
+      <button class="mobile-menu-btn" id="closeMobileMenu">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-nav">
+      <a href="#word-counter" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Word Counter
+      </a>
+      <a href="#case-converter" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Case Converter
+      </a>
+      <a href="#text-to-speech" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Text to Speech
+      </a>
+      <a href="#speech-to-text" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Speech to Text
+      </a>
+      <a href="#space-remover" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Space Remover
+      </a>
+      <a href="#lorem-ipsum" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Lorem Ipsum
+      </a>
+    </div>
+    
+    <div class="mobile-cta">
+      <button class="cta-button w-full" onclick="scrollToTools(); closeMobileMenu();">
+        Try Free Tools
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="pt-8 pb-4">
+    <div class="content-container">
+      <!-- Tools Header -->
+      <div class="tools-header">
+        <div class="tools-header-content">
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">Free Text & Utility Tools</h1>
+          <p class="text-lg text-white/90 max-w-3xl">
+            Essential tools for bloggers, students, and developers. Count words, convert text, generate Lorem Ipsum, and more - all for free!
+          </p>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="tools-grid" id="tools">
+        <!-- Word Counter -->
+        <div class="tool-card active" onclick="showTool('word-counter')" id="word-counter-card">
+          <div class="tool-icon">
+            <i data-lucide="file-text" class="h-6 w-6"></i>
+          </div>
+          <h3 class="tool-title">Word Counter</h3>
+          <p class="tool-description">
+            Count words, characters, sentences, and paragraphs. Perfect for students & bloggers.
+          </p>
+        </div>
+
+        <!-- Case Converter -->
+        <div class="tool-card" onclick="showTool('case-converter')" id="case-converter-card">
+          <div class="tool-icon">
+            <i data-lucide="type" class="h-6 w-6"></i>
+          </div>
+          <h3 class="tool-title">Case Converter</h3>
+          <p class="tool-description">
+            Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more.
+          </p>
+        </div>
+
+        <!-- Text to Speech -->
+        <div class="tool-card" onclick="showTool('text-to-speech')" id="text-to-speech-card">
+          <div class="tool-icon">
+            <i data-lucide="volume-2" class="h-6 w-6"></i>
+          </div>
+          <h3 class="tool-title">Text to Speech</h3>
+          <p class="tool-description">
+            Convert text to natural-sounding speech using browser Web Speech API.
+          </p>
+        </div>
+
+        <!-- Speech to Text -->
+        <div class="tool-card" onclick="showTool('speech-to-text')" id="speech-to-text-card">
+          <div class="tool-icon">
+            <i data-lucide="mic" class="h-6 w-6"></i>
+          </div>
+          <h3 class="tool-title">Speech to Text</h3>
+          <p class="tool-description">
+            Convert your voice to text. Works in Chrome and modern browsers.
+          </p>
+        </div>
+
+        <!-- Space Remover -->
+        <div class="tool-card" onclick="showTool('space-remover')" id="space-remover-card">
+          <div class="tool-icon">
+            <i data-lucide="scissors" class="h-6 w-6"></i>
+          </div>
+          <h3 class="tool-title">Space Remover</h3>
+          <p class="tool-description">
+            Remove extra spaces, line breaks, and clean up messy text.
+          </p>
+        </div>
+
+        <!-- Lorem Ipsum Generator -->
+        <div class="tool-card" onclick="showTool('lorem-ipsum')" id="lorem-ipsum-card">
+          <div class="tool-icon">
+            <i data-lucide="quote" class="h-6 w-6"></i>
+          </div>
+          <h3 class="tool-title">Lorem Ipsum</h3>
+          <p class="tool-description">
+            Generate placeholder text in paragraphs, sentences, or words.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool Containers -->
+      <div id="tool-containers">
+        
+        <!-- Word Counter Tool -->
+        <div class="tool-container" id="word-counter-tool">
+          <div class="tool-header">
+            <h2 class="tool-title-large">
+              <i data-lucide="file-text" class="h-6 w-6 text-purple-500"></i>
+              Word Counter Tool
+            </h2>
+            <p class="text-gray-600 mt-2">Count words, characters, sentences, and paragraphs in your text.</p>
+          </div>
+          <div class="tool-body">
+            <textarea 
+              id="word-counter-input" 
+              class="text-area" 
+              placeholder="Start typing or paste your text here..."
+              oninput="updateWordCount()"
+            >Welcome to our free Word Counter tool! This tool helps students, writers, bloggers, and professionals to analyze their text content. Simply type or paste your text in the box above, and we'll instantly show you the word count, character count, sentence count, and paragraph count. It's perfect for meeting word limits, improving readability, and analyzing your writing style. You can also copy the results or clear the text with a single click. Try it now!</textarea>
+            
+            <!-- Stats Panel -->
+            <div class="stats-panel">
+              <div class="stat-item">
+                <div class="stat-value" id="word-count">0</div>
+                <div class="stat-label">Words</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="char-count">0</div>
+                <div class="stat-label">Characters</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="sentence-count">0</div>
+                <div class="stat-label">Sentences</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="paragraph-count">0</div>
+                <div class="stat-label">Paragraphs</div>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="copyText('word-counter-input')">
+                <i data-lucide="copy" class="h-5 w-5"></i>
+                Copy Text
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="clearText('word-counter-input')">
+                <i data-lucide="trash-2" class="h-5 w-5"></i>
+                Clear Text
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Converter Tool -->
+        <div class="tool-container hidden" id="case-converter-tool">
+          <div class="tool-header">
+            <h2 class="tool-title-large">
+              <i data-lucide="type" class="h-6 w-6 text-purple-500"></i>
+              Case Converter Tool
+            </h2>
+            <p class="text-gray-600 mt-2">Convert text between different cases instantly.</p>
+          </div>
+          <div class="tool-body">
+            <textarea 
+              id="case-converter-input" 
+              class="text-area" 
+              placeholder="Enter text to convert..."
+            >This is a sample text to demonstrate case conversion.</textarea>
+            
+            <!-- Options -->
+            <div class="options-panel">
+              <div class="options-grid">
+                <div class="option-item">
+                  <input type="radio" id="uppercase" name="case" value="uppercase" checked onclick="convertCase()">
+                  <label for="uppercase" class="option-label">UPPERCASE</label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="lowercase" name="case" value="lowercase" onclick="convertCase()">
+                  <label for="lowercase" class="option-label">lowercase</label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="title-case" name="case" value="title" onclick="convertCase()">
+                  <label for="title-case" class="option-label">Title Case</label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="sentence-case" name="case" value="sentence" onclick="convertCase()">
+                  <label for="sentence-case" class="option-label">Sentence case</label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="camel-case" name="case" value="camel" onclick="convertCase()">
+                  <label for="camel-case" class="option-label">camelCase</label>
+                </div>
+                <div class="option-item">
+                  <input type="radio" id="pascal-case" name="case" value="pascal" onclick="convertCase()">
+                  <label for="pascal-case" class="option-label">PascalCase</label>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Converted Text -->
+            <textarea 
+              id="case-converter-output" 
+              class="text-area mt-4" 
+              placeholder="Converted text will appear here..."
+              readonly
+            >THIS IS A SAMPLE TEXT TO DEMONSTRATE CASE CONVERSION.</textarea>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="convertCase()">
+                <i data-lucide="refresh-cw" class="h-5 w-5"></i>
+                Convert Case
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="copyText('case-converter-output')">
+                <i data-lucide="copy" class="h-5 w-5"></i>
+                Copy Result
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="clearBothCases()">
+                <i data-lucide="trash-2" class="h-5 w-5"></i>
+                Clear All
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text to Speech Tool -->
+        <div class="tool-container hidden" id="text-to-speech-tool">
+          <div class="tool-header">
+            <h2 class="tool-title-large">
+              <i data-lucide="volume-2" class="h-6 w-6 text-purple-500"></i>
+              Text to Speech Tool
+            </h2>
+            <p class="text-gray-600 mt-2">Convert text to natural-sounding speech using your browser's built-in speech synthesis.</p>
+          </div>
+          <div class="tool-body">
+            <textarea 
+              id="tts-input" 
+              class="text-area" 
+              placeholder="Enter text to convert to speech..."
+            >Welcome to our Text to Speech tool. This tool uses your browser's built-in speech synthesis to read text aloud. You can adjust the voice, rate, and pitch to customize the speech output. It's perfect for proofreading, accessibility, or just listening to content hands-free.</textarea>
+            
+            <!-- Options Panel -->
+            <div class="options-panel">
+              <div class="options-grid">
+                <div class="control-group">
+                  <label class="control-label">Voice</label>
+                  <select id="tts-voice" class="control-input">
+                    <option value="">Default Voice</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Rate (Speed)</label>
+                  <input type="range" id="tts-rate" min="0.5" max="2" step="0.1" value="1" class="control-input">
+                  <span class="text-sm text-gray-600 mt-1" id="rate-value">1.0</span>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Pitch</label>
+                  <input type="range" id="tts-pitch" min="0.5" max="2" step="0.1" value="1" class="control-input">
+                  <span class="text-sm text-gray-600 mt-1" id="pitch-value">1.0</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Voice Panel -->
+            <div class="voice-panel">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">Speech Controls</h3>
+              <div class="voice-status" id="tts-status">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500"></i>
+                <span class="text-gray-700">Ready to speak</span>
+              </div>
+              
+              <!-- Action Buttons -->
+              <div class="action-buttons justify-center">
+                <button class="action-btn action-btn-primary" onclick="speakText()">
+                  <i data-lucide="play" class="h-5 w-5"></i>
+                  Speak Text
+                </button>
+                <button class="action-btn action-btn-secondary" onclick="pauseSpeech()">
+                  <i data-lucide="pause" class="h-5 w-5"></i>
+                  Pause
+                </button>
+                <button class="action-btn action-btn-secondary" onclick="stopSpeech()">
+                  <i data-lucide="stop-circle" class="h-5 w-5"></i>
+                  Stop
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speech to Text Tool -->
+        <div class="tool-container hidden" id="speech-to-text-tool">
+          <div class="tool-header">
+            <h2 class="tool-title-large">
+              <i data-lucide="mic" class="h-6 w-6 text-purple-500"></i>
+              Speech to Text Tool
+            </h2>
+            <p class="text-gray-600 mt-2">Convert your speech to text using your microphone. Works best in Chrome.</p>
+          </div>
+          <div class="tool-body">
+            <textarea 
+              id="stt-output" 
+              class="text-area" 
+              placeholder="Converted text will appear here..."
+              readonly
+            ></textarea>
+            
+            <!-- Voice Panel -->
+            <div class="voice-panel">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">Voice Recognition</h3>
+              <div class="voice-status" id="stt-status">
+                <i data-lucide="mic-off" class="h-5 w-5 text-gray-500"></i>
+                <span class="text-gray-700">Click "Start Listening" to begin</span>
+              </div>
+              
+              <!-- Action Buttons -->
+              <div class="action-buttons justify-center">
+                <button class="action-btn action-btn-primary" id="start-listening-btn" onclick="startListening()">
+                  <i data-lucide="mic" class="h-5 w-5"></i>
+                  Start Listening
+                </button>
+                <button class="action-btn action-btn-secondary" id="stop-listening-btn" onclick="stopListening()" disabled>
+                  <i data-lucide="mic-off" class="h-5 w-5"></i>
+                  Stop Listening
+                </button>
+                <button class="action-btn action-btn-secondary" onclick="copyText('stt-output')">
+                  <i data-lucide="copy" class="h-5 w-5"></i>
+                  Copy Text
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Space Remover Tool -->
+        <div class="tool-container hidden" id="space-remover-tool">
+          <div class="tool-header">
+            <h2 class="tool-title-large">
+              <i data-lucide="scissors" class="h-6 w-6 text-purple-500"></i>
+              Space Remover Tool
+            </h2>
+            <p class="text-gray-600 mt-2">Clean up messy text by removing extra spaces, tabs, and line breaks.</p>
+          </div>
+          <div class="tool-body">
+            <textarea 
+              id="space-remover-input" 
+              class="text-area" 
+              placeholder="Paste messy text with extra spaces here..."
+            >This  text  has    too   many    spaces.
+
+It   also  has  
+uneven   line  
+breaks.
+
+
+And    empty    lines!</textarea>
+            
+            <!-- Options Panel -->
+            <div class="options-panel">
+              <div class="options-grid">
+                <div class="option-item">
+                  <input type="checkbox" id="remove-double-spaces" checked onclick="cleanSpaces()">
+                  <label for="remove-double-spaces" class="option-label">Remove double spaces</label>
+                </div>
+                <div class="option-item">
+                  <input type="checkbox" id="remove-line-breaks" onclick="cleanSpaces()">
+                  <label for="remove-line-breaks" class="option-label">Remove line breaks</label>
+                </div>
+                <div class="option-item">
+                  <input type="checkbox" id="remove-empty-lines" checked onclick="cleanSpaces()">
+                  <label for="remove-empty-lines" class="option-label">Remove empty lines</label>
+                </div>
+                <div class="option-item">
+                  <input type="checkbox" id="trim-spaces" checked onclick="cleanSpaces()">
+                  <label for="trim-spaces" class="option-label">Trim spaces from start/end</label>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Cleaned Text -->
+            <textarea 
+              id="space-remover-output" 
+              class="text-area mt-4" 
+              placeholder="Cleaned text will appear here..."
+              readonly
+            >This text has too many spaces.
+
+It also has uneven line breaks.
+
+And empty lines!</textarea>
+            
+            <!-- Stats -->
+            <div class="stats-panel">
+              <div class="stat-item">
+                <div class="stat-value" id="original-length">0</div>
+                <div class="stat-label">Original</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="cleaned-length">0</div>
+                <div class="stat-label">Cleaned</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" id="space-reduction">0%</div>
+                <div class="stat-label">Reduction</div>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="cleanSpaces()">
+                <i data-lucide="refresh-cw" class="h-5 w-5"></i>
+                Clean Text
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="copyText('space-remover-output')">
+                <i data-lucide="copy" class="h-5 w-5"></i>
+                Copy Cleaned
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="clearSpaceRemover()">
+                <i data-lucide="trash-2" class="h-5 w-5"></i>
+                Clear All
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lorem Ipsum Generator -->
+        <div class="tool-container hidden" id="lorem-ipsum-tool">
+          <div class="tool-header">
+            <h2 class="tool-title-large">
+              <i data-lucide="quote" class="h-6 w-6 text-purple-500"></i>
+              Lorem Ipsum Generator
+            </h2>
+            <p class="text-gray-600 mt-2">Generate placeholder text for your designs and mockups.</p>
+          </div>
+          <div class="tool-body">
+            <!-- Controls -->
+            <div class="lorem-controls">
+              <div class="control-group">
+                <label class="control-label">Type</label>
+                <select id="lorem-type" class="control-input">
+                  <option value="paragraphs">Paragraphs</option>
+                  <option value="sentences">Sentences</option>
+                  <option value="words">Words</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Quantity</label>
+                <input type="number" id="lorem-quantity" min="1" max="50" value="3" class="control-input">
+              </div>
+              <div class="control-group">
+                <label class="control-label">Start with</label>
+                <input type="text" id="lorem-start" value="Lorem ipsum dolor sit amet" class="control-input" placeholder="Custom start text">
+              </div>
+            </div>
+            
+            <!-- Generated Text -->
+            <textarea 
+              id="lorem-output" 
+              class="text-area" 
+              placeholder="Generated Lorem Ipsum will appear here..."
+              readonly
+              rows="8"
+            ></textarea>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="generateLorem()">
+                <i data-lucide="zap" class="h-5 w-5"></i>
+                Generate Lorem Ipsum
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="copyText('lorem-output')">
+                <i data-lucide="copy" class="h-5 w-5"></i>
+                Copy Text
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="content-container py-12">
+      <!-- Newsletter -->
+      <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 md:p-8 mb-8 md:mb-12">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3">Stay Updated</h3>
+            <p class="text-blue-100 text-sm md:text-base">
+              Subscribe for new tools and updates.
+            </p>
+          </div>
+          <div>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="flex-1 px-4 md:px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm md:text-base"
+                required
+              >
+              <button 
+                type="submit" 
+                class="bg-white text-purple-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap text-sm md:text-base"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs md:text-sm text-blue-200 mt-2 md:mt-3">By subscribing, you agree to our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+        <!-- Logo and Social -->
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="inline-block mb-4">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+              alt="Quizontal Logo" 
+              class="footer-logo"
+              loading="lazy"
+            >
+          </a>
+          <p class="mt-2 md:mt-4 text-gray-400 text-sm mb-4 md:mb-6">
+            Free online tools for developers, designers, writers, and students.
+          </p>
+          <div class="flex space-x-3 md:space-x-4">
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="github" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="twitter" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Tools Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Text Tools</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#word-counter" class="hover:text-white transition-colors block" onclick="showTool('word-counter')">Word Counter</a></li>
+            <li><a href="#case-converter" class="hover:text-white transition-colors block" onclick="showTool('case-converter')">Case Converter</a></li>
+            <li><a href="#text-to-speech" class="hover:text-white transition-colors block" onclick="showTool('text-to-speech')">Text to Speech</a></li>
+            <li><a href="#speech-to-text" class="hover:text-white transition-colors block" onclick="showTool('speech-to-text')">Speech to Text</a></li>
+            <li><a href="#space-remover" class="hover:text-white transition-colors block" onclick="showTool('space-remover')">Space Remover</a></li>
+            <li><a href="#lorem-ipsum" class="hover:text-white transition-colors block" onclick="showTool('lorem-ipsum')">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Company</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Support</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2025 Quizontal Text Tools. All rights reserved.
+        </p>
+        <div class="flex space-x-4 md:space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== INITIALIZATION ==========
+    lucide.createIcons();
+
+    // ========== MOBILE MENU ==========
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+    // ========== NOTIFICATION SYSTEM ==========
+    function showNotification(message, type = 'info', duration = 4000) {
+      const container = document.getElementById('notifications-container');
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      notification.innerHTML = `
+        <i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'x-circle' : 'info'}"></i>
+        <div class="notification-message">${message}</div>
+        <i data-lucide="x" class="h-4 w-4 cursor-pointer" onclick="this.parentElement.remove()"></i>
+      `;
+      
+      container.appendChild(notification);
+      lucide.createIcons();
+      
+      setTimeout(() => notification.classList.add('show'), 10);
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, duration);
+    }
+
+    // ========== TOOL SWITCHING ==========
+    let currentTool = 'word-counter';
+
+    function showTool(toolId) {
+      // Hide all tools
+      document.querySelectorAll('.tool-container').forEach(tool => {
+        tool.classList.add('hidden');
+      });
+      
+      // Remove active class from all cards
+      document.querySelectorAll('.tool-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      // Show selected tool
+      document.getElementById(`${toolId}-tool`).classList.remove('hidden');
+      document.getElementById(`${toolId}-card`).classList.add('active');
+      
+      // Update current tool
+      currentTool = toolId;
+      
+      // Initialize tool if needed
+      switch(toolId) {
+        case 'text-to-speech':
+          initTTS();
+          break;
+        case 'lorem-ipsum':
+          generateLorem();
+          break;
+        case 'space-remover':
+          cleanSpaces();
+          break;
+        case 'word-counter':
+          updateWordCount();
+          break;
+      }
+      
+      // Scroll to tool
+      document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========== UTILITY FUNCTIONS ==========
+    function scrollToTools() {
+      document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function copyText(textareaId) {
+      const textarea = $(textareaId);
+      const text = textarea.value.trim();
+      
+      if (!text) {
+        showNotification('No text to copy', 'error');
+        return;
+      }
+
+      navigator.clipboard.writeText(text).then(() => {
+        showNotification('Text copied to clipboard!', 'success');
+      }).catch(err => {
+        showNotification('Failed to copy: ' + err.message, 'error');
+      });
+    }
+
+    function clearText(textareaId) {
+      $(textareaId).value = '';
+      if (currentTool === 'word-counter') {
+        updateWordCount();
+      }
+      showNotification('Text cleared', 'info');
+    }
+
+    // ========== WORD COUNTER ==========
+    function updateWordCount() {
+      const text = $('word-counter-input').value;
+      
+      // Word count
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      $('word-count').textContent = words;
+      
+      // Character count
+      const chars = text.length;
+      $('char-count').textContent = chars;
+      
+      // Sentence count
+      const sentences = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim()).length : 0;
+      $('sentence-count').textContent = sentences;
+      
+      // Paragraph count
+      const paragraphs = text.trim() ? text.split(/\n+/).filter(p => p.trim()).length : 0;
+      $('paragraph-count').textContent = paragraphs;
+    }
+
+    // ========== CASE CONVERTER ==========
+    function convertCase() {
+      const text = $('case-converter-input').value;
+      const caseType = document.querySelector('input[name="case"]:checked').value;
+      
+      let result = text;
+      
+      switch(caseType) {
+        case 'uppercase':
+          result = text.toUpperCase();
+          break;
+        case 'lowercase':
+          result = text.toLowerCase();
+          break;
+        case 'title':
+          result = text.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
+          break;
+        case 'sentence':
+          result = text.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, char => char.toUpperCase());
+          break;
+        case 'camel':
+          result = text.toLowerCase()
+            .replace(/[^a-zA-Z0-9]+(.)/g, (match, char) => char.toUpperCase())
+            .replace(/\s+/g, '');
+          result = result.charAt(0).toLowerCase() + result.slice(1);
+          break;
+        case 'pascal':
+          result = text.toLowerCase()
+            .replace(/[^a-zA-Z0-9]+(.)/g, (match, char) => char.toUpperCase())
+            .replace(/\s+/g, '');
+          result = result.charAt(0).toUpperCase() + result.slice(1);
+          break;
+      }
+      
+      $('case-converter-output').value = result;
+    }
+
+    function clearBothCases() {
+      $('case-converter-input').value = '';
+      $('case-converter-output').value = '';
+      showNotification('Both fields cleared', 'info');
+    }
+
+    // ========== TEXT TO SPEECH ==========
+    let speech = null;
+    let voices = [];
+
+    function initTTS() {
+      if ('speechSynthesis' in window) {
+        // Get available voices
+        speechSynthesis.addEventListener('voiceschanged', () => {
+          voices = speechSynthesis.getVoices();
+          const voiceSelect = $('tts-voice');
+          voiceSelect.innerHTML = '<option value="">Default Voice</option>';
+          
+          voices.forEach(voice => {
+            const option = document.createElement('option');
+            option.value = voice.name;
+            option.textContent = `${voice.name} (${voice.lang})`;
+            voiceSelect.appendChild(option);
+          });
+        });
+        
+        // Trigger voiceschanged event
+        speechSynthesis.getVoices();
+      } else {
+        showNotification('Speech synthesis not supported in your browser', 'error');
+      }
+    }
+
+    function speakText() {
+      const text = $('tts-input').value.trim();
+      if (!text) {
+        showNotification('Please enter text to speak', 'error');
+        return;
+      }
+
+      if (!('speechSynthesis' in window)) {
+        showNotification('Speech synthesis not supported in your browser', 'error');
+        return;
+      }
+
+      // Cancel any ongoing speech
+      if (speech) {
+        speechSynthesis.cancel();
+      }
+
+      speech = new SpeechSynthesisUtterance(text);
+      
+      // Set voice
+      const voiceSelect = $('tts-voice').value;
+      if (voiceSelect) {
+        const selectedVoice = voices.find(voice => voice.name === voiceSelect);
+        if (selectedVoice) {
+          speech.voice = selectedVoice;
+        }
+      }
+      
+      // Set rate and pitch
+      speech.rate = parseFloat($('tts-rate').value);
+      speech.pitch = parseFloat($('tts-pitch').value);
+      
+      // Update UI
+      $('tts-status').innerHTML = `
+        <i data-lucide="volume-2" class="h-5 w-5 text-blue-500 animate-pulse"></i>
+        <span class="text-gray-700">Speaking...</span>
+      `;
+      lucide.createIcons();
+      
+      // Handle events
+      speech.onend = () => {
+        $('tts-status').innerHTML = `
+          <i data-lucide="check-circle" class="h-5 w-5 text-green-500"></i>
+          <span class="text-gray-700">Finished speaking</span>
+        `;
+        lucide.createIcons();
+      };
+      
+      speech.onerror = (event) => {
+        $('tts-status').innerHTML = `
+          <i data-lucide="x-circle" class="h-5 w-5 text-red-500"></i>
+          <span class="text-gray-700">Speech error occurred</span>
+        `;
+        lucide.createIcons();
+        showNotification('Speech error: ' + event.error, 'error');
+      };
+      
+      speechSynthesis.speak(speech);
+    }
+
+    function pauseSpeech() {
+      if (speechSynthesis.speaking) {
+        speechSynthesis.pause();
+        $('tts-status').innerHTML = `
+          <i data-lucide="pause" class="h-5 w-5 text-yellow-500"></i>
+          <span class="text-gray-700">Speech paused</span>
+        `;
+        lucide.createIcons();
+      }
+    }
+
+    function stopSpeech() {
+      speechSynthesis.cancel();
+      $('tts-status').innerHTML = `
+        <i data-lucide="check-circle" class="h-5 w-5 text-green-500"></i>
+        <span class="text-gray-700">Ready to speak</span>
+      `;
+      lucide.createIcons();
+    }
+
+    // Update range values display
+    $('tts-rate').addEventListener('input', function() {
+      $('rate-value').textContent = this.value;
+    });
+    
+    $('tts-pitch').addEventListener('input', function() {
+      $('pitch-value').textContent = this.value;
+    });
+
+    // ========== SPEECH TO TEXT ==========
+    let recognition = null;
+    let isListening = false;
+
+    function startListening() {
+      if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        showNotification('Speech recognition not supported in your browser. Please use Chrome.', 'error');
+        return;
+      }
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new SpeechRecognition();
+      
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        isListening = true;
+        $('start-listening-btn').disabled = true;
+        $('stop-listening-btn').disabled = false;
+        $('stt-status').innerHTML = `
+          <i data-lucide="mic" class="h-5 w-5 text-green-500 animate-pulse"></i>
+          <span class="text-gray-700">Listening... Speak now</span>
+        `;
+        lucide.createIcons();
+      };
+
+      recognition.onresult = (event) => {
+        let finalTranscript = '';
+        let interimTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript + ' ';
+          } else {
+            interimTranscript += transcript;
+          }
+        }
+
+        const currentText = $('stt-output').value;
+        $('stt-output').value = currentText + finalTranscript;
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        $('stt-status').innerHTML = `
+          <i data-lucide="x-circle" class="h-5 w-5 text-red-500"></i>
+          <span class="text-gray-700">Error: ${event.error}</span>
+        `;
+        lucide.createIcons();
+        stopListening();
+      };
+
+      recognition.onend = () => {
+        if (isListening) {
+          // Restart recognition if still supposed to be listening
+          recognition.start();
+        } else {
+          $('stt-status').innerHTML = `
+            <i data-lucide="mic-off" class="h-5 w-5 text-gray-500"></i>
+            <span class="text-gray-700">Stopped listening</span>
+          `;
+          lucide.createIcons();
+          $('start-listening-btn').disabled = false;
+          $('stop-listening-btn').disabled = true;
+        }
+      };
+
+      recognition.start();
+      showNotification('Started listening. Speak clearly into your microphone.', 'info');
+    }
+
+    function stopListening() {
+      isListening = false;
+      if (recognition) {
+        recognition.stop();
+      }
+    }
+
+    // ========== SPACE REMOVER ==========
+    function cleanSpaces() {
+      const text = $('space-remover-input').value;
+      let result = text;
+      
+      // Store original length
+      const originalLength = text.length;
+      
+      // Apply filters
+      if ($('remove-double-spaces').checked) {
+        result = result.replace(/ +/g, ' ');
+      }
+      
+      if ($('remove-line-breaks').checked) {
+        result = result.replace(/\n+/g, ' ');
+      }
+      
+      if ($('remove-empty-lines').checked) {
+        result = result.replace(/\n\s*\n/g, '\n');
+      }
+      
+      if ($('trim-spaces').checked) {
+        result = result.trim();
+      }
+      
+      $('space-remover-output').value = result;
+      
+      // Update stats
+      const cleanedLength = result.length;
+      const reduction = originalLength > 0 ? Math.round((1 - (cleanedLength / originalLength)) * 100) : 0;
+      
+      $('original-length').textContent = originalLength;
+      $('cleaned-length').textContent = cleanedLength;
+      $('space-reduction').textContent = reduction + '%';
+    }
+
+    function clearSpaceRemover() {
+      $('space-remover-input').value = '';
+      $('space-remover-output').value = '';
+      $('original-length').textContent = '0';
+      $('cleaned-length').textContent = '0';
+      $('space-reduction').textContent = '0%';
+      showNotification('Space remover cleared', 'info');
+    }
+
+    // ========== LOREM IPSUM GENERATOR ==========
+    const loremIpsumWords = [
+      'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit',
+      'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore',
+      'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud',
+      'exercitation', 'ullamco', 'laboris', 'nisi', 'ut', 'aliquip', 'ex', 'ea',
+      'commodo', 'consequat', 'duis', 'aute', 'irure', 'dolor', 'in', 'reprehenderit',
+      'voluptate', 'velit', 'esse', 'cillum', 'dolore', 'eu', 'fugiat', 'nulla',
+      'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident',
+      'sunt', 'in', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum'
+    ];
+
+    function generateLorem() {
+      const type = $('lorem-type').value;
+      const quantity = parseInt($('lorem-quantity').value);
+      const startText = $('lorem-start').value.trim();
+      
+      let result = '';
+      
+      switch(type) {
+        case 'paragraphs':
+          result = generateParagraphs(quantity, startText);
+          break;
+        case 'sentences':
+          result = generateSentences(quantity, startText);
+          break;
+        case 'words':
+          result = generateWords(quantity, startText);
+          break;
+      }
+      
+      $('lorem-output').value = result;
+    }
+
+    function generateParagraphs(count, startText) {
+      let paragraphs = [];
+      for (let i = 0; i < count; i++) {
+        // Each paragraph has 3-8 sentences
+        const sentenceCount = Math.floor(Math.random() * 6) + 3;
+        const paragraph = generateSentences(sentenceCount, i === 0 ? startText : null);
+        paragraphs.push(paragraph);
+      }
+      return paragraphs.join('\n\n');
+    }
+
+    function generateSentences(count, startText) {
+      let sentences = [];
+      
+      if (startText) {
+        sentences.push(capitalizeFirst(startText));
+        count--;
+      }
+      
+      for (let i = 0; i < count; i++) {
+        // Each sentence has 5-15 words
+        const wordCount = Math.floor(Math.random() * 11) + 5;
+        const sentence = generateWords(wordCount);
+        sentences.push(capitalizeFirst(sentence) + '.');
+      }
+      
+      return sentences.join(' ');
+    }
+
+    function generateWords(count, startText) {
+      let words = [];
+      
+      if (startText) {
+        const startWords = startText.toLowerCase().split(' ');
+        words.push(...startWords);
+        count -= startWords.length;
+      }
+      
+      for (let i = 0; i < count; i++) {
+        const randomIndex = Math.floor(Math.random() * loremIpsumWords.length);
+        words.push(loremIpsumWords[randomIndex]);
+      }
+      
+      return words.join(' ');
+    }
+
+    function capitalizeFirst(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    // ========== EVENT LISTENERS ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize tools
+      updateWordCount();
+      convertCase();
+      cleanSpaces();
+      generateLorem();
+      
+      // Setup newsletter form
+      const newsletterForm = document.getElementById('newsletterForm');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          if (email) {
+            showNotification('Thank you for subscribing!', 'success');
+            this.reset();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

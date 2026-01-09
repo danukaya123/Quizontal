@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Free Online Calculators | Quizontal - Age, BMI, Loan, Percentage, GST Calculator</title>
+  <meta name="description" content="Free online calculators: Age calculator, BMI calculator, Loan EMI calculator, Percentage calculator, and GST calculator. Accurate, easy-to-use tools for everyone.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      overflow-x: hidden;
+      background: #f8fafc;
+    }
+
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    section {
+      padding: 3rem 0;
+      width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+    }
+
+    /* ========== NAVIGATION ========== */
+    header {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .nav-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .nav-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 640px) {
+      .nav-logo {
+        height: 36px;
+        max-width: 150px;
+      }
+    }
+    
+    .desktop-nav {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      height: 44px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+      color: #7c3aed;
+    }
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #7c3aed;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .cta-button:hover {
+      background-color: #6d28d9;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 0.5rem;
+      background: transparent;
+      border: none;
+      color: #374151;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-menu-btn:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* ========== CALCULATORS HEADER ========== */
+    .calculators-header {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .calculators-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 100%);
+      z-index: 0;
+    }
+    
+    .calculators-header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* ========== CALCULATORS GRID ========== */
+    .calculators-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .calculators-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .calculators-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .calculator-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .calculator-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: #7c3aed;
+    }
+    
+    .calculator-card.active {
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    .calculator-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .calculator-icon i {
+      color: #7c3aed;
+    }
+    
+    .calculator-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .calculator-description {
+      color: #6b7280;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    
+    /* ========== CALCULATOR CONTAINER ========== */
+    .calculator-container {
+      background: white;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calculator-header {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .calculator-title-large {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .calculator-body {
+      padding: 1.5rem;
+    }
+    
+    /* ========== FORM STYLES ========== */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      color: #374151;
+      background: white;
+      transition: all 0.2s ease;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    .form-input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .form-input-group .form-input {
+      flex: 1;
+    }
+    
+    .form-input-suffix {
+      font-size: 0.875rem;
+      color: #6b7280;
+      white-space: nowrap;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    /* ========== RESULT PANEL ========== */
+    .result-panel {
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+      margin-top: 2rem;
+    }
+    
+    .result-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .result-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #7c3aed;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    
+    .result-description {
+      font-size: 0.875rem;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    
+    .result-details {
+      margin-top: 1.5rem;
+    }
+    
+    .result-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    }
+    
+    .result-detail:last-child {
+      border-bottom: none;
+    }
+    
+    .detail-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    
+    .detail-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    /* ========== BMI CHART ========== */
+    .bmi-chart {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      margin-top: 1.5rem;
+    }
+    
+    .chart-row {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      margin-bottom: 0.25rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    
+    .chart-row:hover {
+      background: #f9fafb;
+    }
+    
+    .chart-range {
+      width: 120px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    .chart-bar {
+      flex: 1;
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 0.375rem;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .chart-fill {
+      height: 100%;
+      border-radius: 0.375rem;
+      transition: width 0.5s ease;
+    }
+    
+    .chart-label {
+      width: 100px;
+      font-size: 0.875rem;
+      color: #6b7280;
+      text-align: right;
+    }
+    
+    /* ========== LOAN TABLE ========== */
+    .loan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      background: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .loan-table th {
+      background: #f9fafb;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .loan-table td {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .loan-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .loan-table tr:hover {
+      background: #f9fafb;
+    }
+    
+    /* ========== ACTION BUTTONS ========== */
+    .action-buttons {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .action-btn-primary {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+    }
+    
+    .action-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    .action-btn-secondary {
+      background: white;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .action-btn-secondary:hover {
+      border-color: #7c3aed;
+      color: #7c3aed;
+    }
+    
+    /* ========== MOBILE MENU ========== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+      color: #7c3aed;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer-logo {
+      max-height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        max-height: 36px;
+        max-width: 140px;
+      }
+    }
+    
+    /* ========== NOTIFICATIONS ========== */
+    .notification {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      max-width: 350px;
+      transform: translateX(calc(100% + 1.5rem));
+      transition: transform 0.3s ease;
+    }
+    
+    .notification.show {
+      transform: translateX(0);
+    }
+    
+    .notification.success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+    
+    .notification.error {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+    }
+    
+    .notification.info {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .hidden {
+      display: none !important;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+  </style>
+</head>
+<body class="bg-gray-50 w-screen overflow-x-hidden">
+
+  <!-- Notifications Container -->
+  <div id="notifications-container"></div>
+
+  <!-- Fixed Navigation -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="nav-logo"
+          loading="eager"
+        >
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#calculators" class="nav-link">
+          <span>All Calculators</span>
+        </a>
+        <a href="#age-calculator" class="nav-link">
+          <span>Age Calculator</span>
+        </a>
+        <a href="#bmi-calculator" class="nav-link">
+          <span>BMI Calculator</span>
+        </a>
+        
+        <button class="cta-button ml-2" onclick="scrollToCalculators()">
+          Try Calculators
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-header">
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="h-10 w-auto max-w-[160px]"
+          loading="eager"
+        >
+      </a>
+      <button class="mobile-menu-btn" id="closeMobileMenu">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-nav">
+      <a href="#age-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Age Calculator
+      </a>
+      <a href="#bmi-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">
+        BMI Calculator
+      </a>
+      <a href="#loan-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Loan EMI Calculator
+      </a>
+      <a href="#percentage-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Percentage Calculator
+      </a>
+      <a href="#gst-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">
+        GST Calculator
+      </a>
+    </div>
+    
+    <div class="mobile-cta">
+      <button class="cta-button w-full" onclick="scrollToCalculators(); closeMobileMenu();">
+        Try Calculators
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="pt-8 pb-4">
+    <div class="content-container">
+      <!-- Calculators Header -->
+      <div class="calculators-header">
+        <div class="calculators-header-content">
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">Free Online Calculators</h1>
+          <p class="text-lg text-white/90 max-w-3xl">
+            Essential calculators for everyday use. Calculate age, BMI, loan EMIs, percentages, and GST instantly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Calculators Grid -->
+      <div class="calculators-grid" id="calculators">
+        <!-- Age Calculator -->
+        <div class="calculator-card active" onclick="showCalculator('age-calculator')" id="age-calculator-card">
+          <div class="calculator-icon">
+            <i data-lucide="calendar" class="h-6 w-6"></i>
+          </div>
+          <h3 class="calculator-title">Age Calculator</h3>
+          <p class="calculator-description">
+            Calculate exact age in years, months, and days. Find days until next birthday.
+          </p>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div class="calculator-card" onclick="showCalculator('bmi-calculator')" id="bmi-calculator-card">
+          <div class="calculator-icon">
+            <i data-lucide="scale" class="h-6 w-6"></i>
+          </div>
+          <h3 class="calculator-title">BMI Calculator</h3>
+          <p class="calculator-description">
+            Calculate Body Mass Index and understand your weight category.
+          </p>
+        </div>
+
+        <!-- Loan EMI Calculator -->
+        <div class="calculator-card" onclick="showCalculator('loan-calculator')" id="loan-calculator-card">
+          <div class="calculator-icon">
+            <i data-lucide="banknote" class="h-6 w-6"></i>
+          </div>
+          <h3 class="calculator-title">Loan EMI Calculator</h3>
+          <p class="calculator-description">
+            Calculate monthly EMIs, total interest, and payment schedule.
+          </p>
+        </div>
+
+        <!-- Percentage Calculator -->
+        <div class="calculator-card" onclick="showCalculator('percentage-calculator')" id="percentage-calculator-card">
+          <div class="calculator-icon">
+            <i data-lucide="percent" class="h-6 w-6"></i>
+          </div>
+          <h3 class="calculator-title">Percentage Calculator</h3>
+          <p class="calculator-description">
+            Calculate percentages, percentage increase/decrease, and more.
+          </p>
+        </div>
+
+        <!-- GST Calculator -->
+        <div class="calculator-card" onclick="showCalculator('gst-calculator')" id="gst-calculator-card">
+          <div class="calculator-icon">
+            <i data-lucide="receipt" class="h-6 w-6"></i>
+          </div>
+          <h3 class="calculator-title">GST Calculator</h3>
+          <p class="calculator-description">
+            Calculate GST amount, net price, and gross price easily.
+          </p>
+        </div>
+      </div>
+
+      <!-- Calculator Containers -->
+      <div id="calculator-containers">
+        
+        <!-- Age Calculator -->
+        <div class="calculator-container" id="age-calculator-tool">
+          <div class="calculator-header">
+            <h2 class="calculator-title-large">
+              <i data-lucide="calendar" class="h-6 w-6 text-purple-500"></i>
+              Age Calculator
+            </h2>
+            <p class="text-gray-600 mt-2">Calculate your exact age in years, months, and days.</p>
+          </div>
+          <div class="calculator-body">
+            <!-- Form -->
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" id="dob" class="form-input" max="" onchange="calculateAge()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Age at Date</label>
+                <input type="date" id="age-at-date" class="form-input" onchange="calculateAge()">
+              </div>
+            </div>
+            
+            <!-- Result -->
+            <div class="result-panel">
+              <div class="result-title">
+                <i data-lucide="calendar-days" class="h-5 w-5"></i>
+                Your Age Calculation
+              </div>
+              
+              <div id="age-result">
+                <div class="result-value text-center mb-4">Select Dates</div>
+                <div class="result-description text-center">
+                  Please select your date of birth and the date you want to calculate age at.
+                </div>
+              </div>
+              
+              <div class="result-details" id="age-details" style="display: none;">
+                <div class="result-detail">
+                  <span class="detail-label">Years</span>
+                  <span class="detail-value" id="age-years">0</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Months</span>
+                  <span class="detail-value" id="age-months">0</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Days</span>
+                  <span class="detail-value" id="age-days">0</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Total Days</span>
+                  <span class="detail-value" id="total-days">0</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Next Birthday</span>
+                  <span class="detail-value" id="next-birthday">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Days Until Next Birthday</span>
+                  <span class="detail-value" id="days-until-birthday">-</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="calculateAge()">
+                <i data-lucide="calculator" class="h-5 w-5"></i>
+                Calculate Age
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="resetAgeCalculator()">
+                <i data-lucide="refresh-ccw" class="h-5 w-5"></i>
+                Reset
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="setToday()">
+                <i data-lucide="calendar" class="h-5 w-5"></i>
+                Set to Today
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div class="calculator-container hidden" id="bmi-calculator-tool">
+          <div class="calculator-header">
+            <h2 class="calculator-title-large">
+              <i data-lucide="scale" class="h-6 w-6 text-purple-500"></i>
+              BMI Calculator
+            </h2>
+            <p class="text-gray-600 mt-2">Calculate your Body Mass Index and understand your weight category.</p>
+          </div>
+          <div class="calculator-body">
+            <!-- Form -->
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Height</label>
+                <div class="form-input-group">
+                  <input type="number" id="height" class="form-input" placeholder="170" min="50" max="300" step="0.1" oninput="calculateBMI()">
+                  <span class="form-input-suffix">cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Weight</label>
+                <div class="form-input-group">
+                  <input type="number" id="weight" class="form-input" placeholder="70" min="20" max="300" step="0.1" oninput="calculateBMI()">
+                  <span class="form-input-suffix">kg</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Result -->
+            <div class="result-panel">
+              <div class="result-title">
+                <i data-lucide="activity" class="h-5 w-5"></i>
+                Your BMI Result
+              </div>
+              
+              <div id="bmi-result">
+                <div class="result-value text-center mb-4" id="bmi-value">-</div>
+                <div class="result-description text-center" id="bmi-category">
+                  Enter your height and weight to calculate BMI
+                </div>
+              </div>
+              
+              <div class="result-details" id="bmi-details" style="display: none;">
+                <div class="result-detail">
+                  <span class="detail-label">Your BMI</span>
+                  <span class="detail-value" id="bmi-detail-value">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Category</span>
+                  <span class="detail-value" id="bmi-category-detail">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Healthy Range</span>
+                  <span class="detail-value">18.5 - 24.9</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- BMI Chart -->
+            <div class="bmi-chart">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">BMI Categories</h3>
+              
+              <div class="chart-row">
+                <div class="chart-range">Underweight</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" id="underweight-bar" style="width: 100%; background: #3b82f6;"></div>
+                </div>
+                <div class="chart-label">&lt; 18.5</div>
+              </div>
+              
+              <div class="chart-row">
+                <div class="chart-range">Normal</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" id="normal-bar" style="width: 100%; background: #10b981;"></div>
+                </div>
+                <div class="chart-label">18.5 - 24.9</div>
+              </div>
+              
+              <div class="chart-row">
+                <div class="chart-range">Overweight</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" id="overweight-bar" style="width: 100%; background: #f59e0b;"></div>
+                </div>
+                <div class="chart-label">25 - 29.9</div>
+              </div>
+              
+              <div class="chart-row">
+                <div class="chart-range">Obese</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" id="obese-bar" style="width: 100%; background: #ef4444;"></div>
+                </div>
+                <div class="chart-label">≥ 30</div>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="calculateBMI()">
+                <i data-lucide="calculator" class="h-5 w-5"></i>
+                Calculate BMI
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="resetBMICalculator()">
+                <i data-lucide="refresh-ccw" class="h-5 w-5"></i>
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loan EMI Calculator -->
+        <div class="calculator-container hidden" id="loan-calculator-tool">
+          <div class="calculator-header">
+            <h2 class="calculator-title-large">
+              <i data-lucide="banknote" class="h-6 w-6 text-purple-500"></i>
+              Loan EMI Calculator
+            </h2>
+            <p class="text-gray-600 mt-2">Calculate monthly EMIs, total interest, and payment schedule for your loan.</p>
+          </div>
+          <div class="calculator-body">
+            <!-- Form -->
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Loan Amount</label>
+                <div class="form-input-group">
+                  <span class="form-input-suffix">$</span>
+                  <input type="number" id="loan-amount" class="form-input" placeholder="10000" min="100" max="10000000" step="100" oninput="calculateLoan()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Interest Rate</label>
+                <div class="form-input-group">
+                  <input type="number" id="interest-rate" class="form-input" placeholder="7.5" min="1" max="30" step="0.1" oninput="calculateLoan()">
+                  <span class="form-input-suffix">% per year</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Loan Tenure</label>
+                <div class="form-input-group">
+                  <input type="number" id="loan-tenure" class="form-input" placeholder="5" min="1" max="30" step="1" oninput="calculateLoan()">
+                  <span class="form-input-suffix">years</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Result -->
+            <div class="result-panel">
+              <div class="result-title">
+                <i data-lucide="credit-card" class="h-5 w-5"></i>
+                Loan Calculation Result
+              </div>
+              
+              <div id="loan-result">
+                <div class="result-value text-center mb-4" id="emi-amount">-</div>
+                <div class="result-description text-center">
+                  Monthly EMI Amount
+                </div>
+              </div>
+              
+              <div class="result-details" id="loan-details" style="display: none;">
+                <div class="result-detail">
+                  <span class="detail-label">Loan Amount</span>
+                  <span class="detail-value" id="loan-amount-display">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Monthly EMI</span>
+                  <span class="detail-value" id="emi-display">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Total Interest</span>
+                  <span class="detail-value" id="total-interest">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Total Payment</span>
+                  <span class="detail-value" id="total-payment">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">Interest Percentage</span>
+                  <span class="detail-value" id="interest-percentage">-</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Loan Table -->
+            <div class="loan-table-container" style="display: none;" id="loan-table-container">
+              <table class="loan-table">
+                <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>Principal Paid</th>
+                    <th>Interest Paid</th>
+                    <th>Remaining Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="loan-table-body">
+                  <!-- Rows will be inserted by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="calculateLoan()">
+                <i data-lucide="calculator" class="h-5 w-5"></i>
+                Calculate EMI
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="resetLoanCalculator()">
+                <i data-lucide="refresh-ccw" class="h-5 w-5"></i>
+                Reset
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="toggleLoanTable()">
+                <i data-lucide="table" class="h-5 w-5"></i>
+                Show/Hide Amortization
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Percentage Calculator -->
+        <div class="calculator-container hidden" id="percentage-calculator-tool">
+          <div class="calculator-header">
+            <h2 class="calculator-title-large">
+              <i data-lucide="percent" class="h-6 w-6 text-purple-500"></i>
+              Percentage Calculator
+            </h2>
+            <p class="text-gray-600 mt-2">Calculate percentages, percentage increase/decrease, and solve percentage problems.</p>
+          </div>
+          <div class="calculator-body">
+            <!-- Calculator Type -->
+            <div class="form-group mb-6">
+              <label class="form-label">Calculation Type</label>
+              <select id="percentage-type" class="form-input" onchange="changePercentageType()">
+                <option value="basic">Basic Percentage (X% of Y)</option>
+                <option value="increase">Percentage Increase</option>
+                <option value="decrease">Percentage Decrease</option>
+                <option value="change">Percentage Change</option>
+                <option value="reverse">Reverse Percentage</option>
+              </select>
+            </div>
+            
+            <!-- Dynamic Form -->
+            <div id="percentage-form">
+              <!-- Basic Percentage Form (default) -->
+              <div class="form-row mb-6">
+                <div class="form-group">
+                  <label class="form-label">Percentage</label>
+                  <div class="form-input-group">
+                    <input type="number" id="percentage-value" class="form-input" placeholder="20" min="0" max="1000" step="0.1" oninput="calculatePercentage()">
+                    <span class="form-input-suffix">%</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Of Number</label>
+                  <input type="number" id="base-number" class="form-input" placeholder="100" min="0" step="0.1" oninput="calculatePercentage()">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Result -->
+            <div class="result-panel">
+              <div class="result-title">
+                <i data-lucide="calculator" class="h-5 w-5"></i>
+                <span id="percentage-result-title">Percentage Calculation Result</span>
+              </div>
+              
+              <div id="percentage-result">
+                <div class="result-value text-center mb-4" id="percentage-result-value">-</div>
+                <div class="result-description text-center" id="percentage-result-description">
+                  Enter values to calculate
+                </div>
+              </div>
+              
+              <div class="result-details" id="percentage-details" style="display: none;">
+                <div class="result-detail">
+                  <span class="detail-label" id="detail-label-1">Calculation</span>
+                  <span class="detail-value" id="detail-value-1">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label" id="detail-label-2">Result</span>
+                  <span class="detail-value" id="detail-value-2">-</span>
+                </div>
+                <div class="result-detail" id="detail-row-3">
+                  <span class="detail-label" id="detail-label-3">Difference</span>
+                  <span class="detail-value" id="detail-value-3">-</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="calculatePercentage()">
+                <i data-lucide="calculator" class="h-5 w-5"></i>
+                Calculate
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="resetPercentageCalculator()">
+                <i data-lucide="refresh-ccw" class="h-5 w-5"></i>
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GST Calculator -->
+        <div class="calculator-container hidden" id="gst-calculator-tool">
+          <div class="calculator-header">
+            <h2 class="calculator-title-large">
+              <i data-lucide="receipt" class="h-6 w-6 text-purple-500"></i>
+              GST Calculator
+            </h2>
+            <p class="text-gray-600 mt-2">Calculate GST amount, net price, and gross price for goods and services.</p>
+          </div>
+          <div class="calculator-body">
+            <!-- Calculation Type -->
+            <div class="form-group mb-6">
+              <label class="form-label">Calculation Type</label>
+              <select id="gst-type" class="form-input" onchange="changeGSTType()">
+                <option value="add">Add GST to Net Price</option>
+                <option value="remove">Remove GST from Gross Price</option>
+                <option value="split">Split GST from Total</option>
+              </select>
+            </div>
+            
+            <!-- GST Rate -->
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">GST Rate</label>
+                <div class="form-input-group">
+                  <input type="number" id="gst-rate" class="form-input" placeholder="18" min="0" max="100" step="0.1" oninput="calculateGST()">
+                  <span class="form-input-suffix">%</span>
+                </div>
+              </div>
+              <div class="form-group" id="gst-amount-group">
+                <label class="form-label" id="gst-amount-label">Amount</label>
+                <div class="form-input-group">
+                  <span class="form-input-suffix">$</span>
+                  <input type="number" id="gst-amount" class="form-input" placeholder="1000" min="0" step="0.01" oninput="calculateGST()">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Result -->
+            <div class="result-panel">
+              <div class="result-title">
+                <i data-lucide="file-text" class="h-5 w-5"></i>
+                <span id="gst-result-title">GST Calculation Result</span>
+              </div>
+              
+              <div id="gst-result">
+                <div class="result-value text-center mb-4" id="gst-result-value">-</div>
+                <div class="result-description text-center" id="gst-result-description">
+                  Enter GST rate and amount to calculate
+                </div>
+              </div>
+              
+              <div class="result-details" id="gst-details" style="display: none;">
+                <div class="result-detail">
+                  <span class="detail-label" id="gst-detail-label-1">Net Price</span>
+                  <span class="detail-value" id="gst-detail-value-1">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">GST Amount</span>
+                  <span class="detail-value" id="gst-amount-detail">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label" id="gst-detail-label-2">Gross Price</span>
+                  <span class="detail-value" id="gst-detail-value-2">-</span>
+                </div>
+                <div class="result-detail">
+                  <span class="detail-label">GST Rate</span>
+                  <span class="detail-value" id="gst-rate-detail">-</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- GST Rate Examples -->
+            <div class="bmi-chart mt-6">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">Common GST Rates</h3>
+              
+              <div class="chart-row">
+                <div class="chart-range">Zero Rate</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" style="width: 100%; background: #10b981;"></div>
+                </div>
+                <div class="chart-label">0%</div>
+              </div>
+              
+              <div class="chart-row">
+                <div class="chart-range">Reduced Rate</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" style="width: 100%; background: #3b82f6;"></div>
+                </div>
+                <div class="chart-label">5%</div>
+              </div>
+              
+              <div class="chart-row">
+                <div class="chart-range">Standard Rate</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" style="width: 100%; background: #8b5cf6;"></div>
+                </div>
+                <div class="chart-label">12% & 18%</div>
+              </div>
+              
+              <div class="chart-row">
+                <div class="chart-range">Luxury Rate</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" style="width: 100%; background: #f59e0b;"></div>
+                </div>
+                <div class="chart-label">28%</div>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn action-btn-primary" onclick="calculateGST()">
+                <i data-lucide="calculator" class="h-5 w-5"></i>
+                Calculate GST
+              </button>
+              <button class="action-btn action-btn-secondary" onclick="resetGSTCalculator()">
+                <i data-lucide="refresh-ccw" class="h-5 w-5"></i>
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="content-container py-12">
+      <!-- Newsletter -->
+      <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 md:p-8 mb-8 md:mb-12">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3">Stay Updated</h3>
+            <p class="text-blue-100 text-sm md:text-base">
+              Subscribe for new calculators and financial tools.
+            </p>
+          </div>
+          <div>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="flex-1 px-4 md:px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm md:text-base"
+                required
+              >
+              <button 
+                type="submit" 
+                class="bg-white text-purple-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap text-sm md:text-base"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs md:text-sm text-blue-200 mt-2 md:mt-3">By subscribing, you agree to our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+        <!-- Logo and Social -->
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="inline-block mb-4">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+              alt="Quizontal Logo" 
+              class="footer-logo"
+              loading="lazy"
+            >
+          </a>
+          <p class="mt-2 md:mt-4 text-gray-400 text-sm mb-4 md:mb-6">
+            Free online calculators for everyday calculations and financial planning.
+          </p>
+          <div class="flex space-x-3 md:space-x-4">
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="github" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="twitter" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Calculators Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Calculators</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#age-calculator" class="hover:text-white transition-colors block" onclick="showCalculator('age-calculator')">Age Calculator</a></li>
+            <li><a href="#bmi-calculator" class="hover:text-white transition-colors block" onclick="showCalculator('bmi-calculator')">BMI Calculator</a></li>
+            <li><a href="#loan-calculator" class="hover:text-white transition-colors block" onclick="showCalculator('loan-calculator')">Loan EMI Calculator</a></li>
+            <li><a href="#percentage-calculator" class="hover:text-white transition-colors block" onclick="showCalculator('percentage-calculator')">Percentage Calculator</a></li>
+            <li><a href="#gst-calculator" class="hover:text-white transition-colors block" onclick="showCalculator('gst-calculator')">GST Calculator</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Company</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Support</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2025 Quizontal Calculators. All rights reserved.
+        </p>
+        <div class="flex space-x-4 md:space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== INITIALIZATION ==========
+    lucide.createIcons();
+
+    // ========== MOBILE MENU ==========
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+    // ========== NOTIFICATION SYSTEM ==========
+    function showNotification(message, type = 'info', duration = 4000) {
+      const container = document.getElementById('notifications-container');
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      notification.innerHTML = `
+        <i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'x-circle' : 'info'}"></i>
+        <div class="notification-message">${message}</div>
+        <i data-lucide="x" class="h-4 w-4 cursor-pointer" onclick="this.parentElement.remove()"></i>
+      `;
+      
+      container.appendChild(notification);
+      lucide.createIcons();
+      
+      setTimeout(() => notification.classList.add('show'), 10);
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, duration);
+    }
+
+    // ========== CALCULATOR SWITCHING ==========
+    let currentCalculator = 'age-calculator';
+
+    function showCalculator(calculatorId) {
+      // Hide all calculators
+      document.querySelectorAll('.calculator-container').forEach(calc => {
+        calc.classList.add('hidden');
+      });
+      
+      // Remove active class from all cards
+      document.querySelectorAll('.calculator-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      // Show selected calculator
+      document.getElementById(`${calculatorId}-tool`).classList.remove('hidden');
+      document.getElementById(`${calculatorId}-card`).classList.add('active');
+      
+      // Update current calculator
+      currentCalculator = calculatorId;
+      
+      // Initialize calculator if needed
+      switch(calculatorId) {
+        case 'age-calculator':
+          initAgeCalculator();
+          break;
+        case 'bmi-calculator':
+          calculateBMI();
+          break;
+        case 'loan-calculator':
+          calculateLoan();
+          break;
+        case 'percentage-calculator':
+          calculatePercentage();
+          break;
+        case 'gst-calculator':
+          calculateGST();
+          break;
+      }
+      
+      // Scroll to calculators
+      document.getElementById('calculators').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========== UTILITY FUNCTIONS ==========
+    function scrollToCalculators() {
+      document.getElementById('calculators').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function formatCurrency(amount) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(amount);
+    }
+
+    function formatNumber(num) {
+      return new Intl.NumberFormat('en-US').format(num);
+    }
+
+    // ========== AGE CALCULATOR ==========
+    function initAgeCalculator() {
+      const today = new Date();
+      const todayStr = today.toISOString().split('T')[0];
+      
+      // Set max dates to today
+      $('dob').max = todayStr;
+      $('age-at-date').max = todayStr;
+      
+      // Set default values
+      $('dob').value = '1990-01-01';
+      $('age-at-date').value = todayStr;
+      
+      calculateAge();
+    }
+
+    function calculateAge() {
+      const dob = new Date($('dob').value);
+      const ageAtDate = new Date($('age-at-date').value);
+      
+      if (!dob || !ageAtDate || dob > ageAtDate) {
+        $('age-result').innerHTML = `
+          <div class="result-value text-center mb-4 text-red-500">Invalid Dates</div>
+          <div class="result-description text-center">
+            Date of birth must be before or on the age calculation date.
+          </div>
+        `;
+        $('age-details').style.display = 'none';
+        return;
+      }
+      
+      // Calculate age
+      let years = ageAtDate.getFullYear() - dob.getFullYear();
+      let months = ageAtDate.getMonth() - dob.getMonth();
+      let days = ageAtDate.getDate() - dob.getDate();
+      
+      // Adjust negative months/days
+      if (days < 0) {
+        months--;
+        // Get days in previous month
+        const prevMonth = new Date(ageAtDate.getFullYear(), ageAtDate.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+      
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      
+      // Calculate total days
+      const diffTime = Math.abs(ageAtDate - dob);
+      const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      
+      // Calculate next birthday
+      const nextBirthday = new Date(ageAtDate.getFullYear(), dob.getMonth(), dob.getDate());
+      if (nextBirthday < ageAtDate) {
+        nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+      }
+      
+      const daysUntilBirthday = Math.floor((nextBirthday - ageAtDate) / (1000 * 60 * 60 * 24));
+      const nextBirthdayStr = nextBirthday.toLocaleDateString('en-US', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      
+      // Update result
+      $('age-result').innerHTML = `
+        <div class="result-value text-center mb-4">${years} years</div>
+        <div class="result-description text-center">
+          ${months} months and ${days} days
+        </div>
+      `;
+      
+      // Update details
+      $('age-years').textContent = years;
+      $('age-months').textContent = months;
+      $('age-days').textContent = days;
+      $('total-days').textContent = formatNumber(totalDays);
+      $('next-birthday').textContent = nextBirthdayStr;
+      $('days-until-birthday').textContent = formatNumber(daysUntilBirthday);
+      
+      $('age-details').style.display = 'block';
+    }
+
+    function resetAgeCalculator() {
+      const today = new Date();
+      const todayStr = today.toISOString().split('T')[0];
+      
+      $('dob').value = '1990-01-01';
+      $('age-at-date').value = todayStr;
+      
+      calculateAge();
+      showNotification('Age calculator reset', 'info');
+    }
+
+    function setToday() {
+      const today = new Date();
+      const todayStr = today.toISOString().split('T')[0];
+      
+      $('age-at-date').value = todayStr;
+      
+      calculateAge();
+      showNotification('Set to today', 'info');
+    }
+
+    // ========== BMI CALCULATOR ==========
+    function calculateBMI() {
+      const height = parseFloat($('height').value) / 100; // Convert cm to meters
+      const weight = parseFloat($('weight').value);
+      
+      if (!height || !weight || height <= 0 || weight <= 0) {
+        $('bmi-value').textContent = '-';
+        $('bmi-category').textContent = 'Enter valid height and weight';
+        $('bmi-details').style.display = 'none';
+        return;
+      }
+      
+      // Calculate BMI
+      const bmi = weight / (height * height);
+      const roundedBMI = bmi.toFixed(1);
+      
+      // Determine category
+      let category = '';
+      let categoryColor = '';
+      
+      if (bmi < 18.5) {
+        category = 'Underweight';
+        categoryColor = '#3b82f6';
+      } else if (bmi < 25) {
+        category = 'Normal weight';
+        categoryColor = '#10b981';
+      } else if (bmi < 30) {
+        category = 'Overweight';
+        categoryColor = '#f59e0b';
+      } else {
+        category = 'Obese';
+        categoryColor = '#ef4444';
+      }
+      
+      // Update result
+      $('bmi-value').textContent = roundedBMI;
+      $('bmi-value').style.color = categoryColor;
+      $('bmi-category').textContent = category;
+      $('bmi-category').style.color = categoryColor;
+      
+      // Update details
+      $('bmi-detail-value').textContent = roundedBMI;
+      $('bmi-category-detail').textContent = category;
+      $('bmi-category-detail').style.color = categoryColor;
+      
+      $('bmi-details').style.display = 'block';
+      
+      // Update BMI chart indicator
+      updateBMIChart(bmi);
+    }
+
+    function updateBMIChart(bmi) {
+      // Reset all bars
+      document.querySelectorAll('.chart-fill').forEach(bar => {
+        bar.style.width = '100%';
+      });
+      
+      // Calculate percentage for current BMI
+      let barPercentage = 0;
+      if (bmi < 18.5) {
+        barPercentage = (bmi / 18.5) * 100;
+        $('underweight-bar').style.width = `${barPercentage}%`;
+      } else if (bmi < 25) {
+        barPercentage = ((bmi - 18.5) / (25 - 18.5)) * 100;
+        $('normal-bar').style.width = `${barPercentage}%`;
+      } else if (bmi < 30) {
+        barPercentage = ((bmi - 25) / (30 - 25)) * 100;
+        $('overweight-bar').style.width = `${barPercentage}%`;
+      } else if (bmi < 40) { // Cap at 40 for display
+        barPercentage = ((bmi - 30) / (40 - 30)) * 100;
+        $('obese-bar').style.width = `${barPercentage}%`;
+      } else {
+        $('obese-bar').style.width = '100%';
+      }
+    }
+
+    function resetBMICalculator() {
+      $('height').value = '170';
+      $('weight').value = '70';
+      
+      calculateBMI();
+      showNotification('BMI calculator reset', 'info');
+    }
+
+    // ========== LOAN EMI CALCULATOR ==========
+    function calculateLoan() {
+      const principal = parseFloat($('loan-amount').value);
+      const annualRate = parseFloat($('interest-rate').value);
+      const years = parseFloat($('loan-tenure').value);
+      
+      if (!principal || !annualRate || !years || principal <= 0 || annualRate <= 0 || years <= 0) {
+        $('emi-amount').textContent = '-';
+        $('loan-details').style.display = 'none';
+        $('loan-table-container').style.display = 'none';
+        return;
+      }
+      
+      // Calculate monthly EMI
+      const monthlyRate = annualRate / 12 / 100;
+      const months = years * 12;
+      
+      const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / 
+                  (Math.pow(1 + monthlyRate, months) - 1);
+      
+      const totalPayment = emi * months;
+      const totalInterest = totalPayment - principal;
+      const interestPercentage = (totalInterest / principal) * 100;
+      
+      // Update result
+      $('emi-amount').textContent = formatCurrency(emi);
+      
+      // Update details
+      $('loan-amount-display').textContent = formatCurrency(principal);
+      $('emi-display').textContent = formatCurrency(emi);
+      $('total-interest').textContent = formatCurrency(totalInterest);
+      $('total-payment').textContent = formatCurrency(totalPayment);
+      $('interest-percentage').textContent = interestPercentage.toFixed(2) + '%';
+      
+      $('loan-details').style.display = 'block';
+      
+      // Generate amortization table
+      generateAmortizationTable(principal, monthlyRate, months, emi);
+    }
+
+    function generateAmortizationTable(principal, monthlyRate, months, emi) {
+      let balance = principal;
+      let tableHTML = '';
+      
+      for (let year = 1; year <= months / 12; year++) {
+        let yearlyPrincipal = 0;
+        let yearlyInterest = 0;
+        
+        for (let month = 1; month <= 12; month++) {
+          if (balance <= 0) break;
+          
+          const interest = balance * monthlyRate;
+          const principalPaid = emi - interest;
+          
+          yearlyPrincipal += principalPaid;
+          yearlyInterest += interest;
+          balance -= principalPaid;
+        }
+        
+        tableHTML += `
+          <tr>
+            <td>Year ${year}</td>
+            <td>${formatCurrency(yearlyPrincipal)}</td>
+            <td>${formatCurrency(yearlyInterest)}</td>
+            <td>${formatCurrency(Math.max(balance, 0))}</td>
+          </tr>
+        `;
+      }
+      
+      $('loan-table-body').innerHTML = tableHTML;
+    }
+
+    function toggleLoanTable() {
+      const tableContainer = $('loan-table-container');
+      if (tableContainer.style.display === 'none') {
+        tableContainer.style.display = 'block';
+        showNotification('Amortization table shown', 'info');
+      } else {
+        tableContainer.style.display = 'none';
+        showNotification('Amortization table hidden', 'info');
+      }
+    }
+
+    function resetLoanCalculator() {
+      $('loan-amount').value = '10000';
+      $('interest-rate').value = '7.5';
+      $('loan-tenure').value = '5';
+      
+      calculateLoan();
+      $('loan-table-container').style.display = 'none';
+      showNotification('Loan calculator reset', 'info');
+    }
+
+    // ========== PERCENTAGE CALCULATOR ==========
+    let currentPercentageType = 'basic';
+
+    function changePercentageType() {
+      currentPercentageType = $('percentage-type').value;
+      const formContainer = $('percentage-form');
+      
+      let formHTML = '';
+      
+      switch(currentPercentageType) {
+        case 'basic':
+          formHTML = `
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Percentage</label>
+                <div class="form-input-group">
+                  <input type="number" id="percentage-value" class="form-input" placeholder="20" min="0" max="1000" step="0.1" oninput="calculatePercentage()">
+                  <span class="form-input-suffix">%</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Of Number</label>
+                <input type="number" id="base-number" class="form-input" placeholder="100" min="0" step="0.1" oninput="calculatePercentage()">
+              </div>
+            </div>
+          `;
+          break;
+          
+        case 'increase':
+        case 'decrease':
+          formHTML = `
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Original Number</label>
+                <input type="number" id="original-number" class="form-input" placeholder="100" min="0" step="0.1" oninput="calculatePercentage()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">${currentPercentageType === 'increase' ? 'Increase' : 'Decrease'} by</label>
+                <div class="form-input-group">
+                  <input type="number" id="percentage-change" class="form-input" placeholder="10" min="0" max="1000" step="0.1" oninput="calculatePercentage()">
+                  <span class="form-input-suffix">%</span>
+                </div>
+              </div>
+            </div>
+          `;
+          break;
+          
+        case 'change':
+          formHTML = `
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Original Value</label>
+                <input type="number" id="old-value" class="form-input" placeholder="100" min="0" step="0.1" oninput="calculatePercentage()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">New Value</label>
+                <input type="number" id="new-value" class="form-input" placeholder="120" min="0" step="0.1" oninput="calculatePercentage()">
+              </div>
+            </div>
+          `;
+          break;
+          
+        case 'reverse':
+          formHTML = `
+            <div class="form-row mb-6">
+              <div class="form-group">
+                <label class="form-label">Number</label>
+                <input type="number" id="reverse-number" class="form-input" placeholder="120" min="0" step="0.1" oninput="calculatePercentage()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Percentage</label>
+                <div class="form-input-group">
+                  <input type="number" id="reverse-percentage" class="form-input" placeholder="20" min="0" max="1000" step="0.1" oninput="calculatePercentage()">
+                  <span class="form-input-suffix">%</span>
+                </div>
+              </div>
+            </div>
+          `;
+          break;
+      }
+      
+      formContainer.innerHTML = formHTML;
+      calculatePercentage();
+    }
+
+    function calculatePercentage() {
+      let result = 0;
+      let description = '';
+      let details = [];
+      
+      switch(currentPercentageType) {
+        case 'basic':
+          const percentage = parseFloat($('percentage-value').value);
+          const base = parseFloat($('base-number').value);
+          
+          if (percentage && base) {
+            result = (percentage / 100) * base;
+            description = `${percentage}% of ${base} is ${result.toFixed(2)}`;
+            details = [
+              { label: 'Calculation', value: `${percentage}% × ${base}` },
+              { label: 'Result', value: result.toFixed(2) }
+            ];
+          }
+          break;
+          
+        case 'increase':
+        case 'decrease':
+          const original = parseFloat($('original-number').value);
+          const change = parseFloat($('percentage-change').value);
+          
+          if (original && change) {
+            if (currentPercentageType === 'increase') {
+              result = original * (1 + change / 100);
+              description = `${original} increased by ${change}% is ${result.toFixed(2)}`;
+              details = [
+                { label: 'Increase Amount', value: (result - original).toFixed(2) },
+                { label: 'New Value', value: result.toFixed(2) }
+              ];
+            } else {
+              result = original * (1 - change / 100);
+              description = `${original} decreased by ${change}% is ${result.toFixed(2)}`;
+              details = [
+                { label: 'Decrease Amount', value: (original - result).toFixed(2) },
+                { label: 'New Value', value: result.toFixed(2) }
+              ];
+            }
+          }
+          break;
+          
+        case 'change':
+          const oldValue = parseFloat($('old-value').value);
+          const newValue = parseFloat($('new-value').value);
+          
+          if (oldValue && newValue) {
+            result = ((newValue - oldValue) / oldValue) * 100;
+            description = `From ${oldValue} to ${newValue} is ${result.toFixed(2)}% ${result >= 0 ? 'increase' : 'decrease'}`;
+            details = [
+              { label: 'Change', value: (newValue - oldValue).toFixed(2) },
+              { label: 'Percentage Change', value: `${result.toFixed(2)}%` }
+            ];
+          }
+          break;
+          
+        case 'reverse':
+          const number = parseFloat($('reverse-number').value);
+          const reversePercentage = parseFloat($('reverse-percentage').value);
+          
+          if (number && reversePercentage) {
+            result = number / (1 + reversePercentage / 100);
+            description = `${number} is ${reversePercentage}% more than ${result.toFixed(2)}`;
+            details = [
+              { label: 'Original Value', value: result.toFixed(2) },
+              { label: 'Increase', value: (number - result).toFixed(2) }
+            ];
+          }
+          break;
+      }
+      
+      // Update UI
+      if (result || result === 0) {
+        $('percentage-result-title').textContent = 'Percentage Calculation Result';
+        $('percentage-result-value').textContent = typeof result === 'number' ? result.toFixed(2) : result;
+        $('percentage-result-description').textContent = description;
+        
+        $('detail-label-1').textContent = details[0]?.label || 'Calculation';
+        $('detail-value-1').textContent = details[0]?.value || '-';
+        $('detail-label-2').textContent = details[1]?.label || 'Result';
+        $('detail-value-2').textContent = details[1]?.value || '-';
+        
+        if (details[2]) {
+          $('detail-row-3').style.display = 'flex';
+          $('detail-label-3').textContent = details[2].label;
+          $('detail-value-3').textContent = details[2].value;
+        } else {
+          $('detail-row-3').style.display = 'none';
+        }
+        
+        $('percentage-details').style.display = 'block';
+      } else {
+        $('percentage-result-value').textContent = '-';
+        $('percentage-result-description').textContent = 'Enter values to calculate';
+        $('percentage-details').style.display = 'none';
+      }
+    }
+
+    function resetPercentageCalculator() {
+      $('percentage-type').value = 'basic';
+      changePercentageType();
+      showNotification('Percentage calculator reset', 'info');
+    }
+
+    // ========== GST CALCULATOR ==========
+    let currentGSTType = 'add';
+
+    function changeGSTType() {
+      currentGSTType = $('gst-type').value;
+      
+      switch(currentGSTType) {
+        case 'add':
+          $('gst-amount-label').textContent = 'Net Price';
+          $('gst-result-title').textContent = 'GST Calculation Result';
+          break;
+        case 'remove':
+          $('gst-amount-label').textContent = 'Gross Price';
+          $('gst-result-title').textContent = 'GST Removal Result';
+          break;
+        case 'split':
+          $('gst-amount-label').textContent = 'Total Amount';
+          $('gst-result-title').textContent = 'GST Split Result';
+          break;
+      }
+      
+      calculateGST();
+    }
+
+    function calculateGST() {
+      const rate = parseFloat($('gst-rate').value);
+      const amount = parseFloat($('gst-amount').value);
+      
+      if (!rate || !amount || rate < 0 || amount < 0) {
+        $('gst-result-value').textContent = '-';
+        $('gst-result-description').textContent = 'Enter valid GST rate and amount';
+        $('gst-details').style.display = 'none';
+        return;
+      }
+      
+      let netPrice, gstAmount, grossPrice, resultValue, description;
+      
+      switch(currentGSTType) {
+        case 'add':
+          netPrice = amount;
+          gstAmount = (netPrice * rate) / 100;
+          grossPrice = netPrice + gstAmount;
+          resultValue = formatCurrency(grossPrice);
+          description = `Net price: ${formatCurrency(netPrice)} + GST: ${formatCurrency(gstAmount)}`;
+          break;
+          
+        case 'remove':
+          grossPrice = amount;
+          netPrice = grossPrice / (1 + rate / 100);
+          gstAmount = grossPrice - netPrice;
+          resultValue = formatCurrency(netPrice);
+          description = `Gross price: ${formatCurrency(grossPrice)} - GST: ${formatCurrency(gstAmount)}`;
+          break;
+          
+        case 'split':
+          grossPrice = amount;
+          netPrice = grossPrice / (1 + rate / 100);
+          gstAmount = grossPrice - netPrice;
+          resultValue = formatCurrency(gstAmount);
+          description = `GST amount in ${formatCurrency(grossPrice)}`;
+          break;
+      }
+      
+      // Update result
+      $('gst-result-value').textContent = resultValue;
+      $('gst-result-description').textContent = description;
+      
+      // Update details
+      $('gst-detail-label-1').textContent = currentGSTType === 'add' ? 'Net Price' : 'Calculated Net';
+      $('gst-detail-value-1').textContent = formatCurrency(netPrice);
+      $('gst-amount-detail').textContent = formatCurrency(gstAmount);
+      $('gst-detail-label-2').textContent = currentGSTType === 'remove' ? 'Original Gross' : 'Gross Price';
+      $('gst-detail-value-2').textContent = formatCurrency(grossPrice);
+      $('gst-rate-detail').textContent = rate.toFixed(1) + '%';
+      
+      $('gst-details').style.display = 'block';
+    }
+
+    function resetGSTCalculator() {
+      $('gst-type').value = 'add';
+      $('gst-rate').value = '18';
+      $('gst-amount').value = '1000';
+      
+      changeGSTType();
+      showNotification('GST calculator reset', 'info');
+    }
+
+    // ========== EVENT LISTENERS ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize calculators
+      initAgeCalculator();
+      calculateBMI();
+      calculateLoan();
+      calculatePercentage();
+      calculateGST();
+      
+      // Setup newsletter form
+      const newsletterForm = document.getElementById('newsletterForm');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          if (email) {
+            showNotification('Thank you for subscribing!', 'success');
+            this.reset();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

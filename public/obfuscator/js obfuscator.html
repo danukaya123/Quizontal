@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>JavaScript Obfuscator Pro - Protect Your Code | Quizontal</title>
+  <meta name="description" content="Professional JavaScript obfuscation tool. Protect your source code from theft and reverse engineering with military-grade encryption.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- JavaScript Obfuscator Library -->
+  <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator@latest/dist/index.browser.js"></script>
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      overflow-x: hidden;
+      background: #f8fafc;
+    }
+
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    section {
+      padding: 3rem 0;
+      width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+    }
+
+    /* ========== NAVIGATION - EXACT COPY FROM HOMEPAGE ========== */
+    header {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .nav-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .nav-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* Logo */
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 640px) {
+      .nav-logo {
+        height: 36px;
+        max-width: 150px;
+      }
+    }
+    
+    /* Desktop Navigation */
+    .desktop-nav {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    
+    /* Navigation Links */
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      height: 44px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+      color: #7c3aed;
+    }
+    
+    .nav-link i {
+      margin-left: 0.25rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .nav-link:hover i {
+      transform: rotate(180deg);
+    }
+    
+    /* CTA Button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #7c3aed;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .cta-button:hover {
+      background-color: #6d28d9;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 0.5rem;
+      background: transparent;
+      border: none;
+      color: #374151;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-menu-btn:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* ========== MAIN TOOL SECTION ========== */
+    .tool-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tool-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(124, 58, 237, 0.1) 100%);
+      z-index: 0;
+    }
+    
+    .tool-header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .tool-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    
+    @media (min-width: 768px) {
+      .tool-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    .tool-subtitle {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    
+    /* Code Input/Output Grid */
+    .code-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .code-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+    
+    /* Code Panel */
+    .code-panel {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+    }
+    
+    /* Panel Header */
+    .panel-header {
+      background: #f9fafb;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .panel-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    /* Textarea */
+    .code-textarea {
+      width: 100%;
+      min-height: 300px;
+      padding: 1.5rem;
+      border: none;
+      background: white;
+      color: #374151;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+    }
+    
+    .code-textarea::placeholder {
+      color: #9ca3af;
+    }
+    
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .action-btn-primary {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+    }
+    
+    .action-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    .action-btn-secondary {
+      background: white;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .action-btn-secondary:hover {
+      border-color: #7c3aed;
+      color: #7c3aed;
+    }
+    
+    /* Options Panel */
+    .options-panel {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+    }
+    
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .option-group {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .option-group-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #7c3aed;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    /* Option Items */
+    .option-item {
+      margin-bottom: 1rem;
+    }
+    
+    .option-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .option-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+      cursor: pointer;
+    }
+    
+    .option-description {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+      margin-left: 1.75rem;
+      line-height: 1.4;
+    }
+    
+    /* Stats Panel */
+    .stats-panel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #7c3aed;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* ========== NOTIFICATIONS ========== */
+    .notification {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      max-width: 350px;
+      transform: translateX(calc(100% + 1.5rem));
+      transition: transform 0.3s ease;
+    }
+    
+    .notification.show {
+      transform: translateX(0);
+    }
+    
+    .notification.success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+    
+    .notification.error {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+    }
+    
+    .notification.info {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+    }
+    
+    /* ========== FEATURES SECTION ========== */
+    .features-section {
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      margin: 2rem 0;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.2s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: #7c3aed;
+    }
+    
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-icon i {
+      color: white;
+    }
+    
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .feature-description {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .gradient-text {
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* ========== MOBILE MENU ========== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+      color: #7c3aed;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== FOOTER STYLES ========== */
+    .footer-logo {
+      max-height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        max-height: 36px;
+        max-width: 140px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 w-screen overflow-x-hidden">
+
+  <!-- Notifications Container -->
+  <div id="notifications-container"></div>
+
+  <!-- Fixed Navigation - Your Homepage Version -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="nav-logo"
+          loading="eager"
+        >
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#features" class="nav-link">
+          <span>Features</span>
+        </a>
+        <a href="#how-it-works" class="nav-link">
+          <span>How It Works</span>
+        </a>
+        <a href="#api" class="nav-link">
+          <span>API</span>
+        </a>
+        <a href="#docs" class="nav-link">
+          <span>Docs</span>
+        </a>
+        
+        <button class="cta-button ml-2" onclick="scrollToTool()">
+          Try Free Obfuscator
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-header">
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="h-10 w-auto max-w-[160px]"
+          loading="eager"
+        >
+      </a>
+      <button class="mobile-menu-btn" id="closeMobileMenu">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-nav">
+      <a href="#features" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Features
+      </a>
+      <a href="#how-it-works" class="mobile-nav-link" onclick="closeMobileMenu()">
+        How It Works
+      </a>
+      <a href="#api" class="mobile-nav-link" onclick="closeMobileMenu()">
+        API
+      </a>
+      <a href="#docs" class="mobile-nav-link" onclick="closeMobileMenu()">
+        Documentation
+      </a>
+    </div>
+    
+    <div class="mobile-cta">
+      <button class="cta-button w-full" onclick="scrollToTool(); closeMobileMenu();">
+        Try Free Obfuscator
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Tool Section -->
+  <section class="pt-8 pb-4">
+    <div class="content-container">
+      <!-- Tool Header -->
+      <div class="tool-header">
+        <div class="tool-header-content">
+          <h1 class="tool-title">JavaScript Obfuscator Pro</h1>
+          <p class="tool-subtitle">
+            Protect your source code with military-grade obfuscation. All processing happens locally in your browser - your code never leaves your computer.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Input/Output -->
+      <div class="code-grid">
+        <!-- Input Panel -->
+        <div class="code-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <i data-lucide="file-code" class="h-5 w-5 text-emerald-500"></i>
+              <span>Input JavaScript Code</span>
+            </div>
+            <button class="cta-button !py-2 !px-3 !text-sm" onclick="loadExample()">
+              Load Example
+            </button>
+          </div>
+          <textarea 
+            id="source" 
+            class="code-textarea" 
+            placeholder="// Paste your JavaScript code here...
+// Example: function hello() { console.log('Hello World'); }
+
+function greet(name) {
+  console.log('Hello, ' + name + '!');
+}
+
+greet('world');"
+            spellcheck="false"
+          >function greet(name) {
+  console.log('Hello, ' + name + '!');
+}
+
+const apiKey = 'sk_live_1234567890abcdef';
+const config = {
+  apiUrl: 'https://api.example.com',
+  timeout: 5000
+};
+
+function processData(data) {
+  return data.map(item => ({
+    ...item,
+    processed: true
+  }));
+}
+
+greet('developer');</textarea>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="code-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <i data-lucide="shield-check" class="h-5 w-5 text-purple-500"></i>
+              <span>Obfuscated Output</span>
+            </div>
+            <button class="cta-button !py-2 !px-3 !text-sm" onclick="copyOutput()">
+              Copy Code
+            </button>
+          </div>
+          <textarea 
+            id="output" 
+            class="code-textarea" 
+            readonly
+            placeholder="// Obfuscated code will appear here...
+// Click 'Obfuscate' to protect your code"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="action-btn action-btn-primary" onclick="obfuscate()">
+          <i data-lucide="shield" class="h-5 w-5"></i>
+          Obfuscate Code
+        </button>
+        <button class="action-btn action-btn-secondary" onclick="downloadOutput()">
+          <i data-lucide="download" class="h-5 w-5"></i>
+          Download Output
+        </button>
+        <button class="action-btn action-btn-secondary" onclick="clearAll()">
+          <i data-lucide="trash-2" class="h-5 w-5"></i>
+          Clear All
+        </button>
+        <button class="action-btn action-btn-secondary" onclick="testObfuscated()">
+          <i data-lucide="play" class="h-5 w-5"></i>
+          Test Output
+        </button>
+      </div>
+
+      <!-- Options Panel -->
+      <div class="options-panel">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">Obfuscation Options</h3>
+        
+        <div class="options-grid">
+          <!-- Basic Options -->
+          <div class="option-group">
+            <h4 class="option-group-title">
+              <i data-lucide="settings" class="h-5 w-5"></i>
+              Basic Settings
+            </h4>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="presetSelect" checked>
+                <label for="presetSelect" class="option-label">Preset Configuration</label>
+              </div>
+              <select id="presetLevel" class="mt-2 w-full p-2 border rounded" onchange="applyPreset()">
+                <option value="high">High Protection (Maximum Security)</option>
+                <option value="medium" selected>Medium Protection (Recommended)</option>
+                <option value="low">Low Protection (Fast & Light)</option>
+              </select>
+              <div class="option-description">
+                Pre-configured protection levels for different use cases
+              </div>
+            </div>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="compact" checked>
+                <label for="compact" class="option-label">Compact Output</label>
+              </div>
+              <div class="option-description">
+                Remove whitespace and comments to reduce file size
+              </div>
+            </div>
+          </div>
+
+          <!-- String Protection -->
+          <div class="option-group">
+            <h4 class="option-group-title">
+              <i data-lucide="lock" class="h-5 w-5"></i>
+              String Protection
+            </h4>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="stringArray" checked>
+                <label for="stringArray" class="option-label">String Array Encryption</label>
+              </div>
+              <div class="option-description">
+                Store all strings in an encrypted array
+              </div>
+            </div>
+            
+            <div class="option-item">
+              <label class="option-label mb-2 block">String Array Encoding</label>
+              <select id="stringArrayEncoding" class="w-full p-2 border rounded">
+                <option value="none">No Encoding (Fastest)</option>
+                <option value="base64" selected>Base64 Encoding (Recommended)</option>
+                <option value="rc4">RC4 Encryption (Strong)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Control Flow -->
+          <div class="option-group">
+            <h4 class="option-group-title">
+              <i data-lucide="git-branch" class="h-5 w-5"></i>
+              Control Flow Obfuscation
+            </h4>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="controlFlowFlattening" checked>
+                <label for="controlFlowFlattening" class="option-label">Control Flow Flattening</label>
+              </div>
+              <div class="option-description">
+                Flatten the control flow to make analysis difficult
+              </div>
+            </div>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="deadCodeInjection" checked>
+                <label for="deadCodeInjection" class="option-label">Dead Code Injection</label>
+              </div>
+              <div class="option-description">
+                Insert fake code blocks to confuse reverse engineers
+              </div>
+            </div>
+          </div>
+
+          <!-- Debug Protection -->
+          <div class="option-group">
+            <h4 class="option-group-title">
+              <i data-lucide="bug" class="h-5 w-5"></i>
+              Debug Protection
+            </h4>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="debugProtection" checked>
+                <label for="debugProtection" class="option-label">Debug Protection</label>
+              </div>
+              <div class="option-description">
+                Prevent debugging in browser developer tools
+              </div>
+            </div>
+            
+            <div class="option-item">
+              <div class="option-row">
+                <input type="checkbox" id="selfDefending" checked>
+                <label for="selfDefending" class="option-label">Self-Defending Mode</label>
+              </div>
+              <div class="option-description">
+                Prevent deobfuscation attempts and code analysis
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Panel -->
+      <div class="stats-panel">
+        <div class="stat-item">
+          <div class="stat-value" id="originalSize">0 B</div>
+          <div class="stat-label">Original Size</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="obfuscatedSize">0 B</div>
+          <div class="stat-label">Obfuscated Size</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="protectionLevel">0%</div>
+          <div class="stat-label">Protection Level</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="processingTime">0ms</div>
+          <div class="stat-label">Processing Time</div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-section" id="features">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Obfuscator?</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Enterprise-grade protection with an intuitive interface. Perfect for developers, agencies, and businesses.
+          </p>
+        </div>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i data-lucide="shield"></i>
+            </div>
+            <h3 class="feature-title">Military-Grade Security</h3>
+            <p class="feature-description">
+              Multiple layers of encryption including string array encoding and control flow flattening.
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i data-lucide="zap"></i>
+            </div>
+            <h3 class="feature-title">Lightning Fast</h3>
+            <p class="feature-description">
+              All processing happens locally in your browser. No network latency, instant results.
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i data-lucide="code"></i>
+            </div>
+            <h3 class="feature-title">Full ES2023 Support</h3>
+            <p class="feature-description">
+              Supports modern JavaScript features including classes, arrow functions, and async/await.
+            </p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i data-lucide="smartphone"></i>
+            </div>
+            <h3 class="feature-title">Fully Responsive</h3>
+            <p class="feature-description">
+              Works perfectly on desktop, tablet, and mobile devices. Obfuscate code anywhere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer - Your Homepage Version -->
+  <footer class="bg-gray-900 text-white">
+    <div class="content-container py-12">
+      <!-- Newsletter -->
+      <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 md:p-8 mb-8 md:mb-12">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3">Stay Updated</h3>
+            <p class="text-blue-100 text-sm md:text-base">
+              Subscribe to our newsletter for the latest security tips and updates.
+            </p>
+          </div>
+          <div>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="flex-1 px-4 md:px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm md:text-base"
+                required
+              >
+              <button 
+                type="submit" 
+                class="bg-white text-purple-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap text-sm md:text-base"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs md:text-sm text-blue-200 mt-2 md:mt-3">By subscribing, you agree to our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+        <!-- Logo and Social -->
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="inline-block mb-4">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+              alt="Quizontal Logo" 
+              class="footer-logo"
+              loading="lazy"
+            >
+          </a>
+          <p class="mt-2 md:mt-4 text-gray-400 text-sm mb-4 md:mb-6">
+            Professional JavaScript obfuscation tool for protecting your intellectual property.
+          </p>
+          <div class="flex space-x-3 md:space-x-4">
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="github" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="twitter" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Product Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Product</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#features" class="hover:text-white transition-colors block">Features</a></li>
+            <li><a href="#api" class="hover:text-white transition-colors block">API</a></li>
+            <li><a href="#docs" class="hover:text-white transition-colors block">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Company</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Support</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2025 Quizontal JavaScript Obfuscator. All rights reserved.
+        </p>
+        <div class="flex space-x-4 md:space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== INITIALIZATION ==========
+    lucide.createIcons();
+
+    // ========== MOBILE MENU ==========
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+    // ========== NOTIFICATION SYSTEM ==========
+    function showNotification(message, type = 'info', duration = 4000) {
+      const container = document.getElementById('notifications-container');
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      notification.innerHTML = `
+        <i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'x-circle' : 'info'}"></i>
+        <div class="notification-message">${message}</div>
+        <i data-lucide="x" class="h-4 w-4 cursor-pointer" onclick="this.parentElement.remove()"></i>
+      `;
+      
+      container.appendChild(notification);
+      lucide.createIcons();
+      
+      setTimeout(() => notification.classList.add('show'), 10);
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, duration);
+    }
+
+    // ========== OBFUSCATION FUNCTIONS ==========
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function getOptionsFromUI() {
+      const preset = $('presetLevel').value;
+      const opts = {
+        compact: $('compact').checked,
+        controlFlowFlattening: $('controlFlowFlattening').checked,
+        deadCodeInjection: $('deadCodeInjection').checked,
+        debugProtection: $('debugProtection').checked,
+        stringArray: $('stringArray').checked,
+        stringArrayEncoding: $('stringArrayEncoding').value === 'none' ? [] : [$('stringArrayEncoding').value],
+        selfDefending: $('selfDefending').checked
+      };
+
+      // Apply preset adjustments
+      if (preset === 'high') {
+        opts.controlFlowFlattening = true;
+        opts.deadCodeInjection = true;
+        opts.debugProtection = true;
+        opts.stringArrayEncoding = ['rc4'];
+        opts.selfDefending = true;
+      } else if (preset === 'medium') {
+        opts.controlFlowFlattening = true;
+        opts.deadCodeInjection = true;
+        opts.debugProtection = true;
+        opts.stringArrayEncoding = ['base64'];
+        opts.selfDefending = true;
+      } else if (preset === 'low') {
+        opts.controlFlowFlattening = false;
+        opts.deadCodeInjection = false;
+        opts.debugProtection = false;
+        opts.stringArrayEncoding = [];
+        opts.selfDefending = false;
+      }
+
+      return opts;
+    }
+
+    function applyPreset() {
+      const preset = $('presetLevel').value;
+      
+      if (preset === 'high') {
+        $('compact').checked = true;
+        $('controlFlowFlattening').checked = true;
+        $('deadCodeInjection').checked = true;
+        $('debugProtection').checked = true;
+        $('stringArray').checked = true;
+        $('stringArrayEncoding').value = 'rc4';
+        $('selfDefending').checked = true;
+      } else if (preset === 'medium') {
+        $('compact').checked = true;
+        $('controlFlowFlattening').checked = true;
+        $('deadCodeInjection').checked = true;
+        $('debugProtection').checked = true;
+        $('stringArray').checked = true;
+        $('stringArrayEncoding').value = 'base64';
+        $('selfDefending').checked = true;
+      } else if (preset === 'low') {
+        $('compact').checked = true;
+        $('controlFlowFlattening').checked = false;
+        $('deadCodeInjection').checked = false;
+        $('debugProtection').checked = false;
+        $('stringArray').checked = true;
+        $('stringArrayEncoding').value = 'none';
+        $('selfDefending').checked = false;
+      }
+      
+      showNotification(`Applied ${preset} preset configuration`, 'info');
+    }
+
+    async function obfuscate() {
+      const source = $('source').value.trim();
+      if (!source) {
+        showNotification('Please enter JavaScript code to obfuscate', 'error');
+        return;
+      }
+
+      try {
+        if (!window.JavaScriptObfuscator) {
+          showNotification('Error: Obfuscator library not loaded', 'error');
+          return;
+        }
+
+        const startTime = Date.now();
+        const opts = getOptionsFromUI();
+        const obf = window.JavaScriptObfuscator.obfuscate(source, opts);
+        const result = obf.getObfuscatedCode();
+        const endTime = Date.now();
+        
+        $('output').value = result;
+        updateStats(source, result, endTime - startTime);
+        showNotification('Code obfuscated successfully!', 'success');
+      } catch (err) {
+        console.error('Obfuscation error:', err);
+        showNotification('Obfuscation failed: ' + err.message, 'error');
+      }
+    }
+
+    function copyOutput() {
+      const output = $('output').value;
+      if (!output.trim()) {
+        showNotification('No obfuscated code to copy', 'error');
+        return;
+      }
+
+      navigator.clipboard.writeText(output).then(() => {
+        showNotification('Code copied to clipboard!', 'success');
+      }).catch(err => {
+        showNotification('Failed to copy: ' + err.message, 'error');
+      });
+    }
+
+    function downloadOutput() {
+      const output = $('output').value;
+      if (!output.trim()) {
+        showNotification('No obfuscated code to download', 'error');
+        return;
+      }
+
+      const blob = new Blob([output], { type: 'application/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'obfuscated-code.js';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      showNotification('Code downloaded successfully!', 'success');
+    }
+
+    function clearAll() {
+      $('source').value = '';
+      $('output').value = '';
+      updateStats();
+      showNotification('Cleared all input and output', 'info');
+    }
+
+    function loadExample() {
+      const exampleCode = `// Sample JavaScript with sensitive data
+const API_CONFIG = {
+  baseURL: 'https://api.secure-service.com/v1',
+  apiKey: 'sk_live_987654321fedcba',
+  endpoints: {
+    auth: '/auth/login',
+    users: '/users'
+  }
+};
+
+class PaymentProcessor {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.transactions = [];
+  }
+  
+  processPayment(amount) {
+    const transactionId = this.generateId();
+    
+    console.log('Processing payment:', {
+      transactionId,
+      amount
+    });
+    
+    return transactionId;
+  }
+  
+  generateId() {
+    return 'txn_' + Math.random().toString(36).substr(2, 9);
+  }
+}
+
+// Initialize payment processor
+const processor = new PaymentProcessor(API_CONFIG.apiKey);
+processor.processPayment(99.99);`;
+      
+      $('source').value = exampleCode;
+      updateStats();
+      showNotification('Example code loaded', 'success');
+    }
+
+    function testObfuscated() {
+      const output = $('output').value;
+      if (!output.trim()) {
+        showNotification('No obfuscated code to test', 'error');
+        return;
+      }
+
+      try {
+        // Create a sandboxed iframe to test the code
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.sandbox = 'allow-scripts';
+        document.body.appendChild(iframe);
+        
+        const script = iframe.contentDocument.createElement('script');
+        script.textContent = output;
+        iframe.contentDocument.head.appendChild(script);
+        
+        setTimeout(() => {
+          document.body.removeChild(iframe);
+          showNotification('Code executed successfully in sandbox', 'success');
+        }, 100);
+      } catch (error) {
+        showNotification('Test failed: ' + error.message, 'error');
+      }
+    }
+
+    function updateStats(input = '', output = '', time = 0) {
+      const inputSize = input.length;
+      const outputSize = output.length;
+      
+      $('originalSize').textContent = formatBytes(inputSize);
+      $('obfuscatedSize').textContent = formatBytes(outputSize);
+      $('processingTime').textContent = time > 0 ? time + 'ms' : '0ms';
+      
+      if (inputSize > 0 && outputSize > 0) {
+        const protection = Math.min(99, Math.round((outputSize / Math.max(1, inputSize)) * 100));
+        $('protectionLevel').textContent = protection + '%';
+      } else {
+        $('protectionLevel').textContent = '0%';
+      }
+    }
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // ========== UTILITY FUNCTIONS ==========
+    function scrollToTool() {
+      document.querySelector('section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========== EVENT LISTENERS ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      // Update stats when input changes
+      $('source').addEventListener('input', () => {
+        updateStats($('source').value, $('output').value);
+      });
+      
+      // Setup newsletter form
+      const newsletterForm = document.getElementById('newsletterForm');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          if (email) {
+            showNotification('Thank you for subscribing!', 'success');
+            this.reset();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

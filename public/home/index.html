@@ -1,0 +1,3118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Quizontal - High-Quality Wallpapers, Stock Photos & AI Images</title>
+  <meta name="description" content="Discover millions of high-quality wallpapers, stock photos, videos, and AI-generated images. Fast search, easy downloads, and powerful AI tools for creators.">
+  <link rel="canonical" href="https://example.com">
+  <meta property="og:title" content="Quizontal - High-Quality Wallpapers, Stock Photos & AI Images">
+  <meta property="og:description" content="Discover millions of high-quality wallpapers, stock photos, videos, and AI-generated images. Fast search, easy downloads, and powerful AI tools for creators.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quizontal - High-Quality Wallpapers, Stock Photos & AI Images">
+  <meta name="twitter:description" content="Discover millions of high-quality wallpapers, stock photos, videos, and AI-generated images. Fast search, easy downloads, and powerful AI tools for creators.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      width: 100%;
+    }
+    
+    /* Hide scrollbar but keep functionality */
+    ::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+    
+    * {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    /* ========== LOADING SCREEN ========== */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    #loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loader {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: inline-block;
+      border-top: 4px solid #7c3aed;
+      border-right: 4px solid transparent;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+    
+    .loader::after {
+      content: '';  
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border-left: 4px solid #ff3d00;
+      border-bottom: 4px solid transparent;
+      animation: rotation 0.5s linear infinite reverse;
+    }
+    
+    @keyframes rotation {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    #loading-screen p {
+      color: #ffffff;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      text-shadow: 0 0 10px rgba(124, 58, 237, 0.8);
+    }
+    
+    .loading-dots {
+      color: #7c3aed;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    
+    .loading-dots span {
+      opacity: 0;
+      animation: loadingDots 1.5s infinite;
+    }
+    
+    .loading-dots span:nth-child(1) { animation-delay: 0s; }
+    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+    
+    @keyframes loadingDots {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    section {
+      padding: 3rem 0;
+      width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+    }
+
+    /* ========== NAVIGATION - FIXED ========== */
+    header {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .nav-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .nav-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* Logo */
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 640px) {
+      .nav-logo {
+        height: 36px;
+        max-width: 150px;
+      }
+    }
+    
+    /* Desktop Navigation */
+    .desktop-nav {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    
+    /* Navigation Links */
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      height: 44px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+      color: #7c3aed;
+    }
+    
+    .nav-link i {
+      margin-left: 0.25rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .nav-link:hover i {
+      transform: rotate(180deg);
+    }
+    
+    /* Search Bar */
+    .search-container {
+      position: relative;
+      min-width: 120px;
+    }
+    
+    @media (min-width: 640px) {
+      .search-container {
+        min-width: 200px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .search-container {
+        min-width: 240px;
+      }
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 0.625rem 1rem 0.625rem 2.5rem;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 0.75rem;
+      outline: none;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      background-color: #f9fafb;
+    }
+    
+    .search-input:focus {
+      border-color: #7c3aed;
+      background-color: white;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6b7280;
+      pointer-events: none;
+    }
+    
+    /* FIXED: Navigation Dropdown */
+    .nav-item {
+      position: relative;
+    }
+    
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 15px); /* ADDED: More space between nav and dropdown */
+    left: 0;
+    width: 800px;
+    max-width: 33vw;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f3f4f6;
+    
+    /* ADDED: Creates a gap/arrow effect */
+    margin-top: 10px;
+}
+    
+    @media (max-width: 1024px) {
+      .nav-dropdown {
+        width: 600px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-dropdown {
+        width: 400px;
+        left: -100%;
+      }
+    }
+    
+    /* Hover functionality fixed */
+    .nav-item:hover .nav-dropdown,
+    .nav-dropdown:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    /* Dropdown content grids */
+    .nav-image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    @media (max-width: 1024px) {
+      .nav-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .nav-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* CTA Button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #7c3aed;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .cta-button:hover {
+      background-color: #6d28d9;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 0.5rem;
+      background: transparent;
+      border: none;
+      color: #374151;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-menu-btn:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+    
+    /* ========== MOBILE MENU - IMPROVED ========== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-item {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+    }
+    
+    .mobile-nav-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-nav-link.active i {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .mobile-dropdown.active {
+      max-height: 2000px;
+    }
+    
+    .mobile-dropdown-content {
+      padding: 1rem;
+    }
+    
+    .mobile-image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    @media (max-width: 480px) {
+      .mobile-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .mobile-image-item {
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .mobile-image-item img {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+    }
+    
+    .mobile-image-item p {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #374151;
+    }
+    
+    .mobile-dropdown-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #6b7280;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .mobile-dropdown-link:hover {
+      color: #7c3aed;
+      background-color: #f3f4f6;
+    }
+    
+    .mobile-video-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .mobile-video-category {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      text-decoration: none;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    
+    .mobile-video-category:hover {
+      border-color: #7c3aed;
+      background: #f9fafb;
+    }
+    
+    .mobile-video-category i {
+      color: #7c3aed;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== HERO SECTION ========== */
+    .hero-section {
+      position: relative;
+      color: white;
+      overflow: hidden;
+      min-height: 93vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    
+    .hero-text {
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    /* ========== VIDEO BACKGROUND SECTION ========== */
+    .video-section {
+      position: relative;
+      color: white;
+      overflow: hidden;
+      padding: 6rem 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .video-section .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    
+    .video-section-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    
+    .video-section-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* ========== Z-PATTERN LAYOUT ========== */
+    .z-pattern-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .z-pattern-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+        margin-bottom: 6rem;
+      }
+      
+      .z-pattern-item.reverse {
+        flex-direction: row-reverse;
+      }
+    }
+    
+    .z-pattern-content {
+      flex: 1;
+    }
+    
+    .z-pattern-image-container {
+      flex: 1;
+    }
+    
+    .z-pattern-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .z-pattern-image {
+        height: 350px;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .z-pattern-image {
+        height: 400px;
+      }
+    }
+    
+    /* ========== GALLERY & GRIDS ========== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .trending-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    
+    .trending-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+    
+    .trending-badge.free {
+      background: rgba(34, 197, 94, 0.9);
+      color: white;
+    }
+    
+    .trending-badge.video {
+      background: rgba(59, 130, 246, 0.9);
+      color: white;
+    }
+    
+    .trending-badge.wallpaper {
+      background: rgba(168, 85, 247, 0.9);
+      color: white;
+    }
+    
+    /* ========== SLIDERS ========== */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .slider-slide {
+      min-width: 100%;
+      padding: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .slider-slide {
+        min-width: 50%;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .slider-slide {
+        min-width: 33.333%;
+      }
+    }
+    
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d1d5db;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .slider-dot.active {
+      background: #7c3aed;
+    }
+    
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    
+    .slider-nav:hover {
+      background: #7c3aed;
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .slider-nav.prev {
+      left: 0.5rem;
+    }
+    
+    .slider-nav.next {
+      right: 0.5rem;
+    }
+    
+    /* Hide nav buttons on mobile */
+    @media (max-width: 640px) {
+      .slider-nav {
+        display: none;
+      }
+    }
+    
+    /* ========== AI TOOLS HOVER EFFECT ========== */
+    .ai-tool-hover {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    
+    .ai-tool-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(124, 58, 237, 0.95);
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+      border-radius: 1rem;
+    }
+    
+    .ai-tool-hover:hover .ai-tool-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .ai-tool-step {
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease;
+    }
+    
+    .ai-tool-hover:hover .ai-tool-step {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .ai-tool-hover:hover .ai-tool-step:nth-child(1) { transition-delay: 0.1s; }
+    .ai-tool-hover:hover .ai-tool-step:nth-child(2) { transition-delay: 0.2s; }
+    .ai-tool-hover:hover .ai-tool-step:nth-child(3) { transition-delay: 0.3s; }
+    .ai-tool-hover:hover .ai-tool-step:nth-child(4) { transition-delay: 0.4s; }
+    
+    /* ========== HOVER EFFECTS ========== */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* ========== ANIMATIONS ========== */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .fade-in-up.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .fade-in-left.animated {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .fade-in-right.animated {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .scale-in.animated {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    /* ========== IMAGE LOADING ========== */
+    img {
+      transition: opacity 0.5s ease;
+      max-width: 100%;
+    }
+    
+    img.loading {
+      opacity: 0;
+    }
+    
+    img.loaded {
+      opacity: 1;
+    }
+    
+    /* ========== FOOTER - FIXED MOBILE LAYOUT ========== */
+    .footer-logo {
+      max-height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        max-height: 36px;
+        max-width: 140px;
+      }
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .gradient-section {
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-white w-screen overflow-x-hidden">
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <p>Loading Quizontal</p>
+    <div class="loading-dots">
+      <span>.</span><span>.</span><span>.</span>
+    </div>
+  </div>
+
+  <!-- Fixed Navigation -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="nav-logo"
+          loading="eager"
+        >
+      </a>
+
+      <!-- Desktop Search Bar -->
+      <div class="search-container hidden lg:block">
+        <form action="https://wall-rust.vercel.app/" method="GET" target="_blank">
+          <i data-lucide="search" class="search-icon h-4 w-4"></i>
+          <input 
+            type="search" 
+            name="q"
+            placeholder="Search images, wallpapers, videos..." 
+            class="search-input"
+            required
+          >
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <!-- Images Dropdown -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span>Images</span>
+                        <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                    </a>
+                    <div class="nav-dropdown">
+                        <h4 class="font-semibold text-gray-900 mb-4 text-lg">Browse Images by Category</h4>
+                        <div class="nav-image-grid">
+                            <div class="rounded-lg overflow-hidden hover-lift">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                    alt="Nature" 
+                                    class="w-full h-32 object-cover"
+                                >
+                                <div class="p-3 bg-gray-50">
+                                    <h5 class="font-medium text-gray-900 text-sm">Nature</h5>
+                                    <p class="text-xs text-gray-500">2,500+ images</p>
+                                </div>
+                            </div>
+                            <div class="rounded-lg overflow-hidden hover-lift">
+                                <img 
+                                    src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/abstract-nav-bar.jpg?raw=true" 
+                                    alt="Abstract" 
+                                    class="w-full h-32 object-cover"
+                                >
+                                <div class="p-3 bg-gray-50">
+                                    <h5 class="font-medium text-gray-900 text-sm">Abstract</h5>
+                                    <p class="text-xs text-gray-500">1,800+ images</p>
+                                </div>
+                            </div>
+                            <div class="rounded-lg overflow-hidden hover-lift">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                    alt="Business" 
+                                    class="w-full h-32 object-cover"
+                                >
+                                <div class="p-3 bg-gray-50">
+                                    <h5 class="font-medium text-gray-900 text-sm">Business</h5>
+                                    <p class="text-xs text-gray-500">3,200+ images</p>
+                                </div>
+                            </div>
+                            <div class="rounded-lg overflow-hidden hover-lift">
+                                <img 
+                                    src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/technology-nav-bar.png?raw=true" 
+                                    alt="Technology" 
+                                    class="w-full h-32 object-cover"
+                                >
+                                <div class="p-3 bg-gray-50">
+                                    <h5 class="font-medium text-gray-900 text-sm">Technology</h5>
+                                    <p class="text-xs text-gray-500">2,100+ images</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <h5 class="font-medium text-gray-900 mb-2">Popular Searches</h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        <a href="https://wall-rust.vercel.app/?q=wallpapers" target="_blank" class="text-sm text-purple-600 hover:text-purple-800">Wallpapers</a>
+                                        <a href="https://wall-rust.vercel.app/?q=stock+photos" target="_blank" class="text-sm text-purple-600 hover:text-purple-800">Stock Photos</a>
+                                        <a href="https://wall-rust.vercel.app/?q=ai+generated" target="_blank" class="text-sm text-purple-600 hover:text-purple-800">AI Generated</a>
+                                        <a href="https://wall-rust.vercel.app/?q=stock+videos" target="_blank" class="text-sm text-purple-600 hover:text-purple-800">Stock Videos</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-gray-900 mb-2">Quick Links</h5>
+                                    <div class="space-y-1">
+                                        <a href="#trending-gallery" class="block text-sm text-gray-600 hover:text-purple-600">Trending Images</a>
+                                        <a href="#" class="block text-sm text-gray-600 hover:text-purple-600">New Arrivals</a>
+                                        <a href="#" class="block text-sm text-gray-600 hover:text-purple-600">Premium Collection</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Videos Dropdown -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span>Videos</span>
+                        <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                    </a>
+                    <div class="nav-dropdown">
+                        <h4 class="font-semibold text-gray-900 mb-4 text-lg">Video Collections</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h5 class="font-medium text-gray-900 mb-3">Categories</h5>
+                                <ul class="space-y-2">
+                                    <li><a href="https://wall-rust.vercel.app/?q=stock+videos" target="_blank" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="video" class="h-4 w-4"></i> Stock Videos</a></li>
+                                    <li><a href="https://wall-rust.vercel.app/?q=motion+graphics" target="_blank" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="film" class="h-4 w-4"></i> Motion Graphics</a></li>
+                                    <li><a href="https://wall-rust.vercel.app/?q=4k+videos" target="_blank" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="tv" class="h-4 w-4"></i> 4K Videos</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-gray-900 mb-3">Featured</h5>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Travel Video" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h6 class="font-medium text-gray-900 text-sm">Travel & Adventure</h6>
+                                            <p class="text-xs text-gray-500">850+ videos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                                <div class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <span>Wallpapers</span>
+                        <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                    </a>
+                    <div class="nav-dropdown">
+                        <h4 class="font-semibold text-gray-900 mb-4 text-lg">Wallpaper Collections</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h5 class="font-medium text-gray-900 mb-3">Categories</h5>
+                                <ul class="space-y-2">
+                                    <li><a href="wallpapers.html" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="image" class="h-4 w-4"></i> HD Wallpapers</a></li>
+                                    <li><a href="wallpapers.html?q=4k+wallpapers" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="tv" class="h-4 w-4"></i> 4K Wallpapers</a></li>
+                                    <li><a href="wallpapers.html?q=mobile+wallpapers" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="smartphone" class="h-4 w-4"></i> Mobile Wallpapers</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-gray-900 mb-3">Featured</h5>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Nature Wallpaper" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h6 class="font-medium text-gray-900 text-sm">Nature & Landscape</h6>
+                                            <p class="text-xs text-gray-500">1,200+ wallpapers</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="nav-item">
+    <a href="#" class="nav-link">
+        <span>AI Tools</span>
+        <i data-lucide="chevron-down" class="h-4 w-4"></i>
+    </a>
+    <div class="nav-dropdown">
+        <h4 class="font-semibold text-gray-900 mb-4 text-lg">AI Tools</h4>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <h5 class="font-medium text-gray-900 mb-3">AI Tools</h5>
+                <ul class="space-y-2">
+                    <li><a href="ai-image-generator.html" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="sparkles" class="h-4 w-4"></i> AI Image Generator</a></li>
+                    <li><a href="ai-background-remover.html" class="text-gray-600 hover:text-purple-600 text-sm flex items-center gap-2"><i data-lucide="scissors" class="h-4 w-4"></i> Background Remover</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-medium text-gray-900 mb-3">Featured</h5>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/ai-image-generator.webp?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="AI Image Generator" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h6 class="font-medium text-gray-900 text-sm">AI Image Generator</h6>
+                            <p class="text-xs text-gray-500">Create AI art from text</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="https://github.com/danukaya123/bgtest/blob/main/bgremove-banner.PNG?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Background Remover" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h6 class="font-medium text-gray-900 text-sm">Background Remover</h6>
+                            <p class="text-xs text-gray-500">Remove backgrounds instantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                
+                <a href="#pricing" class="nav-link">Pricing</a>
+      
+                
+                <button class="cta-button ml-2">
+                    Get Started Free
+                </button>
+            </nav>
+
+      <!-- Mobile Search and Menu -->
+      <div class="flex items-center gap-4 lg:hidden">
+        <div class="search-container">
+          <form action="https://wall-rust.vercel.app/" method="GET" target="_blank">
+            <i data-lucide="search" class="search-icon h-4 w-4"></i>
+            <input 
+              type="search" 
+              name="q"
+              placeholder="Search..." 
+              class="search-input"
+              required
+            >
+          </form>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-header">
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="h-10 w-auto max-w-[160px]"
+          loading="eager"
+        >
+      </a>
+      <button class="mobile-menu-btn" id="closeMobileMenu">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-nav">
+      <!-- Images Dropdown -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" data-dropdown="images">
+          <span>Images</span>
+          <i data-lucide="chevron-down" class="h-5 w-5"></i>
+        </button>
+        <div class="mobile-dropdown" id="images-dropdown">
+          <div class="mobile-dropdown-content">
+            <h5 class="font-medium text-gray-900 mb-3 text-sm">Browse by Category</h5>
+            <div class="mobile-image-grid">
+              <div class="mobile-image-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Nature">
+                <p>Nature</p>
+              </div>
+              <div class="mobile-image-item">
+                <img src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/abstract-nav-bar.jpg?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Abstract">
+                <p>Abstract</p>
+              </div>
+              <div class="mobile-image-item">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Business">
+                <p>Business</p>
+              </div>
+              <div class="mobile-image-item">
+                <img src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/technology-nav-bar.png?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Technology">
+                <p>Technology</p>
+              </div>
+            </div>
+            
+            <h5 class="font-medium text-gray-900 mb-2 text-sm mt-4">Popular Searches</h5>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <a href="https://wall-rust.vercel.app/?q=wallpapers" target="_blank" class="text-xs text-purple-600 hover:text-purple-800">Wallpapers</a>
+              <a href="https://wall-rust.vercel.app/?q=stock+photos" target="_blank" class="text-xs text-purple-600 hover:text-purple-800">Stock Photos</a>
+              <a href="https://wall-rust.vercel.app/?q=ai+generated" target="_blank" class="text-xs text-purple-600 hover:text-purple-800">AI Generated</a>
+              <a href="https://wall-rust.vercel.app/?q=stock-videos" target="_blank" class="text-xs text-purple-600 hover:text-purple-800">Stock Videos</a>
+            </div>
+            
+            <h5 class="font-medium text-gray-900 mb-2 text-sm">Quick Links</h5>
+            <a href="#trending-gallery" class="mobile-dropdown-link">Trending Images</a>
+            <a href="#" class="mobile-dropdown-link">New Arrivals</a>
+            <a href="#" class="mobile-dropdown-link">Premium Collection</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Videos Dropdown -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" data-dropdown="videos">
+          <span>Videos</span>
+          <i data-lucide="chevron-down" class="h-5 w-5"></i>
+        </button>
+        <div class="mobile-dropdown" id="videos-dropdown">
+          <div class="mobile-dropdown-content">
+            <h5 class="font-medium text-gray-900 mb-3 text-sm">Video Categories</h5>
+            <div class="mobile-video-categories">
+              <a href="https://wall-rust.vercel.app/?q=stock+videos" target="_blank" class="mobile-video-category">
+                <i data-lucide="video" class="h-4 w-4"></i>
+                <span class="text-sm">Stock Videos</span>
+              </a>
+              <a href="https://wall-rust.vercel.app/?q=motion+graphics" target="_blank" class="mobile-video-category">
+                <i data-lucide="film" class="h-4 w-4"></i>
+                <span class="text-sm">Motion Graphics</span>
+              </a>
+              <a href="https://wall-rust.vercel.app/?q=4k+videos" target="_blank" class="mobile-video-category">
+                <i data-lucide="tv" class="h-4 w-4"></i>
+                <span class="text-sm">4K Videos</span>
+              </a>
+              <a href="https://wall-rust.vercel.app/?q=background+videos" target="_blank" class="mobile-video-category">
+                <i data-lucide="play-circle" class="h-4 w-4"></i>
+                <span class="text-sm">Background Videos</span>
+              </a>
+            </div>
+            
+            <h5 class="font-medium text-gray-900 mb-2 text-sm mt-4">Featured</h5>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200">
+              <div class="w-12 h-12 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Travel Video" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h6 class="font-medium text-gray-900 text-sm">Travel & Adventure</h6>
+                <p class="text-xs text-gray-500">850+ videos</p>
+              </div>
+            </div>
+            
+            <h5 class="font-medium text-gray-900 mb-2 text-sm mt-4">Quick Access</h5>
+            <a href="#" class="mobile-dropdown-link">Trending Videos</a>
+            <a href="#" class="mobile-dropdown-link">Free Videos</a>
+            <a href="#" class="mobile-dropdown-link">Premium Videos</a>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#ai-tools" class="mobile-nav-link w-full justify-start">AI Generator</a>
+      <a href="#pricing" class="mobile-nav-link w-full justify-start">Pricing</a>
+      <a href="#trending-gallery" class="mobile-nav-link w-full justify-start">Trending Gallery</a>
+      <a href="#testimonials" class="mobile-nav-link w-full justify-start">Testimonials</a>
+    </div>
+    
+    <div class="mobile-cta">
+      <button class="cta-button w-full" onclick="closeMobileMenu()">
+        Get Started Free
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <video autoplay muted loop playsinline class="video-background">
+      <source src="https://cdn.pixabay.com/video/2020/12/03/58193-487176852_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <div class="content-container relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8 fade-in-left hero-text">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Unlimited Creative Assets at Your Fingertips
+          </h1>
+          <p class="text-xl text-gray-100 leading-relaxed">
+            Discover millions of high-quality wallpapers, stock photos, videos, and AI-generated images. Fast search, instant downloads, and powerful AI tools for creators.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="bg-white text-purple-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
+              Start Creating Free
+            </button>
+            <a href="/image-gallery/">
+            <button class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-purple-900 transition-colors">
+              Explore Gallery
+            </button>
+            </a>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 sm:gap-8 text-sm text-gray-200">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="h-5 w-5 text-green-300"></i>
+              <span>10M+ Assets</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="h-5 w-5 text-green-300"></i>
+              <span>AI-Powered</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="h-5 w-5 text-green-300"></i>
+              <span>Instant Download</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative fade-in-right">
+          <img 
+            src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/hero-section.webp?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            alt="Creative workspace" 
+            class="w-full rounded-2xl object-cover shadow-2xl"
+            loading="eager"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Everything You Need for Creative Success - Z Pattern -->
+  <section class="bg-gray-50 pt-20 pb-16">
+    <div class="content-container">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Everything You Need for Creative Success</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Powerful features designed to streamline your creative workflow and deliver professional results every time.
+        </p>
+      </div>
+
+      <!-- Z Pattern Layout -->
+      <div class="space-y-20">
+        <!-- Row 1: Image Left, Text Right -->
+        <div class="z-pattern-item fade-in-left">
+          <div class="z-pattern-content">
+            <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+              <i data-lucide="zap" class="h-8 w-8 text-white"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">Lightning-Fast Search</h3>
+            <p class="text-lg text-gray-600 mb-6">
+              Find exactly what you need in seconds with our advanced AI-powered search engine. No more endless scrolling through irrelevant results.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Smart keyword matching with AI suggestions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Advanced filters by color, orientation, size, and more</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Visual search with image recognition technology</span>
+              </li>
+            </ul>
+          </div>
+          <div class="z-pattern-image-container">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/image-gallery.webp?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Fast search interface" 
+              class="z-pattern-image"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Row 2: Image Right, Text Left -->
+        <div class="z-pattern-item reverse fade-in-right">
+          <div class="z-pattern-content">
+            <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
+              <i data-lucide="download" class="h-8 w-8 text-white"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">Instant Downloads</h3>
+            <p class="text-lg text-gray-600 mb-6">
+              Get your assets immediately in any format and resolution you need. Our download system is optimized for speed and reliability.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Multiple resolutions from SD to 8K for every need</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Various file formats (JPG, PNG, SVG, WEBP, MP4)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Batch download support for entire collections</span>
+              </li>
+            </ul>
+          </div>
+          <div class="z-pattern-image-container">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/download-section.jpg?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Easy download interface" 
+              class="z-pattern-image"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Row 3: Image Left, Text Right -->
+        <div class="z-pattern-item fade-in-left">
+          <div class="z-pattern-content">
+            <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
+              <i data-lucide="sparkles" class="h-8 w-8 text-white"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">Premium Quality</h3>
+            <p class="text-lg text-gray-600 mb-6">
+              Every asset is carefully curated and quality-checked to ensure professional standards. We maintain the highest quality across our entire library.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Hand-picked content by expert curators</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Professional standards and guidelines compliance</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="h-5 w-5 text-green-500 mt-0.5"></i>
+                <span class="text-gray-700">Regular quality audits and updates</span>
+              </li>
+            </ul>
+          </div>
+          <div class="z-pattern-image-container">
+            <img 
+              src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Premium quality content" 
+              class="z-pattern-image"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Gallery - Z Pattern -->
+  <section id="trending-gallery" class="bg-white">
+    <div class="content-container">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Trending Gallery</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Explore our collection of trending copyright-free images, videos, and wallpapers
+        </p>
+      </div>
+
+      <!-- Z Pattern Layout for Trending Gallery -->
+      <div class="space-y-20">
+        <!-- Row 1: Nature Collection -->
+        <div class="z-pattern-item fade-in-left">
+          <div class="z-pattern-content">
+            <span class="bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">Nature Collection</span>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">Breathtaking Natural Landscapes</h3>
+            <p class="text-lg text-gray-600 mb-6">
+              Discover stunning landscapes, wildlife photography, and natural wonders from around the world. All images are copyright-free and available for commercial use.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="mountain" class="h-5 w-5 text-green-500"></i>
+                  <span class="font-medium">Landscapes</span>
+                </div>
+                <p class="text-sm text-gray-500">2,500+ free images</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="leaf" class="h-5 w-5 text-green-500"></i>
+                  <span class="font-medium">Wildlife</span>
+                </div>
+                <p class="text-sm text-gray-500">1,800+ free images</p>
+              </div>
+            </div>
+            <button class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors">
+              Explore Nature Collection
+            </button>
+          </div>
+          <div class="z-pattern-image-container">
+            <img 
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Mountain landscape" 
+              class="z-pattern-image"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Row 2: AI Art Gallery -->
+        <div class="z-pattern-item reverse fade-in-right">
+          <div class="z-pattern-content">
+            <span class="bg-purple-100 text-purple-800 px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">AI Art Gallery</span>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">Unique AI-Generated Artwork</h3>
+            <p class="text-lg text-gray-600 mb-6">
+              Explore unique AI-generated artwork with stunning visual effects and innovative designs. Create custom art for your projects with our AI tools.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="palette" class="h-5 w-5 text-purple-500"></i>
+                  <span class="font-medium">Abstract</span>
+                </div>
+                <p class="text-sm text-gray-500">3,200+ free images</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="zap" class="h-5 w-5 text-yellow-500"></i>
+                  <span class="font-medium">Futuristic</span>
+                </div>
+                <p class="text-sm text-gray-500">2,100+ free images</p>
+              </div>
+            </div>
+            <button class="bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-purple-700 transition-colors">
+              Explore AI Gallery
+            </button>
+          </div>
+          <div class="z-pattern-image-container">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/ai-generated-artwork.png?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="AI generated art" 
+              class="z-pattern-image"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Row 3: Video Collection with Background Video -->
+<!-- Professional Stock Videos Section with Background Video -->
+<section id="stock-videos" class="relative py-16 md:py-24 overflow-hidden">
+  <!-- Background Video -->
+  <div class="absolute inset-0 z-0">
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      class="w-full h-full object-cover"
+      poster="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    >
+      <source src="https://cdn.pixabay.com/video/2023/11/21/190002-887067381_large.mp4" type="video/mp4">
+      <source src="https://cdn.pixabay.com/video/2023/11/21/190002-887067381_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Dark Overlay for Better Text Readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+    <!-- Subtle Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 mix-blend-overlay"></div>
+  </div>
+
+  <!-- Content Container -->
+  <div class="content-container relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 fade-in-up">
+      <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-medium mb-4 border border-white/30">
+        <i data-lucide="video" class="h-4 w-4 inline-block mr-2"></i>
+        Professional Stock Videos
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+        Unlimited High-Quality Footage
+      </h2>
+      <p class="text-xl text-white/90 max-w-3xl mx-auto">
+        Access thousands of high-quality stock videos for your projects. From business to nature, find the perfect footage for any occasion.
+      </p>
+    </div>
+
+    <!-- Video Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 fade-in-up">
+      <!-- 4K Videos -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-blue-400 hover:scale-[1.02] transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+            <i data-lucide="film" class="h-6 w-6 text-white"></i>
+          </div>
+          <span class="bg-blue-500/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+            4K
+          </span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">1,500+</h3>
+        <p class="text-white/80 mb-3">Premium 4K Videos</p>
+        <div class="h-2 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
+          <div class="h-full bg-blue-400 rounded-full w-3/4"></div>
+        </div>
+        <p class="text-sm text-white/60 mt-2">Free to download</p>
+      </div>
+
+      <!-- Stock Footage -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 hover:scale-[1.02] transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+            <i data-lucide="video" class="h-6 w-6 text-white"></i>
+          </div>
+          <span class="bg-purple-500/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+            HD
+          </span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">3,800+</h3>
+        <p class="text-white/80 mb-3">Stock Footage Clips</p>
+        <div class="h-2 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
+          <div class="h-full bg-purple-400 rounded-full w-4/5"></div>
+        </div>
+        <p class="text-sm text-white/60 mt-2">All royalty-free</p>
+      </div>
+
+      <!-- Categories -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-green-400 hover:scale-[1.02] transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+            <i data-lucide="folder-open" class="h-6 w-6 text-white"></i>
+          </div>
+          <span class="bg-green-500/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+            50+
+          </span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">Categories</h3>
+        <p class="text-white/80 mb-3">Business, Nature, Travel & More</p>
+        <div class="h-2 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
+          <div class="h-full bg-green-400 rounded-full w-2/3"></div>
+        </div>
+        <p class="text-sm text-white/60 mt-2">Wide variety</p>
+      </div>
+
+      <!-- New Weekly -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-orange-400 hover:scale-[1.02] transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+            <i data-lucide="sparkles" class="h-6 w-6 text-white"></i>
+          </div>
+          <span class="bg-orange-500/80 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+            New
+          </span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">100+</h3>
+        <p class="text-white/80 mb-3">New Videos Weekly</p>
+        <div class="h-2 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
+          <div class="h-full bg-orange-400 rounded-full w-1/2"></div>
+        </div>
+        <p class="text-sm text-white/60 mt-2">Fresh content</p>
+      </div>
+    </div>
+
+    <!-- Video Categories and Preview -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <!-- Video Preview Card -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl fade-in-left">
+        <div class="aspect-video bg-black/50 backdrop-blur-sm relative">
+          <!-- Video Thumbnail -->
+          <img 
+            src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            alt="Stock video preview" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+          <!-- Video Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end">
+            <div class="p-6 w-full">
+              <button class="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 mb-4 hover:scale-105">
+                <i data-lucide="play" class="h-5 w-5"></i>
+                Play Showreel
+              </button>
+              <p class="text-white/80 text-sm">
+                Watch our curated collection of premium stock footage
+              </p>
+            </div>
+          </div>
+          
+          <!-- Floating Play Button -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <div class="w-20 h-20 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                <i data-lucide="play" class="h-8 w-8 text-gray-900 ml-1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories List -->
+      <div class="fade-in-right">
+        <h3 class="text-2xl font-bold text-white mb-6">Browse by Category</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <a href="#" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-blue-400 hover:bg-white/15 hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-blue-500/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-colors backdrop-blur-sm">
+                <i data-lucide="briefcase" class="h-5 w-5 text-blue-300 group-hover:text-white"></i>
+              </div>
+              <h4 class="font-semibold text-white">Business</h4>
+            </div>
+            <p class="text-sm text-white/80">850+ videos</p>
+          </a>
+          
+          <a href="#" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-green-400 hover:bg-white/15 hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-green-500/30 rounded-lg flex items-center justify-center group-hover:bg-green-500 transition-colors backdrop-blur-sm">
+                <i data-lucide="mountain" class="h-5 w-5 text-green-300 group-hover:text-white"></i>
+              </div>
+              <h4 class="font-semibold text-white">Nature</h4>
+            </div>
+            <p class="text-sm text-white/80">1,200+ videos</p>
+          </a>
+          
+          <a href="#" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-purple-400 hover:bg-white/15 hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-purple-500/30 rounded-lg flex items-center justify-center group-hover:bg-purple-500 transition-colors backdrop-blur-sm">
+                <i data-lucide="heart" class="h-5 w-5 text-purple-300 group-hover:text-white"></i>
+              </div>
+              <h4 class="font-semibold text-white">Lifestyle</h4>
+            </div>
+            <p class="text-sm text-white/80">950+ videos</p>
+          </a>
+          
+          <a href="#" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-orange-400 hover:bg-white/15 hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-orange-500/30 rounded-lg flex items-center justify-center group-hover:bg-orange-500 transition-colors backdrop-blur-sm">
+                <i data-lucide="plane" class="h-5 w-5 text-orange-300 group-hover:text-white"></i>
+              </div>
+              <h4 class="font-semibold text-white">Travel</h4>
+            </div>
+            <p class="text-sm text-white/80">1,100+ videos</p>
+          </a>
+          
+          <a href="#" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-red-400 hover:bg-white/15 hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-red-500/30 rounded-lg flex items-center justify-center group-hover:bg-red-500 transition-colors backdrop-blur-sm">
+                <i data-lucide="flame" class="h-5 w-5 text-red-300 group-hover:text-white"></i>
+              </div>
+              <h4 class="font-semibold text-white">Abstract</h4>
+            </div>
+            <p class="text-sm text-white/80">750+ videos</p>
+          </a>
+          
+          <a href="#" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-cyan-400 hover:bg-white/15 hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-cyan-500/30 rounded-lg flex items-center justify-center group-hover:bg-cyan-500 transition-colors backdrop-blur-sm">
+                <i data-lucide="code" class="h-5 w-5 text-cyan-300 group-hover:text-white"></i>
+              </div>
+              <h4 class="font-semibold text-white">Technology</h4>
+            </div>
+            <p class="text-sm text-white/80">800+ videos</p>
+          </a>
+        </div>
+        
+        <div class="mt-6">
+          <a href="#" class="text-white hover:text-blue-300 font-medium flex items-center gap-2">
+            View all categories
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Videos -->
+    <div class="mb-16">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-2">Featured Videos</h3>
+          <p class="text-white/80">Hand-picked premium footage for your projects</p>
+        </div>
+        <button class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 flex items-center gap-2 mt-4 sm:mt-0 border border-white/30 hover:scale-105">
+          <i data-lucide="video" class="h-5 w-5"></i>
+          Explore Videos
+        </button>
+      </div>
+
+      <!-- Video Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Video Card 1 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-blue-400 hover:scale-[1.02] transition-all duration-300">
+          <div class="relative aspect-video overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Ocean Waves" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+            >
+            <div class="absolute top-4 left-4">
+              <span class="bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                4K
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-green-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Free
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <span class="text-white text-sm font-medium bg-black/50 backdrop-blur-sm px-2 py-1 rounded">00:30</span>
+              <button class="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+                <i data-lucide="play" class="h-4 w-4"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-white text-lg mb-2">Ocean Waves - Calm</h4>
+            <p class="text-white/80 text-sm mb-4">Smooth ocean waves perfect for meditation or relaxation videos.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="download" class="h-4 w-4 text-white/60"></i>
+                <span class="text-white/70 text-sm">1.5k downloads</span>
+              </div>
+              <span class="text-green-300 font-semibold">Free</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-purple-400 hover:scale-[1.02] transition-all duration-300">
+          <div class="relative aspect-video overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="City Timelapse" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+            >
+            <div class="absolute top-4 left-4">
+              <span class="bg-purple-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                HD
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-amber-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Premium
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <span class="text-white text-sm font-medium bg-black/50 backdrop-blur-sm px-2 py-1 rounded">00:45</span>
+              <button class="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+                <i data-lucide="play" class="h-4 w-4"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-white text-lg mb-2">City Night Timelapse</h4>
+            <p class="text-white/80 text-sm mb-4">Stunning timelapse of city lights and traffic at night.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="download" class="h-4 w-4 text-white/60"></i>
+                <span class="text-white/70 text-sm">980 downloads</span>
+              </div>
+              <span class="text-amber-300 font-semibold">Premium</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-green-400 hover:scale-[1.02] transition-all duration-300">
+          <div class="relative aspect-video overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Mountain Aerial" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+            >
+            <div class="absolute top-4 left-4">
+              <span class="bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                4K
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-green-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Free
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <span class="text-white text-sm font-medium bg-black/50 backdrop-blur-sm px-2 py-1 rounded">01:15</span>
+              <button class="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+                <i data-lucide="play" class="h-4 w-4"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-white text-lg mb-2">Mountain Aerial View</h4>
+            <p class="text-white/80 text-sm mb-4">Breathtaking aerial footage of snow-capped mountains.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="download" class="h-4 w-4 text-white/60"></i>
+                <span class="text-white/70 text-sm">1.2k downloads</span>
+              </div>
+              <span class="text-green-300 font-semibold">Free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center border border-white/20 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Start Using Professional Videos Today</h3>
+      <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+        Join thousands of creators who trust our stock video library for their projects. Access 4K footage, royalty-free clips, and weekly updates.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg">
+          <i data-lucide="play-circle" class="h-5 w-5 inline-block mr-2"></i>
+          Browse All Videos
+        </button>
+        <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 hover:scale-105">
+          <i data-lucide="zap" class="h-5 w-5 inline-block mr-2"></i>
+          Try AI Video Tools
+        </button>
+      </div>
+      <p class="text-white/70 text-sm mt-6">
+        <i data-lucide="shield" class="h-4 w-4 inline-block mr-1"></i>
+        No credit card required • Free downloads available • 100% royalty-free
+      </p>
+    </div>
+  </div>
+</section>
+
+      <!-- Popular This Week Slider -->
+      <div class="mt-20 bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl p-6 md:p-8">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center">Popular This Week</h3>
+        
+        <div class="slider-container">
+          <div class="slider-track" id="popularSlider">
+            <!-- Slide 1 -->
+            <div class="slider-slide px-2 md:px-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift h-full border border-gray-100">
+                  <div class="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="City skyline" 
+                      class="w-full h-48 md:h-56 object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    >
+                    <span class="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      FREE
+                    </span>
+                  </div>
+                  <div class="p-4 md:p-6">
+                    <h4 class="font-bold text-gray-900 text-lg md:text-xl mb-2">Urban Architecture</h4>
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="download" class="h-4 w-4 text-gray-500"></i>
+                        <span class="text-gray-600 text-sm md:text-base">1.2k downloads</span>
+                      </div>
+                      <span class="text-green-600 font-semibold text-sm md:text-base">Free</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift h-full border border-gray-100">
+                  <div class="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Business workspace" 
+                      class="w-full h-48 md:h-56 object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    >
+                    <span class="absolute top-3 left-3 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      PREMIUM
+                    </span>
+                  </div>
+                  <div class="p-4 md:p-6">
+                    <h4 class="font-bold text-gray-900 text-lg md:text-xl mb-2">Modern Workspace</h4>
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="download" class="h-4 w-4 text-gray-500"></i>
+                        <span class="text-gray-600 text-sm md:text-base">980 downloads</span>
+                      </div>
+                      <span class="text-purple-600 font-semibold text-sm md:text-base">Premium</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slider-slide px-2 md:px-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift h-full border border-gray-100">
+                  <div class="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Space background" 
+                      class="w-full h-48 md:h-56 object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    >
+                    <span class="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      FREE
+                    </span>
+                  </div>
+                  <div class="p-4 md:p-6">
+                    <h4 class="font-bold text-gray-900 text-lg md:text-xl mb-2">Cosmic Wonders</h4>
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="download" class="h-4 w-4 text-gray-500"></i>
+                        <span class="text-gray-600 text-sm md:text-base">1.5k downloads</span>
+                      </div>
+                      <span class="text-green-600 font-semibold text-sm md:text-base">Free</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift h-full border border-gray-100">
+                  <div class="relative overflow-hidden">
+                    <img 
+                      src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/ai-generated-artwork.png?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Download interface" 
+                      class="w-full h-48 md:h-56 object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    >
+                    <span class="absolute top-3 left-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      AI
+                    </span>
+                  </div>
+                  <div class="p-4 md:p-6">
+                    <h4 class="font-bold text-gray-900 text-lg md:text-xl mb-2">AI ARTWORKS</h4>
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="download" class="h-4 w-4 text-gray-500"></i>
+                        <span class="text-gray-600 text-sm md:text-base">850 downloads</span>
+                      </div>
+                      <span class="text-blue-600 font-semibold text-sm md:text-base">AI</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slider-slide px-2 md:px-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift h-full border border-gray-100">
+                  <div class="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Beach sunset" 
+                      class="w-full h-48 md:h-56 object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    >
+                    <span class="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      FREE
+                    </span>
+                  </div>
+                  <div class="p-4 md:p-6">
+                    <h4 class="font-bold text-gray-900 text-lg md:text-xl mb-2">Ocean Sunset</h4>
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="download" class="h-4 w-4 text-gray-500"></i>
+                        <span class="text-gray-600 text-sm md:text-base">1.3k downloads</span>
+                      </div>
+                      <span class="text-green-600 font-semibold text-sm md:text-base">Free</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift h-full border border-gray-100">
+                  <div class="relative overflow-hidden">
+                    <img 
+                      src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/color-splash.jpg?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                      alt="Abstract colors" 
+                      class="w-full h-48 md:h-56 object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    >
+                    <span class="absolute top-3 left-3 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      PREMIUM
+                    </span>
+                  </div>
+                  <div class="p-4 md:p-6">
+                    <h4 class="font-bold text-gray-900 text-lg md:text-xl mb-2">Color Splash</h4>
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="download" class="h-4 w-4 text-gray-500"></i>
+                        <span class="text-gray-600 text-sm md:text-base">920 downloads</span>
+                      </div>
+                      <span class="text-purple-600 font-semibold text-sm md:text-base">Premium</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slider Navigation -->
+          <button class="slider-nav prev !bg-white/80 backdrop-blur-sm hover:!bg-purple-600" id="prevPopular">
+            <i data-lucide="chevron-left" class="h-5 w-5"></i>
+          </button>
+          <button class="slider-nav next !bg-white/80 backdrop-blur-sm hover:!bg-purple-600" id="nextPopular">
+            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+          </button>
+          
+          <!-- Slider Dots -->
+          <div class="slider-dots mt-6 md:mt-8" id="popularDots">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Tools Section -->
+  <section id="ai-tools" class="bg-gray-50">
+    <div class="content-container">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Powered by Advanced AI Technology</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Transform your creative workflow with cutting-edge AI tools.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div class="space-y-8">
+          <!-- AI Image Generator -->
+          <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 hover-lift fade-in-left">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                <i data-lucide="zap" class="h-6 w-6 text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">AI Image Generator</h3>
+            </div>
+            <p class="text-gray-700 mb-6">
+              Create unlimited custom images from text descriptions.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-purple-600"></i>
+                <span class="text-gray-700">Text-to-image generation</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-purple-600"></i>
+                <span class="text-gray-700">Multiple art styles</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-purple-600"></i>
+                <span class="text-gray-700">Custom resolution up to 4K</span>
+              </li>
+            </ul>
+            <button class="bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-purple-700 transition-colors">
+              Try AI Generator
+            </button>
+          </div>
+          
+          <!-- AI Background Remover -->
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8 hover-lift fade-in-left">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+                <i data-lucide="scissors" class="h-6 w-6 text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">AI Background Remover</h3>
+            </div>
+            <p class="text-gray-700 mb-6">
+              Remove backgrounds from images instantly with AI precision.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <span class="text-gray-700">One-click background removal</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <span class="text-gray-700">Smart edge detection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <span class="text-gray-700">Transparent PNG export</span>
+              </li>
+            </ul>
+            <button class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors">
+              Try Background Remover
+            </button>
+          </div>
+        </div>
+        
+        <!-- AI Tools Visualization -->
+        <div class="space-y-8">
+          <div class="relative fade-in-right">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/ai-image-generator.webp?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="AI image generation interface" 
+              class="w-full rounded-2xl object-cover shadow-lg h-96"
+              loading="lazy"
+            >
+          </div>
+          
+          <!-- AI Background Remover Hover Demo -->
+          <div class="ai-tool-hover relative fade-in-right">
+            <img 
+              src="https://github.com/danukaya123/bgtest/blob/main/bgremove-banner.PNG?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="AI background remover demo" 
+              class="w-full rounded-2xl object-cover shadow-lg h-96"
+              loading="lazy"
+            >
+            <div class="ai-tool-overlay rounded-2xl">
+              <h3 class="text-2xl font-bold mb-6">How to Use AI Background Remover</h3>
+              <div class="ai-tool-step">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-8 h-8 bg-white text-green-600 rounded-full flex items-center justify-center font-bold">1</div>
+                  <h4 class="font-semibold">Upload Your Image</h4>
+                </div>
+                <p class="text-green-50">Drag & drop or select any image with a subject</p>
+              </div>
+              <div class="ai-tool-step">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-8 h-8 bg-white text-green-600 rounded-full flex items-center justify-center font-bold">2</div>
+                  <h4 class="font-semibold">AI Automatically Removes Background</h4>
+                </div>
+                <p class="text-green-50">Our AI detects and removes background instantly</p>
+              </div>
+              <div class="ai-tool-step">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-8 h-8 bg-white text-green-600 rounded-full flex items-center justify-center font-bold">3</div>
+                  <h4 class="font-semibold">Download or Edit</h4>
+                </div>
+                <p class="text-green-50">Download as PNG or edit with new background</p>
+              </div>
+              <div class="ai-tool-step">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-8 h-8 bg-white text-green-600 rounded-full flex items-center justify-center font-bold">4</div>
+                  <h4 class="font-semibold">Use in Your Projects</h4>
+                </div>
+                <p class="text-green-50">Use the transparent image in any design project</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="bg-white" style="display: none;">
+    <div class="content-container">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Get unlimited access to premium content and AI tools
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover-lift scale-in">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Free</h3>
+            <div class="text-3xl font-bold text-gray-900 mb-1">$0</div>
+            <p class="text-gray-600">per month</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              5 downloads per day
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              Standard quality images
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              Basic AI tools
+            </li>
+          </ul>
+          <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 rounded-lg font-medium transition-colors">
+            Get Started
+          </button>
+        </div>
+        <div class="bg-blue-600 text-white rounded-2xl p-8 relative hover-lift scale-in">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+          </div>
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-semibold mb-2">Pro</h3>
+            <div class="text-3xl font-bold mb-1">$19</div>
+            <p class="text-blue-100">per month</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i data-lucide="check" class="h-5 w-5 text-green-400 mr-3"></i>
+              Unlimited downloads
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="h-5 w-5 text-green-400 mr-3"></i>
+              4K & HD quality
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="h-5 w-5 text-green-400 mr-3"></i>
+              Advanced AI tools
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check" class="h-5 w-5 text-green-400 mr-3"></i>
+              Background Remover
+            </li>
+          </ul>
+          <button class="w-full bg-white text-blue-600 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            Start Free Trial
+          </button>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover-lift scale-in">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise</h3>
+            <div class="text-3xl font-bold text-gray-900 mb-1">$49</div>
+            <p class="text-gray-600">per month</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              Everything in Pro
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              Team collaboration
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              Priority support
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i data-lucide="check" class="h-5 w-5 text-green-500 mr-3"></i>
+              Custom AI models
+            </li>
+          </ul>
+          <button class="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-medium transition-colors">
+            Contact Sales
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="bg-gray-50">
+    <div class="content-container">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted by Creative Professionals</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          See what designers and creators say about our platform
+        </p>
+      </div>
+      
+      <div class="relative px-4 md:px-0">
+        <div class="slider-container">
+          <div class="slider-track" id="testimonialTrack">
+            <!-- Testimonial 1 -->
+            <div class="slider-slide px-2">
+              <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover-lift h-full border border-gray-200">
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-700 mb-6 text-sm md:text-base">
+                  "The AI background removal tool is a game-changer for my design workflow. What used to take hours now takes seconds!"
+                </blockquote>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="font-bold text-purple-600 text-sm md:text-base">SC</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm md:text-base truncate">Sarah Chen</div>
+                    <div class="text-xs md:text-sm text-gray-600 truncate">Graphic Designer, PixelCraft</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="slider-slide px-2">
+              <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover-lift h-full border border-gray-200">
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-700 mb-6 text-sm md:text-base">
+                  "The AI image generation feature helps me create unique content that perfectly matches my brand vision every time."
+                </blockquote>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-100 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="font-bold text-green-600 text-sm md:text-base">MR</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm md:text-base truncate">Marcus Rodriguez</div>
+                    <div class="text-xs md:text-sm text-gray-600 truncate">Content Creator @CreativeFlow</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="slider-slide px-2">
+              <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover-lift h-full border border-gray-200">
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-700 mb-6 text-sm md:text-base">
+                  "Our marketing team relies on this platform for all our visual content needs. The copyright-free collection is amazing!"
+                </blockquote>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="font-bold text-blue-600 text-sm md:text-base">ET</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm md:text-base truncate">Emily Thompson</div>
+                    <div class="text-xs md:text-sm text-gray-600 truncate">Marketing Director, TechCorp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div class="slider-slide px-2">
+              <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover-lift h-full border border-gray-200">
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-700 mb-6 text-sm md:text-base">
+                  "The search functionality is incredible! I find exactly what I need in seconds. This has saved our team countless hours."
+                </blockquote>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="font-bold text-orange-600 text-sm md:text-base">JK</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm md:text-base truncate">James Kim</div>
+                    <div class="text-xs md:text-sm text-gray-600 truncate">Creative Director, StudioNine</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 5 -->
+            <div class="slider-slide px-2">
+              <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover-lift h-full border border-gray-200">
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-700 mb-6 text-sm md:text-base">
+                  "As a freelance designer, the Pro plan gives me access to premium assets at an affordable price. Best investment I've made!"
+                </blockquote>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-100 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="font-bold text-pink-600 text-sm md:text-base">AS</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm md:text-base truncate">Alex Scott</div>
+                    <div class="text-xs md:text-sm text-gray-600 truncate">Freelance UI/UX Designer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 6 -->
+            <div class="slider-slide px-2">
+              <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover-lift h-full border border-gray-200">
+                <div class="flex items-center mb-4">
+                  <div class="flex text-yellow-400 mr-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-700 mb-6 text-sm md:text-base">
+                  "The video library is extensive and high-quality. I use it for all my YouTube channel backgrounds and b-roll footage."
+                </blockquote>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="font-bold text-indigo-600 text-sm md:text-base">LM</span>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="font-semibold text-gray-900 text-sm md:text-base truncate">Lisa Morgan</div>
+                    <div class="text-xs md:text-sm text-gray-600 truncate">YouTube Creator, 500K subs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slider Navigation - Only show on desktop -->
+          <button class="slider-nav prev !bg-white/80 backdrop-blur-sm hover:!bg-purple-600 hidden md:flex" id="prevTestimonial">
+            <i data-lucide="chevron-left" class="h-5 w-5"></i>
+          </button>
+          <button class="slider-nav next !bg-white/80 backdrop-blur-sm hover:!bg-purple-600 hidden md:flex" id="nextTestimonial">
+            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+          </button>
+          
+          <!-- Slider Dots -->
+          <div class="slider-dots mt-8" id="testimonialDots">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+            <div class="slider-dot" data-slide="5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer - FIXED MOBILE LAYOUT -->
+  <footer class="bg-gray-900 text-white">
+    <div class="content-container py-12">
+      <!-- Newsletter -->
+      <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 md:p-8 mb-8 md:mb-12 fade-in-up">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3">Stay Updated with Creative Insights</h3>
+            <p class="text-blue-100 text-sm md:text-base">
+              Subscribe to our newsletter for the latest design trends and AI tips.
+            </p>
+          </div>
+          <div>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="flex-1 px-4 md:px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm md:text-base"
+                required
+              >
+              <button 
+                type="submit" 
+                class="bg-white text-purple-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap text-sm md:text-base"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs md:text-sm text-blue-200 mt-2 md:mt-3">By subscribing, you agree to our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links - FIXED MOBILE COLUMNS -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+        <!-- Logo and Social -->
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="inline-block mb-4">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+              alt="Quizontal Logo" 
+              class="footer-logo"
+              loading="lazy"
+            >
+          </a>
+          <p class="mt-2 md:mt-4 text-gray-400 text-sm mb-4 md:mb-6">
+            Quizontal is a free and easy-to-use platform that provides high-quality stock photos and HD videos for both personal and commercial use. Our collection includes a wide variety of images and videos suitable for blogs, websites, social media, presentations, and creative projects. 
+          </p>
+          <div class="flex space-x-3 md:space-x-4">
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="facebook" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="youtube" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4 md:h-5 md:w-5"></i>
+            <a href="https://wa.me/1234567890" target="_blank"
+               class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors flex items-center justify-center">
+            <!-- WhatsApp SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
+               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.671.149s-.768.966-.941 1.164c-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.297-.496.099-.198.05-.371-.025-.52-.074-.149-.671-1.611-.918-2.205-.242-.579-.487-.5-.671-.51-.173-.008-.371-.01-.57-.01s-.52.074-.792.372c-.273.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347zM12.004 2C6.478 2 2 6.477 2 12c0 2.12.666 4.09 1.822 5.722L2 22l4.358-1.114C7.902 21.338 9.912 22 12 22c5.523 0 10-4.477 10-10S17.527 2 12.004 2z"/>
+              </svg>
+            </a>
+
+            </a>
+          </div>
+        </div>
+        
+        <!-- Product Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Services</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">Images</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Wallpapers</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Videos</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">AI Image Generator</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Image Background Remover</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Company</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Support</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors block">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors block">Privacy Policy</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2025 Quizontal. All rights reserved.
+        </p>
+        <div class="flex space-x-4 md:space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== INITIALIZATION ==========
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ========== LOADING SCREEN ==========
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.classList.add('fade-out');
+        
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }, 1500);
+    });
+
+    // ========== MOBILE MENU FUNCTIONALITY ==========
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Close all dropdowns when closing mobile menu
+      document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdownId = button.getAttribute('data-dropdown') + '-dropdown';
+        const dropdown = document.getElementById(dropdownId);
+        const icon = button.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+          if (d.id !== dropdownId) {
+            d.classList.remove('active');
+          }
+        });
+        
+        document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(link => {
+          if (link !== button) {
+            link.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+        button.classList.toggle('active');
+        
+        if (dropdown.classList.contains('active')) {
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-dropdown-link, .mobile-nav-link[href^="#"]').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // ========== DESKTOP DROPDOWN FIXES ==========
+    // Ensure dropdowns stay open when hovering over them
+    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', () => {
+        dropdown.style.opacity = '1';
+        dropdown.style.visibility = 'visible';
+        dropdown.style.transform = 'translateY(0)';
+      });
+      
+      dropdown.addEventListener('mouseleave', () => {
+        dropdown.style.opacity = '0';
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.transform = 'translateY(10px)';
+      });
+    });
+
+    // ========== SCROLL ANIMATIONS ==========
+    function checkScroll() {
+      const elements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('animated');
+        }
+      });
+    }
+
+    // Initial check
+    checkScroll();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkScroll);
+
+    // ========== NEWSLETTER FORM ==========
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+        
+        if (email) {
+          alert('Thank you for subscribing! You will receive our creative insights soon.');
+          emailInput.value = '';
+        }
+      });
+    }
+
+    // ========== SMOOTH SCROLLING ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ========== IMAGE LOADING ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (img.complete) {
+          img.classList.add('loaded');
+        } else {
+          img.classList.add('loading');
+          img.addEventListener('load', () => {
+            img.classList.remove('loading');
+            img.classList.add('loaded');
+          });
+        }
+      });
+    });
+
+    // ========== SLIDER FUNCTIONALITY ==========
+    class PopularSlider {
+      constructor() {
+        this.track = document.getElementById('popularSlider');
+        this.slides = this.track.querySelectorAll('.slider-slide');
+        this.dots = document.querySelectorAll('#popularDots .slider-dot');
+        this.prevBtn = document.getElementById('prevPopular');
+        this.nextBtn = document.getElementById('nextPopular');
+        this.currentSlide = 0;
+        this.totalSlides = this.slides.length;
+        this.autoPlayInterval = null;
+        this.slidesPerView = this.calculateSlidesPerView();
+        
+        this.init();
+      }
+      
+      calculateSlidesPerView() {
+        if (window.innerWidth >= 768) return 1;
+        return 1;
+      }
+      
+      init() {
+        // Set slide widths
+        this.updateSlideWidth();
+        
+        // Event listeners
+        if (this.prevBtn) {
+          this.prevBtn.addEventListener('click', () => this.prev());
+        }
+        
+        if (this.nextBtn) {
+          this.nextBtn.addEventListener('click', () => this.next());
+        }
+        
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Auto-play
+        this.startAutoPlay();
+        
+        // Pause on hover
+        this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+          this.slidesPerView = this.calculateSlidesPerView();
+          this.updateSlideWidth();
+          this.updateSlider();
+        });
+      }
+      
+      updateSlideWidth() {
+        const slideWidth = 100 / this.slidesPerView;
+        this.slides.forEach(slide => {
+          slide.style.minWidth = `${slideWidth}%`;
+        });
+      }
+      
+      goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlider();
+      }
+      
+      next() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateSlider();
+      }
+      
+      prev() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateSlider();
+      }
+      
+      updateSlider() {
+        const slideWidth = 100 / this.slidesPerView;
+        this.track.style.transform = `translateX(-${this.currentSlide * slideWidth}%)`;
+        
+        // Update dots
+        this.dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === this.currentSlide);
+        });
+      }
+      
+      startAutoPlay() {
+        if (this.autoPlayInterval) clearInterval(this.autoPlayInterval);
+        this.autoPlayInterval = setInterval(() => this.next(), 4000);
+      }
+      
+      stopAutoPlay() {
+        if (this.autoPlayInterval) {
+          clearInterval(this.autoPlayInterval);
+          this.autoPlayInterval = null;
+        }
+      }
+    }
+    
+    class TestimonialSlider {
+      constructor() {
+        this.track = document.getElementById('testimonialTrack');
+        this.slides = this.track.querySelectorAll('.slider-slide');
+        this.dots = document.querySelectorAll('#testimonialDots .slider-dot');
+        this.prevBtn = document.getElementById('prevTestimonial');
+        this.nextBtn = document.getElementById('nextTestimonial');
+        this.currentSlide = 0;
+        this.totalSlides = this.slides.length;
+        this.slidesPerView = this.calculateSlidesPerView();
+        this.autoPlayInterval = null;
+        
+        this.init();
+      }
+      
+      calculateSlidesPerView() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+      }
+      
+      init() {
+        // Initialize slider
+        this.updateSlider();
+        
+        // Event listeners for navigation buttons
+        if (this.prevBtn) {
+          this.prevBtn.addEventListener('click', () => {
+            this.stopAutoPlay();
+            this.prev();
+            setTimeout(() => this.startAutoPlay(), 5000);
+          });
+        }
+        
+        if (this.nextBtn) {
+          this.nextBtn.addEventListener('click', () => {
+            this.stopAutoPlay();
+            this.next();
+            setTimeout(() => this.startAutoPlay(), 5000);
+          });
+        }
+        
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            this.stopAutoPlay();
+            this.goToSlide(index);
+            setTimeout(() => this.startAutoPlay(), 5000);
+          });
+        });
+        
+        // Auto-play
+        this.startAutoPlay();
+        
+        // Pause on hover
+        this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+          this.slidesPerView = this.calculateSlidesPerView();
+          this.updateSlider();
+        });
+      }
+      
+      goToSlide(index) {
+        if (index >= this.totalSlides - this.slidesPerView + 1) {
+          index = this.totalSlides - this.slidesPerView;
+        }
+        if (index < 0) index = 0;
+        
+        this.currentSlide = index;
+        this.updateSlider();
+      }
+      
+      next() {
+        const maxSlide = this.totalSlides - this.slidesPerView;
+        
+        if (this.currentSlide < maxSlide) {
+          this.currentSlide++;
+        } else {
+          this.currentSlide = 0;
+        }
+        this.updateSlider();
+      }
+      
+      prev() {
+        const maxSlide = this.totalSlides - this.slidesPerView;
+        
+        if (this.currentSlide > 0) {
+          this.currentSlide--;
+        } else {
+          this.currentSlide = maxSlide;
+        }
+        this.updateSlider();
+      }
+      
+      updateSlider() {
+        const slideWidth = 100 / this.slidesPerView;
+        const translateX = this.currentSlide * slideWidth;
+        
+        this.track.style.transform = `translateX(-${translateX}%)`;
+        
+        // Update active dots
+        this.dots.forEach((dot, index) => {
+          const isActive = index >= this.currentSlide && index < this.currentSlide + this.slidesPerView;
+          dot.classList.toggle('active', isActive);
+        });
+      }
+      
+      startAutoPlay() {
+        if (this.autoPlayInterval) clearInterval(this.autoPlayInterval);
+        this.autoPlayInterval = setInterval(() => {
+          this.next();
+        }, 4000);
+      }
+      
+      stopAutoPlay() {
+        if (this.autoPlayInterval) {
+          clearInterval(this.autoPlayInterval);
+          this.autoPlayInterval = null;
+        }
+      }
+    }
+    
+    // Initialize sliders
+    const popularSlider = new PopularSlider();
+    const testimonialSlider = new TestimonialSlider();
+  </script>
+
+</body>
+</html>
