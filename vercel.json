@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/humanize/:path*",
+      "destination": "https://humanize-web.vercel.app/:path*"
+    },
+    {
+      "source": "/paraphrase/:path*",
+      "destination": "https://pharaphrase-web.vercel.app/:path*"
+    },
+    {
+      "source": "/youtube/:path*",
+      "destination": "https://yt-web-six.vercel.app/:path*"
+    },
+    {
+      "source": "/fb/:path*",
+      "destination": "https://fb-web-psi.vercel.app/:path*"
+    },
+    {
+      "source": "/tiktok/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/:path*"
+    },
+    {
+      "source": "/removebg/:path*",
+      "destination": "https://background-remove-website.vercel.app/:path*"
+    }
+  ]
+}
