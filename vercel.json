@@ -1,27 +1,27 @@
 {
   "rewrites": [
     {
-      "source": "/humanize/:path*",
-      "destination": "https://humanize-web.vercel.app/:path*"
-    },
-    {
-      "source": "/paraphrase/:path*",
+      "source": "/ai-tools/paraphrase/:path*",
       "destination": "https://pharaphrase-web.vercel.app/:path*"
     },
     {
-      "source": "/youtube/:path*",
+      "source": "/ai-tools/humanize/:path*",
+      "destination": "https://humanize-web.vercel.app/:path*"
+    },
+    {
+      "source": "/downloaders/youtube/:path*",
       "destination": "https://yt-web-six.vercel.app/:path*"
     },
     {
-      "source": "/fb/:path*",
+      "source": "/downloaders/facebook/:path*",
       "destination": "https://fb-web-psi.vercel.app/:path*"
     },
     {
-      "source": "/tiktok/:path*",
+      "source": "/downloaders/tiktok/:path*",
       "destination": "https://tiktok-web-one.vercel.app/:path*"
     },
     {
-      "source": "/removebg/:path*",
+      "source": "/ai-tools/removebg/:path*",
       "destination": "https://background-remove-website.vercel.app/:path*"
     }
   ]
