@@ -2,21 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Copyright Free Videos - Quizontal | High-Quality Free Stock Videos</title>
-    <meta name="description" content="Discover millions of copyright-free videos and stock footage. Free downloads for personal and commercial use. No attribution required.">
-    
-    <!-- Tailwind CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Quizontal</title>
+    <meta name="description" content="Disclaimer for Quizontal - Terms of use for our free stock images, videos, wallpapers, AI tools, and downloader tools">
+    <!-- Same CSS and JS dependencies as homepage -->
     <script src="https://cdn.tailwindcss.com/3.3.3"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ========== RESET & BASE STYLES ========== */
+        /* Base styles matching your homepage */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -30,29 +25,11 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             overflow-x: hidden;
+            background-color: #ffffff;
+            color: #374151;
         }
         
-        /* ========== LAYOUT CONTAINERS ========== */
-        .content-container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .content-container {
-                padding: 0 1.5rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .content-container {
-                padding: 0 2rem;
-            }
-        }
-        
-        /* ========== NAVIGATION - EXACT COPY FROM HOMEPAGE ========== */
+        /* Header & Navigation */
         header {
             width: 100%;
             background: white;
@@ -453,460 +430,293 @@
       bottom: 0;
     }
         
-        /* ========== HERO SECTION WITH VIDEO BACKGROUND ========== */
-        .hero-section {
-            position: relative;
-            color: white;
-            overflow: hidden;
-            min-height: 400px;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Main Content Container */
+        .content-container {
             width: 100%;
-            height: 100%;
-            z-index: 0;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         
-        .video-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        @media (min-width: 640px) {
+            .content-container {
+                padding: 0 1.5rem;
+            }
         }
         
-        /* Fallback image in case video doesn't load */
-        .video-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            opacity: 0;
-            z-index: 1;
+        @media (min-width: 1024px) {
+            .content-container {
+                padding: 0 2rem;
+            }
         }
         
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(0, 0, 0, 0.8) 0%, 
-                rgba(0, 0, 0, 0.6) 50%,
-                rgba(0, 0, 0, 0.4) 100%);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 2rem 0;
-        }
-        
-        /* Video Play/Pause Control */
-        .video-control {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            z-index: 3;
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .video-control:hover {
-            background: rgba(124, 58, 237, 0.9);
-            transform: scale(1.1);
-        }
-        
-        /* ========== GALLERY SECTION ========== */
-        .section-spacing {
+        /* SIMPLE HERO SECTION */
+        .simple-hero {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
             padding: 3rem 0;
+            border-bottom: 1px solid #e5e7eb;
         }
         
         @media (min-width: 768px) {
-            .section-spacing {
+            .simple-hero {
                 padding: 4rem 0;
             }
         }
         
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
         
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Video Card - Enhanced Visuals */
-        .video-card {
-            position: relative;
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .video-card:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .video-thumbnail {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            cursor: pointer;
-        }
-        
-        .video-card:hover .video-thumbnail {
-            transform: scale(1.1);
-        }
-        
-        /* Play Button Overlay */
-        .video-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 250px;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
+        .hero-icon {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .video-card:hover .video-play-overlay {
-            opacity: 1;
-        }
-        
-        .play-button {
             width: 60px;
             height: 60px;
-            background: rgba(124, 58, 237, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            transition: transform 0.3s ease;
-        }
-        
-        .video-card:hover .play-button {
-            transform: scale(1.1);
-        }
-        
-        /* Video Duration Badge */
-        .video-duration {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        /* Video Info */
-        .video-info {
-            padding: 1rem;
             background: white;
-        }
-        
-        .video-author {
-            font-size: 0.875rem;
-            color: #374151;
-            font-weight: 500;
-        }
-        
-        .video-stats {
-            font-size: 0.75rem;
-            color: #6b7280;
-            margin-top: 4px;
-        }
-        
-        /* ========== FILTER & SORT ========== */
-        .filter-section {
-            background: white;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .filter-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .filter-tag {
-            background: #f3f4f6;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            color: #374151;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .filter-tag:hover,
-        .filter-tag.active {
-            background: #7c3aed;
-            color: white;
-        }
-        
-        /* ========== LOADING STATES ========== */
-        .loading-spinner {
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            border-top: 3px solid #7c3aed;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* ========== MOBILE MENU ========== */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: white;
-            z-index: 9999;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
-            display: none;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-            display: block;
-        }
-        
-        .mobile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        
-        .mobile-nav {
-            padding: 1rem;
-        }
-        
-        .mobile-nav-link {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem;
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: #374151;
-            font-size: 1rem;
-            font-weight: 500;
-            text-align: left;
-            cursor: pointer;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s ease;
-            margin-bottom: 0.25rem;
-        }
-        
-        .mobile-nav-link:hover,
-        .mobile-nav-link.active {
-            background-color: #f9fafb;
-            color: #7c3aed;
-        }
-        
-        .mobile-cta {
-            padding: 1rem;
-            border-top: 1px solid #e5e7eb;
-            background: #f9fafb;
-            position: sticky;
-            bottom: 0;
-        }
-        
-        /* ========== VIDEO MODAL - RESPONSIVE ========== */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1001;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            position: relative;
-            background: white;
-            margin: 2rem auto;
-            padding: 1.5rem;
             border-radius: 1rem;
-            max-width: 900px;
-            width: 95%;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
-        @media (max-width: 768px) {
-            .modal-content {
-                margin: 1rem auto;
-                padding: 1rem;
-                width: 98%;
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
             }
         }
         
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+        .hero-subtitle {
+            font-size: 1.125rem;
             color: #6b7280;
-            cursor: pointer;
-            z-index: 1;
-            transition: all 0.2s ease;
-        }
-        
-        .modal-close:hover {
-            background: #f3f4f6;
-            color: #374151;
-        }
-        
-        .modal-video-container {
-            position: relative;
-            width: 100%;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .modal-video {
-            width: 100%;
-            max-height: 60vh;
-            display: block;
+            max-width: 600px;
             margin: 0 auto;
         }
         
-        @media (max-width: 768px) {
-            .modal-video {
-                max-height: 50vh;
+        /* Disclaimer Content Styles */
+        .disclaimer-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .disclaimer-container {
+                padding: 0;
+                margin: 4rem auto;
             }
         }
         
-        /* ========== UTILITY CLASSES ========== */
-        .gradient-text {
-            background: linear-gradient(135deg, #7c3aed, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .disclaimer-content {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
         }
         
-        .hover-lift {
-            transition: transform 0.2s ease;
+        @media (min-width: 768px) {
+            .disclaimer-content {
+                padding: 3rem;
+            }
         }
         
-        .hover-lift:hover {
-            transform: translateY(-4px);
+        .disclaimer-section {
+            margin-bottom: 2.5rem;
         }
         
-        /* ========== FOOTER STYLES ========== */
+        .disclaimer-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .disclaimer-section p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .disclaimer-section ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+        
+        .disclaimer-section li {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .disclaimer-section li:before {
+            content: "•";
+            color: #7c3aed;
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #fbbf24;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .warning-box h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .warning-box p {
+            color: #92400e;
+            margin: 0;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #111827;
+            color: white;
+        }
+        
         .footer-logo {
-            height: 40px;
+            max-height: 40px;
             width: auto;
             filter: brightness(0) invert(1);
         }
         
-        /* ========== VIDEO SPECIFIC STYLES ========== */
-        .video-quality-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(124, 58, 237, 0.9);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
+        .footer-content {
+            padding: 3rem 0;
         }
         
-        /* ========== VIDEO LOADING STATE ========== */
-        .video-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        .footer-col-wide {
+            grid-column: span 2;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
             color: white;
-            font-size: 14px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 20px;
-            z-index: 2;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #374151;
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.2s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #7c3aed;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding: 1.5rem 0;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        
+        .footer-links-horizontal {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links-horizontal a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links-horizontal a:hover {
+            color: white;
+        }
+        
+        /* Utility classes */
+        .text-purple-600 {
+            color: #7c3aed;
+        }
+        
+        .bg-purple-50 {
+            background-color: #f5f3ff;
         }
     </style>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Fixed Navigation - Exact Homepage Version -->
+<body class="bg-white w-screen overflow-x-hidden">
+    <!-- Navigation Header -->
   <header>
     <div class="nav-container">
       <!-- Logo -->
@@ -1358,129 +1168,193 @@
   </div>
 </div>
 
-    <!-- Hero Section with Video Background -->
-    <section class="hero-section">
-        <!-- Video Background -->
-        <div class="video-background">
-            <video id="hero-video" autoplay muted loop playsinline>
-                <source src="https://cdn.pixabay.com/video/2023/08/17/176521-855920743_large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-loading" id="video-loading">Loading background video...</div>
-        </div>
-        
-        <!-- Overlay -->
-        <div class="hero-overlay"></div>
-        
-        <!-- Video Control Button -->
-        <button class="video-control" id="video-control" onclick="toggleVideoPlayback()">
-            <i data-lucide="volume-x" class="h-6 w-6" id="volume-icon"></i>
-        </button>
-        
-        <!-- Content -->
+    <!-- SIMPLE HERO SECTION -->
+    <section class="simple-hero">
         <div class="content-container">
             <div class="hero-content">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                        Free Stock Videos & Footage
-                    </h1>
-                    <p class="text-lg mb-6 text-gray-100 max-w-2xl mx-auto">
-                        Discover high-quality stock videos and HD footage. Free for commercial use. No attribution required.
-                    </p>
-                    
-                    <!-- Simple Search Bar -->
-                    <div class="max-w-2xl mx-auto">
-                        <div class="relative">
-                            <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 z-10"></i>
-                            <input 
-                                type="search" 
-                                id="hero-search-input"
-                                placeholder="Search for nature videos, business footage, travel videos..." 
-                                class="w-full pl-12 pr-4 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-lg"
-                            >
-                        </div>
-                    </div>
+                <div class="hero-icon">
+                    <i data-lucide="file-text" class="h-8 w-8 text-purple-600"></i>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section-spacing bg-gray-50">
-        <div class="content-container">
-            <!-- Filter Section -->
-            <div class="filter-section">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-900">Free Stock Videos</h3>
-                        <p class="text-sm text-gray-600" id="total-results">Loading videos...</p>
-                    </div>
-                </div>
-                
-                <!-- Filter Tags -->
-                <div class="filter-tags">
-                    <button class="filter-tag active" onclick="setFilter('nature')">Nature</button>
-                    <button class="filter-tag" onclick="setFilter('business')">Business</button>
-                    <button class="filter-tag" onclick="setFilter('technology')">Technology</button>
-                    <button class="filter-tag" onclick="setFilter('travel')">Travel</button>
-                    <button class="filter-tag" onclick="setFilter('people')">People</button>
-                    <button class="filter-tag" onclick="setFilter('abstract')">Abstract</button>
-                </div>
-            </div>
-            
-            <!-- Video Gallery Grid -->
-            <div id="gallery-grid" class="gallery-grid">
-                <!-- Videos will be loaded here -->
-            </div>
-            
-            <!-- Loading Spinner -->
-            <div id="loading-spinner" class="flex justify-center py-8">
-                <div class="loading-spinner"></div>
-            </div>
-            
-            <!-- Load More Button -->
-            <div id="load-more-container" class="text-center mt-8 hidden">
-                <button id="load-more-btn" class="cta-button px-8" onclick="loadMoreVideos()">
-                    Load More Videos
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Modal -->
-    <div id="video-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">
-                <i data-lucide="x"></i>
-            </button>
-            
-            <div class="modal-video-container">
-                <video id="modal-video" class="modal-video" controls>
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <div class="mt-6">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div>
-                        <h3 id="modal-video-title" class="text-xl font-bold text-gray-900">Stock Video</h3>
-                        <p id="modal-author" class="text-gray-600"></p>
-                        <div class="flex items-center gap-4 mt-2">
-                            <span id="modal-duration" class="text-sm text-gray-500"></span>
-                            <span id="modal-resolution" class="text-sm text-gray-500"></span>
-                        </div>
-                    </div>
-                    <button id="download-btn" class="cta-button" onclick="downloadCurrentVideo()">
-                        <i data-lucide="download" class="h-4 w-4 mr-2"></i>
-                        Download Video
-                    </button>
-                </div>
-                <p class="text-sm text-gray-500 mt-4">
-                    Free to use for personal and commercial projects. No attribution required.
+                <h1 class="hero-title">Quizontal Disclaimer</h1>
+                <p class="hero-subtitle">
+                    Important legal information about your use of Quizontal's services, tools, and content.
                 </p>
+                <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calendar" class="h-4 w-4"></i>
+                        <span>Last Updated: January 2025</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="h-4 w-4"></i>
+                        <span>Reading time: 5 minutes</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Disclaimer Content -->
+    <main class="content-container">
+        <div class="disclaimer-container">
+            <div class="disclaimer-content">
+                <!-- General Disclaimer -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="alert-triangle" class="h-6 w-6 text-purple-600"></i>
+                        General Disclaimer
+                    </h2>
+                    <p>
+                        The information contained on Quizontal (the "Service") is for general information purposes only. 
+                        While we strive to keep the information up to date and correct, we make no representations or 
+                        warranties of any kind, express or implied, about the completeness, accuracy, reliability, 
+                        suitability, or availability with respect to the website or the information, products, services, 
+                        or related graphics contained on the website for any purpose.
+                    </p>
+                </div>
+
+                <!-- Content Usage -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="image" class="h-6 w-6 text-purple-600"></i>
+                        Content Usage & Copyright
+                    </h2>
+                    <p>
+                        Quizontal provides access to various types of content including images, videos, and wallpapers:
+                    </p>
+                    <ul>
+                        <li>All content is provided "as is" without any warranties</li>
+                        <li>We cannot guarantee the accuracy of copyright status for all content</li>
+                        <li>Users are responsible for verifying copyright information before use</li>
+                        <li>Some content may require attribution or have specific usage restrictions</li>
+                        <li>Commercial use may require additional verification</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <h3>
+                            <i data-lucide="alert-circle" class="h-5 w-5 text-yellow-600"></i>
+                            Important Notice
+                        </h3>
+                        <p>
+                            While we strive to provide copyright-free content, we cannot guarantee that all content 
+                            is completely free from copyright restrictions. It is your responsibility to ensure proper 
+                            usage rights before using any content from our platform.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- AI Tools Disclaimer -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="brain" class="h-6 w-6 text-purple-600"></i>
+                        AI Tools Disclaimer
+                    </h2>
+                    <p>
+                        Our AI-powered tools (Image Generator, Background Remover, Text Paraphraser, etc.) are 
+                        provided for creative and educational purposes:
+                    </p>
+                    <ul>
+                        <li>AI-generated content may not be perfect and may require manual adjustments</li>
+                        <li>We do not guarantee the accuracy or quality of AI-generated outputs</li>
+                        <li>Users are responsible for reviewing and editing AI-generated content</li>
+                        <li>AI tools should not be used for illegal or unethical purposes</li>
+                        <li>Outputs from AI tools may be subject to copyright considerations</li>
+                    </ul>
+                </div>
+
+                <!-- Downloader Tools -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="download" class="h-6 w-6 text-purple-600"></i>
+                        Downloader Tools
+                    </h2>
+                    <p>
+                        Our downloader tools (YouTube, Facebook, TikTok) are provided for personal use:
+                    </p>
+                    <ul>
+                        <li>Only download content that you have the right to download</li>
+                        <li>Respect copyright laws and platform terms of service</li>
+                        <li>Do not use downloaded content for commercial purposes without permission</li>
+                        <li>We are not responsible for how you use downloaded content</li>
+                        <li>Downloading copyrighted material without permission may be illegal</li>
+                    </ul>
+                </div>
+
+                <!-- Limitation of Liability -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="shield-off" class="h-6 w-6 text-purple-600"></i>
+                        Limitation of Liability
+                    </h2>
+                    <p>
+                        In no event shall Quizontal be liable for any loss or damage including without limitation, 
+                        indirect or consequential loss or damage, or any loss or damage whatsoever arising from:
+                    </p>
+                    <ul>
+                        <li>Loss of data or profits arising out of, or in connection with, the use of this website</li>
+                        <li>Reliance on any information provided on this website</li>
+                        <li>Use of our tools, services, or downloaded content</li>
+                        <li>Technical issues, errors, or interruptions in service</li>
+                        <li>Any third-party content or links</li>
+                    </ul>
+                </div>
+
+                <!-- External Links -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="external-link" class="h-6 w-6 text-purple-600"></i>
+                        External Links Disclaimer
+                    </h2>
+                    <p>
+                        Through this website you are able to link to other websites which are not under the control 
+                        of Quizontal. We have no control over the nature, content, and availability of those sites. 
+                        The inclusion of any links does not necessarily imply a recommendation or endorse the views 
+                        expressed within them.
+                    </p>
+                </div>
+
+                <!-- User Responsibility -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="user" class="h-6 w-6 text-purple-600"></i>
+                        User Responsibility
+                    </h2>
+                    <p>
+                        By using Quizontal, you agree that:
+                    </p>
+                    <ul>
+                        <li>You will use the service in compliance with all applicable laws</li>
+                        <li>You will not use our tools for illegal or harmful purposes</li>
+                        <li>You are responsible for any content you create, download, or distribute</li>
+                        <li>You will respect intellectual property rights</li>
+                        <li>You understand that we may modify or discontinue services at any time</li>
+                    </ul>
+                </div>
+
+                <!-- Updates to Disclaimer -->
+                <div class="disclaimer-section">
+                    <h2>
+                        <i data-lucide="refresh-cw" class="h-6 w-6 text-purple-600"></i>
+                        Updates to This Disclaimer
+                    </h2>
+                    <p>
+                        We may update this disclaimer from time to time. We will notify you of any changes by 
+                        posting the new disclaimer on this page. You are advised to review this disclaimer 
+                        periodically for any changes.
+                    </p>
+                </div>
+
+                <div class="last-updated">
+                    <p>
+                        <i data-lucide="calendar" class="h-4 w-4 inline-block mr-1"></i>
+                        Last Updated: January 2025
+                    </p>
+                    <p class="mt-2">
+                        If you have any questions about this disclaimer, please contact us through our website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
   <footer class="bg-gray-900 text-white">
@@ -1599,196 +1473,11 @@
     </div>
   </footer>
 
-    <!-- JavaScript -->
-<script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-
-    // ========== VIDEO BACKGROUND MANAGEMENT ==========
-    function initVideoBackground() {
-        const video = document.getElementById('hero-video');
-        const videoControl = document.getElementById('video-control');
-        const volumeIcon = document.getElementById('volume-icon');
-        const videoLoading = document.getElementById('video-loading');
-
-        // Video loaded successfully
-        video.addEventListener('loadeddata', function() {
-            videoLoading.style.display = 'none';
-            console.log('Background video loaded successfully');
-        });
-
-        // Video error handling
-        video.addEventListener('error', function() {
-            videoLoading.textContent = 'Video failed to load. Using fallback background.';
-            videoLoading.style.background = 'rgba(124, 58, 237, 0.8)';
-            setTimeout(() => {
-                videoLoading.style.display = 'none';
-            }, 3000);
-            console.error('Background video failed to load');
-        });
-
-        // Video playback ended - loop
-        video.addEventListener('ended', function() {
-            video.currentTime = 0;
-            video.play();
-        });
-
-        // Set initial state
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-
-        // Play video
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.log('Autoplay prevented:', error);
-                video.muted = true;
-                video.play();
-            });
-        }
-    }
-
-    function toggleVideoPlayback() {
-        const video = document.getElementById('hero-video');
-        const volumeIcon = document.getElementById('volume-icon');
-        
-        if (video.muted) {
-            // Unmute and play
-            video.muted = false;
-            volumeIcon.setAttribute('data-lucide', 'volume-2');
-            showNotification('Sound turned on', 'info');
-        } else {
-            // Mute
-            video.muted = true;
-            volumeIcon.setAttribute('data-lucide', 'volume-x');
-            showNotification('Sound turned off', 'info');
-        }
-        
-        // Update icon
+    <script>
+        // Initialize Lucide icons
         lucide.createIcons();
-    }
 
-    // ========== PEXELS VIDEOS API CONFIGURATION ==========
-    const PEXELS_API_KEY = 'BaCBEeB2Y1gNaCYddJaRoFaVgCdDNhYu51qQe5JMUcPU56RMiJ5M3FOZ';
-    const PEXELS_VIDEOS_API_URL = 'https://api.pexels.com/videos/';
-    const VIDEOS_PER_PAGE = 32;
-
-    // ========== APP STATE ==========
-    let currentQuery = 'travel';
-    let currentPage = 1;
-    let isLoading = false;
-    let currentVideo = null;
-    let totalResults = 0;
-
-    // ========== DOM ELEMENTS ==========
-    const galleryGrid = document.getElementById('gallery-grid');
-    const loadingSpinner = document.getElementById('loading-spinner');
-    const loadMoreContainer = document.getElementById('load-more-container');
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const totalResultsEl = document.getElementById('total-results');
-
-    // ========== URL PARAMETER HANDLING ==========
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    function getSearchQueryFromURL() {
-        // Try different parameter names
-        const query = getQueryParam('q') || 
-                      getQueryParam('query') || 
-                      getQueryParam('search') || 
-                      getQueryParam('s');
-        
-        return query ? decodeURIComponent(query) : null;
-    }
-
-    function updateURLWithSearch(query) {
-        if (!query.trim()) return;
-        
-        // Update URL without page reload
-        const newUrl = `${window.location.origin}${window.location.pathname}?q=${encodeURIComponent(query)}`;
-        window.history.pushState({ path: newUrl }, '', newUrl);
-    }
-
-    // ========== INITIALIZATION ==========
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize video background
-        initVideoBackground();
-        
-        // Check for URL search parameter
-        const urlQuery = getSearchQueryFromURL();
-        
-        if (urlQuery) {
-            // Set the search input value
-            const searchInput = document.getElementById('hero-search-input');
-            if (searchInput) {
-                searchInput.value = urlQuery;
-            }
-            
-            // Load videos based on URL query
-            searchVideos(urlQuery);
-        } else {
-            // Load default videos
-            loadVideos();
-        }
-        
-        // Setup search input
-        const searchInput = document.getElementById('hero-search-input');
-        if (searchInput) {
-            searchInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const query = this.value.trim();
-                    searchVideos(query);
-                    
-                    // Update URL without reloading page
-                    updateURLWithSearch(query);
-                }
-            });
-        }
-        
-        // Setup newsletter form
-        const newsletterForm = document.getElementById('newsletterForm');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                if (email) {
-                    alert('Thank you for subscribing!');
-                    this.reset();
-                }
-            });
-        }
-        
-        // Listen for browser back/forward navigation
-        window.addEventListener('popstate', function() {
-            const urlQuery = getSearchQueryFromURL();
-            
-            if (urlQuery) {
-                const searchInput = document.getElementById('hero-search-input');
-                if (searchInput) {
-                    searchInput.value = urlQuery;
-                }
-                searchVideos(urlQuery);
-            } else {
-                // Load default if no query
-                currentQuery = 'travel';
-                currentPage = 1;
-                galleryGrid.innerHTML = '';
-                loadingSpinner.classList.remove('hidden');
-                loadVideos();
-                
-                // Clear search input
-                const searchInput = document.getElementById('hero-search-input');
-                if (searchInput) {
-                    searchInput.value = '';
-                }
-            }
-        });
-    });
-    // ========== MOBILE MENU FUNCTIONALITY ==========
+        // ========== MOBILE MENU FUNCTIONALITY ==========
    const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
@@ -1852,411 +1541,28 @@
       link.addEventListener('click', closeMobileMenu);
     });
 
-    // ========== DESKTOP DROPDOWN FIXES ==========
-    // Ensure dropdowns stay open when hovering over them
-    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-      dropdown.addEventListener('mouseenter', () => {
-        dropdown.style.opacity = '1';
-        dropdown.style.visibility = 'visible';
-        dropdown.style.transform = 'translateY(0)';
-      });
-      
-      dropdown.addEventListener('mouseleave', () => {
-        dropdown.style.opacity = '0';
-        dropdown.style.visibility = 'hidden';
-        dropdown.style.transform = 'translateY(10px)';
-      });
-    });
 
-    // ========== PEXELS VIDEOS API FUNCTIONS ==========
-    async function fetchFromPexelsVideos(query, page = 1) {
-        try {
-            const url = `${PEXELS_VIDEOS_API_URL}search?query=${encodeURIComponent(query)}&per_page=${VIDEOS_PER_PAGE}&page=${page}`;
-            
-            const response = await fetch(url, {
-                headers: {
-                    'Authorization': PEXELS_API_KEY
+        // ========== SMOOTH SCROLLING ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
-            
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            return {
-                videos: data.videos || [],
-                total_results: data.total_results || 0
-            };
-            
-        } catch (error) {
-            console.error('Error fetching from Pexels Videos API:', error);
-            throw error;
-        }
-    }
-
-    // ========== VIDEO FUNCTIONS ==========
-    async function loadVideos() {
-        if (isLoading) return;
-        
-        isLoading = true;
-        
-        try {
-            const data = await fetchFromPexelsVideos(currentQuery, currentPage);
-            
-            totalResults = data.total_results;
-            totalResultsEl.textContent = `${totalResults.toLocaleString()} videos found`;
-            
-            if (data.videos.length > 0) {
-                displayVideos(data.videos);
-                
-                // Show load more button if there are more videos
-                if (data.videos.length === VIDEOS_PER_PAGE) {
-                    loadMoreContainer.classList.remove('hidden');
-                }
-            } else {
-                galleryGrid.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <i data-lucide="video" class="h-16 w-16 text-gray-400 mx-auto mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">No videos found</h3>
-                        <p class="text-gray-600">Try a different search term</p>
-                    </div>
-                `;
-            }
-            
-        } catch (error) {
-            showError();
-        } finally {
-            loadingSpinner.classList.add('hidden');
-            isLoading = false;
-        }
-    }
-
-    async function loadMoreVideos() {
-        if (isLoading) return;
-        
-        isLoading = true;
-        loadMoreBtn.disabled = true;
-        loadMoreBtn.innerHTML = '<i data-lucide="loader" class="h-5 w-5 mr-2 animate-spin"></i>Loading...';
-        
-        currentPage++;
-        
-        try {
-            const data = await fetchFromPexelsVideos(currentQuery, currentPage);
-            
-            if (data.videos.length > 0) {
-                displayVideos(data.videos);
-                    
-                // Hide load more button if no more videos
-                if (data.videos.length < VIDEOS_PER_PAGE) {
-                    loadMoreContainer.classList.add('hidden');
-                }
-            } else {
-                loadMoreContainer.classList.add('hidden');
-            }
-            
-        } catch (error) {
-            console.error('Error loading more videos:', error);
-            loadMoreContainer.classList.add('hidden');
-        } finally {
-            loadMoreBtn.disabled = false;
-            loadMoreBtn.innerHTML = 'Load More Videos';
-            isLoading = false;
-        }
-    }
-
-    function displayVideos(videos) {
-        if (!videos || videos.length === 0) return;
-        
-        videos.forEach((video) => {
-            const card = document.createElement('div');
-            card.className = 'video-card';
-            
-            // Get highest quality thumbnail
-            const thumbnailUrl = video.image || video.video_pictures[0]?.picture || 'https://images.pexels.com/videos/855015/free-video-855015.jpg';
-            
-            // Find HD video file
-            const hdVideo = video.video_files.find(f => f.quality === 'hd' || f.quality === 'sd') || video.video_files[0];
-            
-            // Format duration
-            const duration = formatDuration(video.duration);
-            
-            card.innerHTML = `
-                <div class="relative">
-                    <img src="${thumbnailUrl}" alt="Video by ${video.user.name}" class="video-thumbnail" loading="lazy">
-                    <div class="video-play-overlay" onclick="viewVideo(${JSON.stringify(video).replace(/"/g, '&quot;')})">
-                        <div class="play-button">
-                            <i data-lucide="play" class="h-6 w-6 ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="video-duration">${duration}</div>
-                    <div class="video-quality-badge">HD</div>
-                </div>
-                <div class="video-info">
-                    <div class="video-author">${video.user.name}</div>
-                    <div class="video-stats">
-                        <span>${video.width}x${video.height}</span>
-                        •
-                        <span>${formatFileSize(hdVideo?.file_size || 0)}</span>
-                    </div>
-                </div>
-            `;
-            galleryGrid.appendChild(card);
         });
-        
-        // Update Lucide icons for new content
-        lucide.createIcons();
-    }
 
-    function formatDuration(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    function formatFileSize(bytes) {
-        if (bytes === 0) return '0 B';
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
-    }
-
-    function searchVideos(query) {
-        if (!query.trim()) return;
-        
-        currentQuery = query;
-        currentPage = 1;
-        
-        // Update URL
-        updateURLWithSearch(query);
-        
-        // Clear gallery
-        galleryGrid.innerHTML = '';
-        loadingSpinner.classList.remove('hidden');
-        loadMoreContainer.classList.add('hidden');
-        
-        // Update filter buttons
-        document.querySelectorAll('.filter-tag').forEach(btn => {
-            btn.classList.toggle('active', btn.textContent.toLowerCase() === query.toLowerCase());
+        // Re-initialize icons after dynamic content
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
         });
-        
-        // Load videos
-        loadVideos();
-    }
-
-    function setFilter(query) {
-        const searchInput = document.getElementById('hero-search-input');
-        if (searchInput) {
-            searchInput.value = query;
-        }
-        searchVideos(query);
-    }
-
-    function showError() {
-        galleryGrid.innerHTML = `
-            <div class="col-span-full text-center py-12">
-                <i data-lucide="wifi-off" class="h-16 w-16 text-gray-400 mx-auto mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">Connection Error</h3>
-                <p class="text-gray-600 mb-4">Unable to load videos. Please check your connection.</p>
-                <button onclick="loadVideos()" class="cta-button">Retry</button>
-            </div>
-        `;
-        loadingSpinner.classList.add('hidden');
-    }
-
-    // ========== VIDEO MODAL FUNCTIONS ==========
-    function viewVideo(video) {
-        currentVideo = video;
-        
-        const modal = document.getElementById('video-modal');
-        const modalVideo = document.getElementById('modal-video');
-        const modalAuthor = document.getElementById('modal-author');
-        const modalDuration = document.getElementById('modal-duration');
-        const modalResolution = document.getElementById('modal-resolution');
-        const modalVideoTitle = document.getElementById('modal-video-title');
-        
-        // Find HD video file
-        const hdVideo = video.video_files.find(f => f.quality === 'hd') || 
-                       video.video_files.find(f => f.quality === 'sd') || 
-                       video.video_files[0];
-        
-        modalVideo.src = hdVideo?.link || video.video_files[0]?.link;
-        modalAuthor.textContent = `By ${video.user.name}`;
-        modalDuration.textContent = `Duration: ${formatDuration(video.duration)}`;
-        modalResolution.textContent = `Resolution: ${video.width}x${video.height}`;
-        modalVideoTitle.textContent = `Stock Video`;
-        
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        
-        // Play video automatically
-        setTimeout(() => {
-            modalVideo.play().catch(e => console.log('Auto-play prevented:', e));
-        }, 300);
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('video-modal');
-        const modalVideo = document.getElementById('modal-video');
-        
-        // Pause video
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
-        
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    // ========== VIDEO DOWNLOAD FUNCTION ==========
-    function downloadCurrentVideo() {
-        if (!currentVideo) return;
-        
-        // Find the best quality video for download
-        const hdVideo = currentVideo.video_files.find(f => f.quality === 'hd') || 
-                       currentVideo.video_files.find(f => f.quality === 'sd') || 
-                       currentVideo.video_files[0];
-        
-        if (!hdVideo || !hdVideo.link) {
-            showNotification('Download link not available', 'error');
-            return;
-        }
-        
-        const downloadUrl = hdVideo.link;
-        const fileName = `quizontal-video-${currentVideo.id}.mp4`;
-        
-        downloadVideoDirect(downloadUrl, fileName);
-    }
-
-    function downloadVideoDirect(url, filename) {
-        try {
-            // Create a progress notification
-            showNotification('Starting download...', 'info');
-            
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    return response.blob();
-                })
-                .then(blob => {
-                    const blobUrl = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = blobUrl;
-                    a.download = filename;
-                    a.style.display = 'none';
-                    
-                    document.body.appendChild(a);
-                    a.click();
-                    
-                    // Clean up
-                    setTimeout(() => {
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(blobUrl);
-                    }, 100);
-                    
-                    showNotification('Download started!', 'success');
-                })
-                .catch(error => {
-                    console.warn('Blob download failed, trying direct method:', error);
-                    downloadUsingAnchor(url, filename);
-                });
-        } catch (error) {
-            console.error('Download error:', error);
-            downloadUsingAnchor(url, filename);
-        }
-    }
-
-    function downloadUsingAnchor(url, filename) {
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.style.display = 'none';
-        a.setAttribute('target', '_blank');
-        
-        document.body.appendChild(a);
-        
-        setTimeout(() => {
-            try {
-                a.click();
-                showNotification('Download started! Video will open in new tab.', 'info');
-            } catch (e) {
-                console.error('Click failed:', e);
-                window.open(url, '_blank');
-                showNotification('Video opened in new tab. Right-click to save.', 'info');
-            }
-            
-            setTimeout(() => {
-                if (document.body.contains(a)) {
-                    document.body.removeChild(a);
-                }
-            }, 1000);
-        }, 100);
-    }
-
-    // ========== NOTIFICATION FUNCTION ==========
-    function showNotification(message, type = 'success') {
-        const colors = {
-            success: 'bg-green-500',
-            error: 'bg-red-500',
-            info: 'bg-blue-500'
-        };
-        
-        const icons = {
-            success: 'check-circle',
-            error: 'x-circle',
-            info: 'info'
-        };
-        
-        // Remove existing notifications
-        document.querySelectorAll('.download-notification').forEach(n => n.remove());
-        
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `download-notification fixed top-4 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-1002 transform translate-x-full transition-transform duration-300`;
-        notification.innerHTML = `
-            <div class="flex items-center gap-2">
-                <i data-lucide="${icons[type]}" class="h-5 w-5"></i>
-                <span>${message}</span>
-            </div>
-        `;
-        
-        document.body.appendChild(notification);
-        
-        // Animate in
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 10);
-        
-        // Animate out after 3 seconds
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                if (document.body.contains(notification)) {
-                    document.body.removeChild(notification);
-                }
-            }, 300);
-        }, 3000);
-        
-        // Update icons
-        lucide.createIcons();
-    }
-
-
-    // ========== KEYBOARD SHORTCUTS ==========
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
-            closeMobileMenu();
-        }
-    });
-
-    // Close modal when clicking outside
-    window.addEventListener('click', (e) => {
-        const modal = document.getElementById('video-modal');
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-</script>
+    </script>
 </body>
 </html>

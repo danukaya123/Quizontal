@@ -1,0 +1,2394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Contact Us | Quizontal - Get in Touch with Our Team</title>
+  <meta name="description" content="Contact Quizontal team for support, partnerships, or feedback. We're here to help you with our creative tools and resources.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Contact Us | Quizontal">
+  <meta property="og:description" content="Get in touch with Quizontal team for support, partnerships, or feedback about our creative tools.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quizontal.vercel.app/contact-us">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://quizontal.vercel.app/contact-us">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #374151;
+      overflow-x: hidden;
+    }
+    
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* ========== NAVIGATION - EXACT COPY FROM HOMEPAGE ========== */
+    header {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .nav-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .nav-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* Logo */
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 640px) {
+      .nav-logo {
+        height: 36px;
+        max-width: 150px;
+      }
+    }
+    
+    /* Desktop Navigation */
+    .desktop-nav {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    
+    /* Navigation Links */
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      height: 44px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background-color: rgba(124, 58, 237, 0.05);
+      color: #7c3aed;
+    }
+    
+    .nav-link i {
+      margin-left: 0.25rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .nav-link:hover i {
+      transform: rotate(180deg);
+    }
+    
+    /* Search Bar */
+    .search-container {
+      position: relative;
+      min-width: 120px;
+    }
+    
+    @media (min-width: 640px) {
+      .search-container {
+        min-width: 200px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .search-container {
+        min-width: 240px;
+      }
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 0.625rem 1rem 0.625rem 2.5rem;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 0.75rem;
+      outline: none;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      background-color: #f9fafb;
+    }
+    
+    .search-input:focus {
+      border-color: #7c3aed;
+      background-color: white;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6b7280;
+      pointer-events: none;
+    }
+    
+    /* FIXED: Navigation Dropdown */
+    .nav-item {
+      position: relative;
+    }
+    
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 15px);
+      left: 0;
+      width: 800px;
+      max-width: 33vw;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      padding: 1.5rem;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #f3f4f6;
+      margin-top: 10px;
+    }
+    
+    @media (max-width: 1024px) {
+      .nav-dropdown {
+        width: 600px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-dropdown {
+        width: 400px;
+        left: -100%;
+      }
+    }
+    
+    /* Hover functionality fixed */
+    .nav-item:hover .nav-dropdown,
+    .nav-dropdown:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    /* Dropdown content grids */
+    .nav-image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    @media (max-width: 1024px) {
+      .nav-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .nav-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #7c3aed;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      height: 44px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .cta-button:hover {
+      background-color: #6d28d9;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+    
+    /* Mobile Menu Button */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-item {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+    }
+    
+    .mobile-nav-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-nav-link.active i {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .mobile-dropdown.active {
+      max-height: 2000px;
+    }
+    
+    .mobile-dropdown-content {
+      padding: 1rem;
+    }
+    
+    .mobile-image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    @media (max-width: 480px) {
+      .mobile-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .mobile-image-item {
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .mobile-image-item img {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+    }
+    
+    .mobile-image-item p {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #374151;
+    }
+    
+    .mobile-dropdown-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #6b7280;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .mobile-dropdown-link:hover {
+      color: #7c3aed;
+      background-color: #f3f4f6;
+    }
+    
+    .mobile-video-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .mobile-video-category {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      text-decoration: none;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    
+    .mobile-video-category:hover {
+      border-color: #7c3aed;
+      background: #f9fafb;
+    }
+    
+    .mobile-video-category i {
+      color: #7c3aed;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== CONTACT US CONTENT ========== */
+    .contact-hero {
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+      padding: 5rem 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      opacity: 0.1;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-hero {
+        padding: 7rem 0;
+      }
+    }
+    
+    .contact-content {
+      padding: 4rem 0;
+      background: white;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-content {
+        padding: 6rem 0;
+      }
+    }
+    
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    /* Contact Form */
+    .contact-form-container {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+    }
+    
+    @media (max-width: 640px) {
+      .contact-form-container {
+        padding: 1.5rem;
+      }
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+    
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 16px;
+    }
+    
+    /* Contact Info Cards */
+    .contact-info-card {
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      height: 100%;
+    }
+    
+    @media (max-width: 640px) {
+      .contact-info-card {
+        padding: 1.5rem;
+      }
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    }
+    
+    @media (max-width: 640px) {
+      .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+      }
+    }
+    
+    .info-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    }
+    
+    .info-icon i {
+      color: #7c3aed;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 5rem;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: #7c3aed;
+      box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+    }
+    
+    .faq-item.active {
+      border-color: #7c3aed;
+      background: #f9fafb;
+    }
+    
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #374151;
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-top: 0;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding-top: 1rem;
+    }
+    
+    /* Response Time Card */
+    .response-time-card {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      .response-time-card {
+        text-align: left;
+      }
+    }
+    
+    /* Map Placeholder */
+    .map-placeholder {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      border-radius: 1rem;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      border: 2px dashed #d1d5db;
+    }
+    
+    /* ========== RESPONSIVE FIXES FOR CONTACT PAGE ========== */
+    @media (max-width: 640px) {
+      /* Fix response time card */
+      .response-time-card {
+        padding: 1.25rem;
+        text-align: center;
+      }
+      
+      .response-time-card .flex {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .response-time-card a {
+        justify-content: center;
+        width: 100%;
+        padding: 0.75rem 1rem;
+      }
+      
+      /* Fix social media links section */
+      .social-media-card {
+        padding: 1.5rem !important;
+      }
+      
+      .social-media-card h4 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      .social-media-card .social-links-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      
+      /* Fix contact info cards */
+      .info-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      
+      .info-item .info-icon {
+        margin-bottom: 1rem;
+      }
+      
+      .info-item > div {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Adjust contact grid for tablet */
+      .contact-grid {
+        gap: 2rem;
+      }
+      
+      /* Center align everything on mobile */
+      .contact-form-container,
+      .contact-info-card,
+      .response-time-card,
+      .social-media-card {
+        text-align: center;
+      }
+      
+      /* Fix button alignment in response time card */
+      .response-time-card a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Fix social links alignment */
+      .social-link {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    /* Specific fix for the social media section */
+    .social-media-card .social-links-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .social-media-card .social-links-container {
+        justify-content: flex-start;
+      }
+    }
+
+    /* Fix for the response time card buttons */
+    .response-time-card a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    /* Social Media Card */
+    .social-media-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 640px) {
+      .social-media-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Social Links */
+    .social-link {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ========== FOOTER STYLES ========== */
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        height: 36px;
+        max-width: 140px;
+      }
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .gradient-text {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hover-lift {
+      transition: transform 0.2s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+    }
+    
+    /* Animation Classes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    
+    /* Success/Error Messages */
+    .alert {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+    
+    .alert-success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    
+    .alert-error {
+      background: #fee2e2;
+      color: #7f1d1d;
+      border: 1px solid #fecaca;
+    }
+
+    /* Custom Notification */
+    .custom-notification {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateX(120%);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Fixed Navigation -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="nav-logo"
+          loading="eager"
+        >
+      </a>
+
+      <!-- Desktop Search Bar -->
+      <div class="search-container hidden lg:block">
+        <form action="https://quizontal.vercel.app/" method="GET" target="_blank">
+          <i data-lucide="search" class="search-icon h-4 w-4"></i>
+          <input 
+            type="search" 
+            name="q"
+            placeholder="Search images, wallpapers, videos..." 
+            class="search-input"
+            required
+          >
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <!-- Stock Media Dropdown -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <span>Stock Media</span>
+            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+          </a>
+          <div class="nav-dropdown">
+            <h4 class="font-semibold text-gray-900 mb-4 text-lg">Stock Media Library</h4>
+            
+            <div class="grid grid-cols-2 gap-6 mb-6">
+              <!-- Images -->
+              <div>
+                <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+                  <i data-lucide="image" class="h-4 w-4 text-purple-600"></i>
+                  Images
+                </h5>
+                <div class="space-y-2">
+                  <a href="https://quizontal.vercel.app/image-gallery/?q=nature" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Nature & Landscape</a>
+                  <a href="https://quizontal.vercel.app/image-gallery/?q=abstract" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Abstract Art</a>
+                  <a href="https://quizontal.vercel.app/image-gallery/?q=business" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Business & Technology</a>
+                  <a href="https://quizontal.vercel.app/image-gallery/?q=wallpapers" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Wallpapers</a>
+                </div>
+              </div>
+              
+              <!-- Videos -->
+              <div>
+                <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+                  <i data-lucide="video" class="h-4 w-4 text-blue-600"></i>
+                  Videos
+                </h5>
+                <div class="space-y-2">
+                  <a href="https://quizontal.vercel.app/video-gallery/?q=stock+videos" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Stock Videos</a>
+                  <a href="https://quizontal.vercel.app/video-gallery/?q=4k+videos" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">4K Videos</a>
+                  <a href="https://quizontal.vercel.app/video-gallery/?q=background+videos" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Background Videos</a>
+                  <a href="https://quizontal.vercel.app/video-gallery/?q=motion+graphics" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Motion Graphics</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="bg-gray-50 rounded-lg p-4">
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div class="text-lg font-bold text-gray-900">10M+</div>
+                  <div class="text-xs text-gray-600">Assets</div>
+                </div>
+                <div>
+                  <div class="text-lg font-bold text-gray-900">100%</div>
+                  <div class="text-xs text-gray-600">Copyright Free</div>
+                </div>
+                <div>
+                  <div class="text-lg font-bold text-gray-900">4K</div>
+                  <div class="text-xs text-gray-600">Quality</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- AI Tools Dropdown -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <span>AI Tools</span>
+            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+          </a>
+          <div class="nav-dropdown">
+            <h4 class="font-semibold text-gray-900 mb-4 text-lg">AI-Powered Tools</h4>
+            
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Visual AI Tools -->
+              <div>
+                <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+                  <i data-lucide="palette" class="h-4 w-4 text-purple-600"></i>
+                  Visual AI Tools
+                </h5>
+                <div class="space-y-3">
+                  <a href="/ai-tools/ai-image-generator/index.html" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-purple-400 hover:shadow-sm transition-all">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <i data-lucide="sparkles" class="h-5 w-5 text-purple-600"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-medium text-gray-900 text-sm">AI Image Generator</h6>
+                      <p class="text-xs text-gray-500">Create images from text</p>
+                    </div>
+                  </a>
+                  <a href="https://quizontal.vercel.app/ai-tools/removebg" aria-disabled="true" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-green-400 hover:shadow-sm transition-all">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <i data-lucide="scissors" class="h-5 w-5 text-green-600"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-medium text-gray-900 text-sm">Background Remover</h6>
+                      <p class="text-xs text-gray-500">Remove backgrounds instantly</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Text AI Tools -->
+              <div>
+                <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+                  <i data-lucide="type" class="h-4 w-4 text-blue-600"></i>
+                  Text AI Tools
+                </h5>
+                <div class="space-y-3">
+                  <a href="https://quizontal.vercel.app/ai-tools/paraphrase" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-sm transition-all">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <i data-lucide="edit-3" class="h-5 w-5 text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-medium text-gray-900 text-sm">AI Text Paraphraser</h6>
+                      <p class="text-xs text-gray-500">Refine your text with AI</p>
+                    </div>
+                  </a>
+                  <a href="https://quizontal.vercel.app/ai-tools/humanize" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-green-400 hover:shadow-sm transition-all">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <i data-lucide="user" class="h-5 w-5 text-green-600"></i>
+                    </div>
+                    <div>
+                      <h6 class="font-medium text-gray-900 text-sm">AI Text Humanizer</h6>
+                      <p class="text-xs text-gray-500">Make AI text sound human</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Downloaders Dropdown -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <span>Downloaders</span>
+            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+          </a>
+          <div class="nav-dropdown">
+            <h4 class="font-semibold text-gray-900 mb-4 text-lg">Video & Audio Downloaders</h4>
+            
+            <div class="space-y-4">
+              <!-- YouTube Downloader -->
+              <a href="https://quizontal.vercel.app/downloaders/youtube" class="flex items-center gap-4 p-4 bg-red-50 rounded-xl hover:bg-red-100 transition-colors group">
+                <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center">
+                  <i data-lucide="youtube" class="h-6 w-6 text-white"></i>
+                </div>
+                <div class="flex-1">
+                  <h5 class="font-semibold text-gray-900">YouTube Downloader</h5>
+                  <p class="text-sm text-gray-600">Download videos & audio in HD/MP3</p>
+                </div>
+                <i data-lucide="arrow-right" class="h-5 w-5 text-gray-400 group-hover:text-red-600"></i>
+              </a>
+              
+              <!-- Facebook Downloader -->
+              <a href="https://quizontal.vercel.app/downloaders/facebook" class="flex items-center gap-4 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors group">
+                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                  <i data-lucide="facebook" class="h-6 w-6 text-white"></i>
+                </div>
+                <div class="flex-1">
+                  <h5 class="font-semibold text-gray-900">Facebook Downloader</h5>
+                  <p class="text-sm text-gray-600">Download videos, reels & stories</p>
+                </div>
+                <i data-lucide="arrow-right" class="h-5 w-5 text-gray-400 group-hover:text-blue-600"></i>
+              </a>
+              
+              <!-- TikTok Downloader -->
+              <a href="https://quizontal.vercel.app/downloaders/tiktok" class="flex items-center gap-4 p-4 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors group">
+                <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center">
+                  <i data-lucide="music" class="h-6 w-6 text-white"></i>
+                </div>
+                <div class="flex-1">
+                  <h5 class="font-semibold text-gray-900">TikTok Downloader</h5>
+                  <p class="text-sm text-gray-600">Download TikTok videos without watermark</p>
+                </div>
+                <i data-lucide="arrow-right" class="h-5 w-5 text-gray-400 group-hover:text-pink-600"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Utility Tools Dropdown -->
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <span>Utility Tools</span>
+            <i data-lucide="chevron-down" class="h-4 w-4"></i>
+          </a>
+          <div class="nav-dropdown">
+            <h4 class="font-semibold text-gray-900 mb-4 text-lg">Developer & Creator Tools</h4>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Calculator Tools -->
+              <a href="/tools/calculator/index.html" class="p-3 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors group">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="calculator" class="h-4 w-4 text-purple-600"></i>
+                  <h5 class="font-medium text-gray-900">Calculator Tools</h5>
+                </div>
+                <p class="text-xs text-gray-600">Unit converters, color contrast, image size</p>
+              </a>
+              
+              <!-- SEO Tools -->
+              <a href="/tools/seo-tools/index.html" class="p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="search" class="h-4 w-4 text-blue-600"></i>
+                  <h5 class="font-medium text-gray-900">SEO Tools</h5>
+                </div>
+                <p class="text-xs text-gray-600">Keyword checker, meta tag analyzer</p>
+              </a>
+              
+              <!-- JS Obfuscator -->
+              <a href="/tools/js-obfuscator/index.html" class="p-3 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors group">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="shield-off" class="h-4 w-4 text-yellow-600"></i>
+                  <h5 class="font-medium text-gray-900">JS Obfuscator</h5>
+                </div>
+                <p class="text-xs text-gray-600">Protect your JavaScript code</p>
+              </a>
+              
+              <!-- Text Tools -->
+              <a href="/tools/text-and-utility-tools/index.html" class="p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="file-text" class="h-4 w-4 text-green-600"></i>
+                  <h5 class="font-medium text-gray-900">Text Tools</h5>
+                </div>
+                <p class="text-xs text-gray-600">Word counter, case converter, more</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blog Link -->
+        <a href="/blog" class="nav-link">Blog</a>
+        
+        <!-- CTA Button -->
+        <button class="cta-button ml-2">
+          Get Started Free
+        </button>
+      </nav>
+
+      <!-- Mobile Search and Menu -->
+      <div class="flex items-center gap-4 lg:hidden">
+        <div class="search-container">
+          <form action="https://quizontal.vercel.app/" method="GET" target="_blank">
+            <i data-lucide="search" class="search-icon h-4 w-4"></i>
+            <input 
+              type="search" 
+              name="q"
+              placeholder="Search..." 
+              class="search-input"
+              required
+            >
+          </form>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-header">
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="h-10 w-auto max-w-[160px]"
+          loading="eager"
+        >
+      </a>
+      <button class="mobile-menu-btn" id="closeMobileMenu">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-nav">
+      <!-- Stock Media Dropdown -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" data-dropdown="stock-media">
+          <span>Stock Media</span>
+          <i data-lucide="chevron-down" class="h-5 w-5"></i>
+        </button>
+        <div class="mobile-dropdown" id="stock-media-dropdown">
+          <div class="mobile-dropdown-content">
+            <h5 class="font-medium text-gray-900 mb-3 text-sm">Images</h5>
+            <div class="mobile-image-grid">
+              <a href="https://quizontal.vercel.app/image-gallery/?q=nature" target="_blank" class="mobile-image-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Nature">
+                <p>Nature</p>
+              </a>
+              <a href="https://quizontal.vercel.app/image-gallery/?q=abstract" target="_blank" class="mobile-image-item">
+                <img src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/abstract-nav-bar.jpg?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Abstract">
+                <p>Abstract</p>
+              </a>
+              <a href="https://quizontal.vercel.app/image-gallery/?q=business" target="_blank" class="mobile-image-item">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Business">
+                <p>Business</p>
+              </a>
+              <a href="https://quizontal.vercel.app/image-gallery/?q=wallpapers" target="_blank" class="mobile-image-item">
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Wallpapers">
+                <p>Wallpapers</p>
+              </a>
+            </div>
+            
+            <h5 class="font-medium text-gray-900 mb-2 text-sm mt-4">Videos</h5>
+            <div class="mobile-video-categories">
+              <a href="https://quizontal.vercel.app/video-gallery/?q=stock+videos" target="_blank" class="mobile-video-category">
+                <i data-lucide="video" class="h-4 w-4"></i>
+                <span class="text-sm">Stock Videos</span>
+              </a>
+              <a href="https://quizontal.vercel.app/video-gallery/?q=4k+videos" target="_blank" class="mobile-video-category">
+                <i data-lucide="tv" class="h-4 w-4"></i>
+                <span class="text-sm">4K Videos</span>
+              </a>
+              <a href="https://quizontal.vercel.app/video-gallery/?q=background+videos" target="_blank" class="mobile-video-category">
+                <i data-lucide="play-circle" class="h-4 w-4"></i>
+                <span class="text-sm">Background Videos</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI Tools Dropdown -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" data-dropdown="ai-tools">
+          <span>AI Tools</span>
+          <i data-lucide="chevron-down" class="h-5 w-5"></i>
+        </button>
+        <div class="mobile-dropdown" id="ai-tools-dropdown">
+          <div class="mobile-dropdown-content">
+            <h5 class="font-medium text-gray-900 mb-3 text-sm">Visual AI Tools</h5>
+            <div class="space-y-2 mb-4">
+              <a href="/ai-tools/ai-image-generator/index.html" class="mobile-dropdown-link flex items-center gap-2">
+                <i data-lucide="sparkles" class="h-4 w-4 text-purple-600"></i>
+                AI Image Generator
+              </a>
+              <a href="https://quizontal.vercel.app/ai-tools/removebg" aria-disabled="true" class="mobile-dropdown-link flex items-center gap-2">
+                <i data-lucide="scissors" class="h-4 w-4 text-green-600"></i>
+                Background Remover
+              </a>
+            </div>
+            
+            <h5 class="font-medium text-gray-900 mb-2 text-sm">Text AI Tools</h5>
+            <div class="space-y-2">
+              <a href="https://quizontal.vercel.app/ai-tools/paraphrase" class="mobile-dropdown-link flex items-center gap-2">
+                <i data-lucide="edit-3" class="h-4 w-4 text-blue-600"></i>
+                Text Paraphraser
+              </a>
+              <a href="https://quizontal.vercel.app/ai-tools/humanize" class="mobile-dropdown-link flex items-center gap-2">
+                <i data-lucide="user" class="h-4 w-4 text-green-600"></i>
+                Text Humanizer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Downloaders Dropdown -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" data-dropdown="downloaders">
+          <span>Downloaders</span>
+          <i data-lucide="chevron-down" class="h-5 w-5"></i>
+        </button>
+        <div class="mobile-dropdown" id="downloaders-dropdown">
+          <div class="mobile-dropdown-content">
+            <div class="space-y-3">
+              <a href="https://quizontal.vercel.app/downloaders/youtube" class="mobile-video-category bg-red-50 border-red-200">
+                <i data-lucide="youtube" class="h-4 w-4 text-red-600"></i>
+                <span class="text-sm">YouTube Downloader</span>
+              </a>
+              <a href="https://quizontal.vercel.app/downloaders/facebook" class="mobile-video-category bg-blue-50 border-blue-200">
+                <i data-lucide="facebook" class="h-4 w-4 text-blue-600"></i>
+                <span class="text-sm">Facebook Downloader</span>
+              </a>
+              <a href="https://quizontal.vercel.app/downloaders/tiktok" class="mobile-video-category bg-pink-50 border-pink-200">
+                <i data-lucide="music" class="h-4 w-4 text-pink-600"></i>
+                <span class="text-sm">TikTok Downloader</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Utility Tools Dropdown -->
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link" data-dropdown="utility">
+          <span>Utility Tools</span>
+          <i data-lucide="chevron-down" class="h-5 w-5"></i>
+        </button>
+        <div class="mobile-dropdown" id="utility-dropdown">
+          <div class="mobile-dropdown-content">
+            <div class="grid grid-cols-2 gap-2 mb-4">
+              <a href="/tools/calculator/index.html" class="bg-purple-50 border border-purple-200 rounded-lg p-3 text-center hover:bg-purple-100">
+                <i data-lucide="calculator" class="h-5 w-5 text-purple-600 mx-auto mb-1"></i>
+                <span class="text-xs font-medium">Calculators</span>
+              </a>
+              <a href="/tools/seo-tools/index.html" class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center hover:bg-blue-100">
+                <i data-lucide="search" class="h-5 w-5 text-blue-600 mx-auto mb-1"></i>
+                <span class="text-xs font-medium">SEO Tools</span>
+              </a>
+              <a href="/tools/js-obfuscator/index.html" class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center hover:bg-yellow-100">
+                <i data-lucide="shield-off" class="h-5 w-5 text-yellow-600 mx-auto mb-1"></i>
+                <span class="text-xs font-medium">JS Obfuscator</span>
+              </a>
+              <a href="/tools/text-and-utility-tools/index.html" class="bg-green-50 border border-green-200 rounded-lg p-3 text-center hover:bg-green-100">
+                <i data-lucide="file-text" class="h-5 w-5 text-green-600 mx-auto mb-1"></i>
+                <span class="text-xs font-medium">Text Tools</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Other Links -->
+      <a href="/blog" class="mobile-nav-link w-full justify-start">Blog</a>
+    </div>
+    
+    <div class="mobile-cta">
+      <button class="cta-button w-full" onclick="closeMobileMenu()">
+        Get Started Free
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="content-container relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in-up">
+          Get in Touch
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-8 fade-in-up delay-1">
+          We're here to help you with our creative tools, answer your questions, and listen to your feedback.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center fade-in-up delay-2">
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+            <i data-lucide="clock" class="h-4 w-4 inline-block mr-1"></i>
+            24-48 hour response
+          </span>
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+            <i data-lucide="mail" class="h-4 w-4 inline-block mr-1"></i>
+            quizontal.business@gmail.com
+          </span>
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+            <i data-lucide="phone" class="h-4 w-4 inline-block mr-1"></i>
+            +94 77 612 1326
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="contact-content">
+    <div class="content-container">
+      
+      <!-- Success/Error Messages -->
+      <div id="successAlert" class="alert alert-success" style="display: none;">
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-circle" class="h-5 w-5"></i>
+          <span id="successMessage">Your message has been sent successfully! We'll get back to you within 24-48 hours.</span>
+        </div>
+      </div>
+      
+      <div id="errorAlert" class="alert alert-error" style="display: none;">
+        <div class="flex items-center gap-2">
+          <i data-lucide="alert-circle" class="h-5 w-5"></i>
+          <span id="errorMessage">There was an error sending your message. Please try again or email us directly.</span>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-container fade-in-up">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+          
+          <form id="contactForm" class="space-y-4">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                class="form-input"
+                placeholder="Enter your full name"
+                required
+              >
+              <div class="text-sm text-red-500 mt-1 hidden" id="nameError">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                class="form-input"
+                placeholder="Enter your email address"
+                required
+              >
+              <div class="text-sm text-red-500 mt-1 hidden" id="emailError">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                class="form-input"
+                placeholder="Enter your subject"
+                required
+              >
+              <div class="text-sm text-red-500 mt-1 hidden" id="nameError">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Your Message *</label>
+              <textarea 
+                id="message" 
+                name="message"
+                class="form-textarea"
+                placeholder="Please describe your inquiry in detail..."
+                rows="5"
+                required
+              ></textarea>
+              <div class="text-sm text-red-500 mt-1 hidden" id="messageError">Please enter your message</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="urgency" class="form-label">Urgency Level</label>
+              <div class="flex gap-4 mt-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="urgency" value="Low" class="text-purple-600" checked>
+                  <span>Low</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="urgency" value="Normal" class="text-purple-600">
+                  <span>Normal</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="urgency" value="High" class="text-purple-600">
+                  <span>High</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="flex items-start gap-2">
+                <input 
+                  type="checkbox" 
+                  id="subscribe"
+                  name="subscribe"
+                  class="mt-1 text-purple-600"
+                >
+                <label for="subscribe" class="text-sm text-gray-600">
+                  Subscribe to our newsletter for updates on new features and creative tips
+                </label>
+              </div>
+            </div>
+            
+            <button 
+              type="submit" 
+              class="cta-button w-full text-lg py-3"
+              id="submitButton"
+            >
+              <span id="submitText">Send Message</span>
+              <span id="submitLoading" class="hidden">
+                <i data-lucide="loader" class="h-5 w-5 animate-spin mr-2"></i>
+                Sending...
+              </span>
+            </button>
+            
+            <p class="text-sm text-gray-500 text-center mt-4">
+              By submitting this form, you agree to our 
+              <a href="/privacy-policy/index.html" class="text-purple-600 hover:underline">Privacy Policy</a>
+            </p>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-6">
+          <div class="contact-info-card fade-in-up delay-1">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i data-lucide="mail" class="h-6 w-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Email Us</h4>
+                <p class="text-gray-600 mb-2">
+                  For general inquiries, support, or partnership opportunities
+                </p>
+                <a href="mailto:quizontal.business@gmail.com" class="text-purple-600 font-medium hover:underline">
+                  quizontal.business@gmail.com
+                </a>
+                <button 
+                  onclick="copyToClipboard('quizontal.business@gmail.com', 'Email')"
+                  class="ml-2 text-sm text-gray-500 hover:text-purple-600"
+                  title="Copy email"
+                >
+                  <i data-lucide="copy" class="h-4 w-4"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i data-lucide="phone" class="h-6 w-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Call Us</h4>
+                <p class="text-gray-600 mb-2">
+                  Available Monday to Friday, 9 AM - 6 PM (GMT+5:30)
+                </p>
+                <a href="tel:+94776121326" class="text-purple-600 font-medium hover:underline">
+                  +94 77 612 1326
+                </a>
+                <button 
+                  onclick="copyToClipboard('+94776121326', 'Phone number')"
+                  class="ml-2 text-sm text-gray-500 hover:text-purple-600"
+                  title="Copy phone number"
+                >
+                  <i data-lucide="copy" class="h-4 w-4"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i data-lucide="message-square" class="h-6 w-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Live Chat</h4>
+                <p class="text-gray-600 mb-2">
+                  Get instant help through our website chat (available during business hours)
+                </p>
+                <button 
+                  onclick="openChat()"
+                  class="text-purple-600 font-medium hover:underline flex items-center gap-1"
+                >
+                  <i data-lucide="message-circle" class="h-4 w-4"></i>
+                  Start Chat
+                </button>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i data-lucide="clock" class="h-6 w-6"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Response Time</h4>
+                <p class="text-gray-600">
+                  We typically respond within <strong class="text-purple-600">24-48 hours</strong> for email inquiries and <strong class="text-purple-600">1-2 hours</strong> for urgent matters.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Time Card - FIXED VERSION -->
+          <div class="response-time-card fade-in-up delay-2">
+            <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 mb-4">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <i data-lucide="zap" class="h-6 w-6"></i>
+                <h4 class="font-bold text-lg sm:text-xl">Urgent Support</h4>
+              </div>
+            </div>
+            <p class="text-white/90 mb-4 text-center sm:text-left">
+              For critical issues requiring immediate attention, please call us directly or use the "High" urgency option in the contact form.
+            </p>
+            <div class="flex justify-center sm:justify-start">
+              <a href="tel:+94776121326" class="inline-flex items-center justify-center gap-2 bg-white text-green-700 px-4 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors w-full sm:w-auto">
+                <i data-lucide="phone" class="h-5 w-5"></i>
+                <span class="whitespace-nowrap">Call Now: +94 77 612 1326</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Media - FIXED VERSION -->
+
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-3">
+          <div class="faq-item" onclick="toggleFAQ(1)">
+            <div class="faq-question">
+              <span>How long does it take to get a response?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 transition-transform"></i>
+            </div>
+            <div class="faq-answer">
+              <p class="text-gray-600">
+                We typically respond to all inquiries within <strong>24-48 hours</strong>. For urgent matters marked as "High" priority, we aim to respond within <strong>1-2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM GMT+5:30).
+              </p>
+            </div>
+          </div>
+          
+          <div class="faq-item" onclick="toggleFAQ(2)">
+            <div class="faq-question">
+              <span>What information should I include in my message?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 transition-transform"></i>
+            </div>
+            <div class="faq-answer">
+              <p class="text-gray-600">
+                Please include:
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li>Your name and contact information</li>
+                  <li>Detailed description of your inquiry or issue</li>
+                  <li>URL of the page you're having issues with (if applicable)</li>
+                  <li>Screenshots or error messages (for technical issues)</li>
+                  <li>Your browser and device information (for technical support)</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+          
+          <div class="faq-item" onclick="toggleFAQ(3)">
+            <div class="faq-question">
+              <span>Do you offer partnership opportunities?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 transition-transform"></i>
+            </div>
+            <div class="faq-answer">
+              <p class="text-gray-600">
+                Yes! We're always open to partnerships with content creators, developers, and businesses. Please select "Partnership Opportunity" as your subject in the contact form and provide details about your proposal. We review all partnership inquiries and respond to promising opportunities within 3-5 business days.
+              </p>
+            </div>
+          </div>
+          
+          <div class="faq-item" onclick="toggleFAQ(4)">
+            <div class="faq-question">
+              <span>How can I report a bug or technical issue?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 transition-transform"></i>
+            </div>
+            <div class="faq-answer">
+              <p class="text-gray-600">
+                Please select "Bug Report" as your subject and include:
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li>Steps to reproduce the issue</li>
+                  <li>Expected vs actual behavior</li>
+                  <li>Screenshots or screen recordings</li>
+                  <li>Your browser, device, and OS information</li>
+                  <li>Any error messages you received</li>
+                </ul>
+                This helps us quickly identify and fix the issue.
+              </p>
+            </div>
+          </div>
+          
+          <div class="faq-item" onclick="toggleFAQ(5)">
+            <div class="faq-question">
+              <span>Can I request a new feature for Quizontal?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 transition-transform"></i>
+            </div>
+            <div class="faq-answer">
+              <p class="text-gray-600">
+                Absolutely! We love hearing feature requests from our users. Please select "Feature Request" as your subject and provide as much detail as possible about:
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li>The problem you're trying to solve</li>
+                  <li>How you envision the feature working</li>
+                  <li>Why this would be valuable for you and other users</li>
+                  <li>Any examples from other platforms (if applicable)</li>
+                </ul>
+                We review all feature requests and add popular ones to our development roadmap.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Placeholder -->
+      <div class="map-placeholder fade-in-up delay-2">
+        <div class="text-center">
+          <i data-lucide="map-pin" class="h-12 w-12 text-gray-400 mx-auto mb-3"></i>
+          <p class="text-gray-500">Based in Sri Lanka, serving creators worldwide</p>
+          <p class="text-sm text-gray-400 mt-1">Digital Creative Hub</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="content-container py-12">
+      <!-- Newsletter -->
+      <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 md:p-8 mb-8 md:mb-12 fade-in-up">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3">Stay Updated with Creative Insights</h3>
+            <p class="text-blue-100 text-sm md:text-base">
+              Subscribe to our newsletter for the latest design trends and AI tips.
+            </p>
+          </div>
+          <div>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="flex-1 px-4 md:px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm md:text-base"
+                required
+              >
+              <button 
+                type="submit" 
+                class="bg-white text-purple-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap text-sm md:text-base"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs md:text-sm text-blue-200 mt-2 md:mt-3">By subscribing, you agree to our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+        <!-- Logo and Social -->
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="inline-block mb-4">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+              alt="Quizontal Logo" 
+              class="footer-logo"
+              loading="lazy"
+            >
+          </a>
+          <p class="mt-2 md:mt-4 text-gray-400 text-sm mb-4 md:mb-6">
+            Quizontal is a free and easy-to-use platform that provides high-quality stock photos and HD videos for both personal and commercial use. Our collection includes a wide variety of images and videos suitable for blogs, websites, social media, presentations, and creative projects. 
+          </p>
+          <div class="flex space-x-3 md:space-x-4">
+            <a href="https://web.facebook.com/danuka.disanayaka.3701/" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="facebook" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="https://www.youtube.com/@quizontal" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="youtube" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/danuka-dissanayake-570803375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="https://wa.me/94774915917" target="_blank"
+               class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.671.149s-.768.966-.941 1.164c-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.297-.496.099-.198.05-.371-.025-.52-.074-.149-.671-1.611-.918-2.205-.242-.579-.487-.5-.671-.51-.173-.008-.371-.01-.57-.01s-.52.074-.792.372c-.273.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347zM12.004 2C6.478 2 2 6.477 2 12c0 2.12.666 4.09 1.822 5.722L2 22l4.358-1.114C7.902 21.338 9.912 22 12 22c5.523 0 10-4.477 10-10S17.527 2 12.004 2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Product Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">AI-Tools</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="/ai-tools/ai-image-generator/index.html" class="hover:text-white transition-colors block">AI Image Generator</a></li>
+            <li><a href="https://quizontal.vercel.app/ai-tools/removebg" class="hover:text-white transition-colors block">AI Background Remover</a></li>
+            <li><a href="https://quizontal.vercel.app/ai-tools/paraphrase" class="hover:text-white transition-colors block">AI Text Paraphraser</a></li>
+            <li><a href="https://quizontal.vercel.app/ai-tools/humanize" class="hover:text-white transition-colors block">AI Text Humanizer</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Downloaders</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="https://quizontal.vercel.app/downloaders/youtube" class="hover:text-white transition-colors block">Youtube Downloader</a></li>
+            <li><a href="https://quizontal.vercel.app/downloaders/facebook" class="hover:text-white transition-colors block">Facebook Downloader</a></li>
+            <li><a href="https://quizontal.vercel.app/downloaders/tiktok" class="hover:text-white transition-colors block">Tiktok Downloader</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Resources</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="/image-gallery/index.html" class="hover:text-white transition-colors block">Stock images</a></li>
+            <li><a href="/video-gallery/index.html" class="hover:text-white transition-colors block">Stock videos</a></li>
+            <li><a href="/wallpaper-gallery/index.html" class="hover:text-white transition-colors block">Wallpapers</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2025 Quizontal. All rights reserved.
+        </p>
+         <div class="flex space-x-4 md:space-x-6">
+          <a href="/privacy-policy/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Privacy Policy</a>
+          <a href="/terms-of-service/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Terms of Service</a>
+          <a href="/about-us/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">About us</a>
+          <a href="/contact-us/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Contact us</a>
+          <a href="/declaimer/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Declaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget (Simulated) -->
+  <div id="chatWidget" class="fixed bottom-6 right-6 z-50 hidden">
+    <div class="bg-white rounded-2xl shadow-2xl w-80 overflow-hidden border border-gray-200">
+      <div class="bg-purple-600 text-white p-4">
+        <div class="flex justify-between items-center">
+          <h4 class="font-semibold">Chat Support</h4>
+          <button onclick="closeChat()" class="text-white hover:text-gray-200">
+            <i data-lucide="x" class="h-5 w-5"></i>
+          </button>
+        </div>
+        <p class="text-sm text-purple-100 mt-1">Typically replies in a few minutes</p>
+      </div>
+      <div class="p-4 h-64 overflow-y-auto bg-gray-50">
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-lg border border-gray-200">
+            <p class="text-sm">Hi! How can I help you today?</p>
+            <p class="text-xs text-gray-500 mt-1">Support Agent • Just now</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 border-t border-gray-200">
+        <div class="flex gap-2">
+          <input 
+            type="text" 
+            placeholder="Type your message..."
+            class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+            disabled
+          >
+          <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+            <i data-lucide="send" class="h-4 w-4"></i>
+          </button>
+        </div>
+        <p class="text-xs text-gray-500 mt-2 text-center">
+          Chat simulation. For real support, please use the contact form.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Button -->
+  <button 
+    onclick="openChat()"
+    class="fixed bottom-6 right-6 bg-purple-600 text-white w-14 h-14 rounded-full shadow-lg hover:bg-purple-700 transition-colors z-40 flex items-center justify-center"
+    id="chatButton"
+  >
+    <i data-lucide="message-circle" class="h-6 w-6"></i>
+  </button>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ========== MOBILE MENU FUNCTIONALITY ==========
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Close all dropdowns when closing mobile menu
+      document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdownId = button.getAttribute('data-dropdown') + '-dropdown';
+        const dropdown = document.getElementById(dropdownId);
+        const icon = button.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+          if (d.id !== dropdownId) {
+            d.classList.remove('active');
+          }
+        });
+        
+        document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(link => {
+          if (link !== button) {
+            link.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+        button.classList.toggle('active');
+        
+        if (dropdown.classList.contains('active')) {
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-dropdown-link, .mobile-nav-link[href^="#"]').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // ========== CONTACT FORM FUNCTIONALITY ==========
+    const contactForm = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const submitText = document.getElementById('submitText');
+    const submitLoading = document.getElementById('submitLoading');
+    const successAlert = document.getElementById('successAlert');
+    const errorAlert = document.getElementById('errorAlert');
+
+    // Function to send email using direct email client
+    async function sendEmailDirectly(formData) {
+      // Create email content
+      const emailContent = `
+        New Contact Form Submission from Quizontal
+        
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Subject: ${formData.subject}
+        Urgency: ${formData.urgency}
+        Newsletter Subscription: ${formData.subscribe ? 'Yes' : 'No'}
+        
+        Message:
+        ${formData.message}
+        
+        ---
+        Sent from: ${window.location.href}
+        User Agent: ${navigator.userAgent}
+      `;
+      
+      // Open default email client
+      const mailtoLink = `mailto:quizontal.business@gmail.com?subject=Quizontal Contact: ${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailContent)}`;
+      window.open(mailtoLink, '_blank');
+      
+      return { status: 200 };
+    }
+
+    // Main contact form submission handler
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Reset error states
+      document.querySelectorAll('[id$="Error"]').forEach(el => {
+        el.classList.add('hidden');
+      });
+      
+      // Validate form
+      let isValid = true;
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
+      
+      if (!name) {
+        document.getElementById('nameError').classList.remove('hidden');
+        isValid = false;
+      }
+      
+      if (!email || !validateEmail(email)) {
+        document.getElementById('emailError').classList.remove('hidden');
+        isValid = false;
+      }
+      
+      if (!subject) {
+        document.getElementById('subjectError').classList.remove('hidden');
+        isValid = false;
+      }
+      
+      if (!message) {
+        document.getElementById('messageError').classList.remove('hidden');
+        isValid = false;
+      }
+      
+      if (!isValid) {
+        showNotification('Please fill in all required fields correctly.', 'error');
+        return;
+      }
+      
+      // Get form data
+      const formData = {
+        name,
+        email,
+        subject,
+        message,
+        urgency: document.querySelector('input[name="urgency"]:checked')?.value || 'Normal',
+        subscribe: document.getElementById('subscribe').checked,
+        timestamp: new Date().toISOString(),
+        pageUrl: window.location.href
+      };
+      
+      // Show loading state
+      submitText.classList.add('hidden');
+      submitLoading.classList.remove('hidden');
+      submitButton.disabled = true;
+      
+      // Hide previous alerts
+      successAlert.style.display = 'none';
+      errorAlert.style.display = 'none';
+      
+      try {
+        // Send email
+        await sendEmailDirectly(formData);
+        
+        // Show success
+        successAlert.style.display = 'block';
+        showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Store in localStorage as backup
+        const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+        submissions.push({
+          ...formData,
+          status: 'sent',
+          method: 'direct_email'
+        });
+        localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+      } catch (error) {
+        console.error('Error sending email:', error);
+        
+        // Show error
+        errorAlert.style.display = 'block';
+        showNotification('Failed to send message. Please try again or email us directly.', 'error');
+        
+        // Store in localStorage for later retry
+        const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+        submissions.push({
+          ...formData,
+          status: 'failed',
+          error: error.message
+        });
+        localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+        
+      } finally {
+        // Reset button state
+        submitText.classList.remove('hidden');
+        submitLoading.classList.add('hidden');
+        submitButton.disabled = false;
+      }
+    });
+
+    // Email validation function
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    // ========== COPY TO CLIPBOARD ==========
+    function copyToClipboard(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        showNotification(`${label} copied to clipboard!`, 'success');
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        showNotification('Failed to copy to clipboard', 'error');
+      });
+    }
+
+    // ========== CHAT FUNCTIONALITY ==========
+    const chatWidget = document.getElementById('chatWidget');
+    const chatButton = document.getElementById('chatButton');
+
+    function openChat() {
+      chatWidget.classList.remove('hidden');
+      chatButton.classList.add('hidden');
+      lucide.createIcons();
+    }
+
+    function closeChat() {
+      chatWidget.classList.add('hidden');
+      chatButton.classList.remove('hidden');
+    }
+
+    // ========== FAQ FUNCTIONALITY ==========
+// ========== FAQ FUNCTIONALITY ==========
+function toggleFAQ(index) {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  // Make sure index is valid
+  if (index < 1 || index > faqItems.length) {
+    console.error('Invalid FAQ index:', index);
+    return;
+  }
+  
+  const faqItem = faqItems[index - 1];
+  const icon = faqItem.querySelector('i');
+  
+  // Toggle current FAQ item
+  const isActive = faqItem.classList.contains('active');
+  
+  // Close all FAQ items
+  faqItems.forEach(item => {
+    item.classList.remove('active');
+    const itemIcon = item.querySelector('i');
+    if (itemIcon) {
+      itemIcon.style.transform = 'rotate(0deg)';
+    }
+  });
+  
+  // If the clicked item wasn't active, open it
+  if (!isActive) {
+    faqItem.classList.add('active');
+    if (icon) {
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+  
+  // Reinitialize icons for the rotated chevron
+  lucide.createIcons();
+}
+
+// Initialize FAQ click handlers after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Add click handlers to all FAQ items
+  document.querySelectorAll('.faq-item').forEach((item, index) => {
+    // Remove the inline onclick and add event listener
+    item.removeAttribute('onclick');
+    item.addEventListener('click', function() {
+      toggleFAQ(index + 1);
+    });
+    
+    // Style the FAQ item for better UX
+    item.style.cursor = 'pointer';
+    item.setAttribute('role', 'button');
+    item.setAttribute('aria-expanded', 'false');
+    
+    // Update aria-expanded when toggled
+    item.addEventListener('click', function() {
+      const isExpanded = this.classList.contains('active');
+      this.setAttribute('aria-expanded', isExpanded);
+    });
+  });
+});
+
+    // ========== NOTIFICATION FUNCTION ==========
+    function showNotification(message, type = 'success') {
+      const colors = {
+        success: 'bg-green-500',
+        error: 'bg-red-500',
+        info: 'bg-blue-500'
+      };
+      
+      const icons = {
+        success: 'check-circle',
+        error: 'alert-circle',
+        info: 'info'
+      };
+      
+      // Remove existing notifications
+      document.querySelectorAll('.custom-notification').forEach(n => n.remove());
+      
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `custom-notification ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2`;
+      notification.innerHTML = `
+        <i data-lucide="${icons[type]}" class="h-5 w-5"></i>
+        <span>${message}</span>
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Animate in
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 10);
+      
+      // Animate out after 4 seconds
+      setTimeout(() => {
+        notification.style.transform = 'translateX(120%)';
+        setTimeout(() => {
+          if (notification.parentElement) {
+            notification.remove();
+          }
+        }, 300);
+      }, 4000);
+      
+      // Update icons
+      lucide.createIcons();
+    }
+
+    // ========== NEWSLETTER FORM ==========
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
+      
+      if (!email || !validateEmail(email)) {
+        showNotification('Please enter a valid email address', 'error');
+        return;
+      }
+      
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i data-lucide="loader" class="h-5 w-5 animate-spin mr-2"></i>Subscribing...';
+      submitBtn.disabled = true;
+      
+      // Simulate subscription
+      setTimeout(() => {
+        showNotification('Thank you for subscribing to our newsletter!', 'success');
+        emailInput.value = '';
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Store subscription
+        const subscriptions = JSON.parse(localStorage.getItem('newsletterSubscriptions') || '[]');
+        subscriptions.push({ email, date: new Date().toISOString() });
+        localStorage.setItem('newsletterSubscriptions', JSON.stringify(subscriptions));
+      }, 1500);
+    });
+
+    // ========== ANIMATION ON SCROLL ==========
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.fade-in-up');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+
+    // Set initial state for animation elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Run on load and scroll
+    window.addEventListener('load', () => {
+      animateOnScroll();
+      lucide.createIcons();
+    });
+    window.addEventListener('scroll', animateOnScroll);
+
+    // ========== ENHANCE MOBILE RESPONSIVENESS ==========
+    function enhanceMobileResponsiveness() {
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Make social links more touch-friendly on mobile
+        document.querySelectorAll('.social-link').forEach(link => {
+          link.style.minWidth = '56px';
+          link.style.minHeight = '56px';
+        });
+      }
+    }
+
+    // Run on load and resize
+    window.addEventListener('load', enhanceMobileResponsiveness);
+    window.addEventListener('resize', enhanceMobileResponsiveness);
+
+    // ========== FORM AUTO-SAVE ==========
+    function saveFormDraft() {
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        urgency: document.querySelector('input[name="urgency"]:checked')?.value,
+        subscribe: document.getElementById('subscribe').checked
+      };
+      
+      localStorage.setItem('contactFormDraft', JSON.stringify(formData));
+    }
+
+    function loadFormDraft() {
+      const draft = JSON.parse(localStorage.getItem('contactFormDraft'));
+      if (draft) {
+        document.getElementById('name').value = draft.name || '';
+        document.getElementById('email').value = draft.email || '';
+        document.getElementById('subject').value = draft.subject || '';
+        document.getElementById('message').value = draft.message || '';
+        
+        if (draft.urgency) {
+          document.querySelector(`input[name="urgency"][value="${draft.urgency}"]`).checked = true;
+        }
+        
+        document.getElementById('subscribe').checked = draft.subscribe || false;
+      }
+    }
+
+    // Auto-save form every 5 seconds
+    setInterval(saveFormDraft, 5000);
+    
+    // Load draft on page load
+    window.addEventListener('load', loadFormDraft);
+    
+    // Clear draft on successful submission
+    contactForm.addEventListener('submit', () => {
+      setTimeout(() => {
+        localStorage.removeItem('contactFormDraft');
+      }, 1000);
+    });
+
+    // ========== KEYBOARD SHORTCUTS ==========
+    document.addEventListener('keydown', (e) => {
+      // ESC to close mobile menu and chat
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+        closeChat();
+      }
+      
+      // Ctrl+Enter to submit form
+      if (e.ctrlKey && e.key === 'Enter' && document.activeElement.tagName !== 'TEXTAREA') {
+        contactForm.requestSubmit();
+      }
+    });
+
+  </script>
+</body>
+</html>

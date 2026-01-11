@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Terms of Service | Quizontal - Legal Agreement</title>
+  <meta name="description" content="Terms of Service governing the use of Quizontal's free stock media, AI tools, downloaders, and creative utilities. Read our legal agreement before using our services.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Terms of Service | Quizontal">
+  <meta property="og:description" content="Legal agreement for using Quizontal's creative tools and resources. Understand your rights and responsibilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quizontal.vercel.app/terms-of-service">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://quizontal.vercel.app/terms-of-service">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #374151;
+      overflow-x: hidden;
+    }
+    
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* ========== NAVIGATION - EXACT COPY FROM HOMEPAGE ========== */
+        header {
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-container {
+                padding: 0 2rem;
+            }
+        }
+        
+        /* Logo */
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 640px) {
+            .nav-logo {
+                height: 36px;
+                max-width: 150px;
+            }
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .desktop-nav {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Navigation Links */
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            height: 44px;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(124, 58, 237, 0.05);
+            color: #7c3aed;
+        }
+        
+        .nav-link i {
+            margin-left: 0.25rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .nav-link:hover i {
+            transform: rotate(180deg);
+        }
+        
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            min-width: 120px;
+        }
+        
+        @media (min-width: 640px) {
+            .search-container {
+                min-width: 200px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .search-container {
+                min-width: 240px;
+            }
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.625rem 1rem 0.625rem 2.5rem;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 0.75rem;
+            outline: none;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            background-color: #f9fafb;
+        }
+        
+        .search-input:focus {
+            border-color: #7c3aed;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            pointer-events: none;
+        }
+        
+        /* FIXED: Navigation Dropdown */
+        .nav-item {
+            position: relative;
+        }
+        
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 15px); /* ADDED: More space between nav and dropdown */
+    left: 0;
+    width: 800px;
+    max-width: 33vw;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f3f4f6;
+    
+    /* ADDED: Creates a gap/arrow effect */
+    margin-top: 10px;
+}
+        
+        @media (max-width: 1024px) {
+            .nav-dropdown {
+                width: 600px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-dropdown {
+                width: 400px;
+                left: -100%;
+            }
+        }
+        
+        /* Hover functionality fixed */
+        .nav-item:hover .nav-dropdown,
+        .nav-dropdown:hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        /* Dropdown content grids */
+        .nav-image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .nav-image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #7c3aed;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            height: 44px;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        .cta-button:hover {
+            background-color: #6d28d9;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+        }
+        
+        /* Mobile Menu Button */
+  .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-item {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+    }
+    
+    .mobile-nav-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-nav-link.active i {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .mobile-dropdown.active {
+      max-height: 2000px;
+    }
+    
+    .mobile-dropdown-content {
+      padding: 1rem;
+    }
+    
+    .mobile-image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    @media (max-width: 480px) {
+      .mobile-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .mobile-image-item {
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .mobile-image-item img {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+    }
+    
+    .mobile-image-item p {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #374151;
+    }
+    
+    .mobile-dropdown-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #6b7280;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .mobile-dropdown-link:hover {
+      color: #7c3aed;
+      background-color: #f3f4f6;
+    }
+    
+    .mobile-video-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .mobile-video-category {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      text-decoration: none;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    
+    .mobile-video-category:hover {
+      border-color: #7c3aed;
+      background: #f9fafb;
+    }
+    
+    .mobile-video-category i {
+      color: #7c3aed;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== TERMS OF SERVICE CONTENT ========== */
+    .terms-hero {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    @media (min-width: 768px) {
+      .terms-hero {
+        padding: 6rem 0;
+      }
+    }
+    
+    .terms-content {
+      padding: 4rem 0;
+      background: white;
+    }
+    
+    .terms-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .terms-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      color: #1f2937;
+    }
+    
+    .section-title i {
+      color: #7c3aed;
+    }
+    
+    .notice-box {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .warning-box {
+      background: #fee2e2;
+      border-left: 4px solid #ef4444;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .info-box {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .success-box {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .definition-list {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .definition-item {
+      margin-bottom: 1rem;
+    }
+    
+    .definition-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .definition-term {
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+    
+    .definition-description {
+      color: #6b7280;
+      margin-left: 1rem;
+    }
+    
+    .acceptance-card {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    
+    .legal-badge {
+      background: #374151;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+    
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-table th {
+      background: #f3f4f6;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    
+    .service-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+    
+    .service-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .prohibited-list {
+      background: #fef2f2;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .prohibited-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: #7f1d1d;
+    }
+    
+    .prohibited-item i {
+      color: #ef4444;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+    
+    /* ========== FOOTER STYLES ========== */
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        height: 36px;
+        max-width: 140px;
+      }
+    }
+    
+    /* ========== MOBILE MENU STYLES ========== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-item {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+    }
+    
+    .mobile-nav-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-nav-link.active i {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .mobile-dropdown.active {
+      max-height: 2000px;
+    }
+    
+    .mobile-dropdown-content {
+      padding: 1rem;
+    }
+    
+    .mobile-dropdown-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #6b7280;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .mobile-dropdown-link:hover {
+      color: #7c3aed;
+      background-color: #f3f4f6;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .gradient-text {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .last-updated {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+    
+    .toc-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: #374151;
+    }
+    
+    .toc-item:hover {
+      background: #f3f4f6;
+      color: #7c3aed;
+    }
+    
+    .toc-number {
+      background: #e0e7ff;
+      color: #4f46e5;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Fixed Navigation -->
+  <header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+          alt="Quizontal Logo" 
+          class="nav-logo"
+          loading="eager"
+        >
+      </a>
+
+      <!-- Desktop Search Bar -->
+      <div class="search-container hidden lg:block">
+        <form action="https://quizontal.vercel.app/" method="GET" target="_blank">
+          <i data-lucide="search" class="search-icon h-4 w-4"></i>
+          <input 
+            type="search" 
+            name="q"
+            placeholder="Search images, wallpapers, videos..." 
+            class="search-input"
+            required
+          >
+        </form>
+      </div>
+
+      <!-- Desktop Navigation -->
+<!-- Updated Desktop Navigation -->
+<nav class="desktop-nav">
+  <!-- Stock Media Dropdown -->
+  <div class="nav-item">
+    <a href="#" class="nav-link">
+      <span>Stock Media</span>
+      <i data-lucide="chevron-down" class="h-4 w-4"></i>
+    </a>
+    <div class="nav-dropdown">
+      <h4 class="font-semibold text-gray-900 mb-4 text-lg">Stock Media Library</h4>
+      
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <!-- Images -->
+        <div>
+          <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+            <i data-lucide="image" class="h-4 w-4 text-purple-600"></i>
+            Images
+          </h5>
+          <div class="space-y-2">
+            <a href="https://quizontal.vercel.app/image-gallery/?q=nature" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Nature & Landscape</a>
+            <a href="https://quizontal.vercel.app/image-gallery/?q=abstract" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Abstract Art</a>
+            <a href="https://quizontal.vercel.app/image-gallery/?q=business" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Business & Technology</a>
+            <a href="https://quizontal.vercel.app/image-gallery/?q=wallpapers" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Wallpapers</a>
+          </div>
+        </div>
+        
+        <!-- Videos -->
+        <div>
+          <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+            <i data-lucide="video" class="h-4 w-4 text-blue-600"></i>
+            Videos
+          </h5>
+          <div class="space-y-2">
+            <a href="https://quizontal.vercel.app/video-gallery/?q=stock+videos" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Stock Videos</a>
+            <a href="https://quizontal.vercel.app/video-gallery/?q=4k+videos" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">4K Videos</a>
+            <a href="https://quizontal.vercel.app/video-gallery/?q=background+videos" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Background Videos</a>
+            <a href="https://quizontal.vercel.app/video-gallery/?q=motion+graphics" target="_blank" class="block text-sm text-gray-600 hover:text-purple-600 hover:bg-gray-50 p-2 rounded">Motion Graphics</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Stats -->
+      <div class="bg-gray-50 rounded-lg p-4">
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div>
+            <div class="text-lg font-bold text-gray-900">10M+</div>
+            <div class="text-xs text-gray-600">Assets</div>
+          </div>
+          <div>
+            <div class="text-lg font-bold text-gray-900">100%</div>
+            <div class="text-xs text-gray-600">Copyright Free</div>
+          </div>
+          <div>
+            <div class="text-lg font-bold text-gray-900">4K</div>
+            <div class="text-xs text-gray-600">Quality</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- AI Tools Dropdown -->
+  <div class="nav-item">
+    <a href="#" class="nav-link">
+      <span>AI Tools</span>
+      <i data-lucide="chevron-down" class="h-4 w-4"></i>
+    </a>
+    <div class="nav-dropdown">
+      <h4 class="font-semibold text-gray-900 mb-4 text-lg">AI-Powered Tools</h4>
+      
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Visual AI Tools -->
+        <div>
+          <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+            <i data-lucide="palette" class="h-4 w-4 text-purple-600"></i>
+            Visual AI Tools
+          </h5>
+          <div class="space-y-3">
+            <a href="/ai-tools/ai-image-generator/index.html" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-purple-400 hover:shadow-sm transition-all">
+              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                <i data-lucide="sparkles" class="h-5 w-5 text-purple-600"></i>
+              </div>
+              <div>
+                <h6 class="font-medium text-gray-900 text-sm">AI Image Generator</h6>
+                <p class="text-xs text-gray-500">Create images from text</p>
+              </div>
+            </a>
+            <a href="https://quizontal.vercel.app/ai-tools/removebg" aria-disabled="true" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-green-400 hover:shadow-sm transition-all">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <i data-lucide="scissors" class="h-5 w-5 text-green-600"></i>
+              </div>
+              <div>
+                <h6 class="font-medium text-gray-900 text-sm">Background Remover</h6>
+                <p class="text-xs text-gray-500">Remove backgrounds instantly</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Text AI Tools -->
+        <div>
+          <h5 class="font-medium text-gray-900 mb-3 flex items-center gap-2">
+            <i data-lucide="type" class="h-4 w-4 text-blue-600"></i>
+            Text AI Tools
+          </h5>
+          <div class="space-y-3">
+            <a href="https://quizontal.vercel.app/ai-tools/paraphrase" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:shadow-sm transition-all">
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                <i data-lucide="edit-3" class="h-5 w-5 text-blue-600"></i>
+              </div>
+              <div>
+                <h6 class="font-medium text-gray-900 text-sm">AI Text Paraphraser</h6>
+                <p class="text-xs text-gray-500">Refine your text with AI</p>
+              </div>
+            </a>
+            <a href="https://quizontal.vercel.app/ai-tools/humanize" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-green-400 hover:shadow-sm transition-all">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <i data-lucide="user" class="h-5 w-5 text-green-600"></i>
+              </div>
+              <div>
+                <h6 class="font-medium text-gray-900 text-sm">AI Text Humanizer</h6>
+                <p class="text-xs text-gray-500">Make AI text sound human</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Downloaders Dropdown -->
+  <div class="nav-item">
+    <a href="#" class="nav-link">
+      <span>Downloaders</span>
+      <i data-lucide="chevron-down" class="h-4 w-4"></i>
+    </a>
+    <div class="nav-dropdown">
+      <h4 class="font-semibold text-gray-900 mb-4 text-lg">Video & Audio Downloaders</h4>
+      
+      <div class="space-y-4">
+        <!-- YouTube Downloader -->
+        <a href="https://quizontal.vercel.app/downloaders/youtube" class="flex items-center gap-4 p-4 bg-red-50 rounded-xl hover:bg-red-100 transition-colors group">
+          <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center">
+            <i data-lucide="youtube" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="flex-1">
+            <h5 class="font-semibold text-gray-900">YouTube Downloader</h5>
+            <p class="text-sm text-gray-600">Download videos & audio in HD/MP3</p>
+          </div>
+          <i data-lucide="arrow-right" class="h-5 w-5 text-gray-400 group-hover:text-red-600"></i>
+        </a>
+        
+        <!-- Facebook Downloader -->
+        <a href="https://quizontal.vercel.app/downloaders/facebook" class="flex items-center gap-4 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors group">
+          <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+            <i data-lucide="facebook" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="flex-1">
+            <h5 class="font-semibold text-gray-900">Facebook Downloader</h5>
+            <p class="text-sm text-gray-600">Download videos, reels & stories</p>
+          </div>
+          <i data-lucide="arrow-right" class="h-5 w-5 text-gray-400 group-hover:text-blue-600"></i>
+        </a>
+        
+        <!-- TikTok Downloader -->
+        <a href="https://quizontal.vercel.app/downloaders/tiktok" class="flex items-center gap-4 p-4 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors group">
+          <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center">
+            <i data-lucide="music" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="flex-1">
+            <h5 class="font-semibold text-gray-900">TikTok Downloader</h5>
+            <p class="text-sm text-gray-600">Download TikTok videos without watermark</p>
+          </div>
+          <i data-lucide="arrow-right" class="h-5 w-5 text-gray-400 group-hover:text-pink-600"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Utility Tools Dropdown -->
+  <div class="nav-item">
+    <a href="#" class="nav-link">
+      <span>Utility Tools</span>
+      <i data-lucide="chevron-down" class="h-4 w-4"></i>
+    </a>
+    <div class="nav-dropdown">
+      <h4 class="font-semibold text-gray-900 mb-4 text-lg">Developer & Creator Tools</h4>
+      
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Calculator Tools -->
+        <a href="/tools/calculator/index.html" class="p-3 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors group">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="calculator" class="h-4 w-4 text-purple-600"></i>
+            <h5 class="font-medium text-gray-900">Calculator Tools</h5>
+          </div>
+          <p class="text-xs text-gray-600">Unit converters, color contrast, image size</p>
+        </a>
+        
+        <!-- SEO Tools -->
+        <a href="/tools/seo-tools/index.html" class="p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="search" class="h-4 w-4 text-blue-600"></i>
+            <h5 class="font-medium text-gray-900">SEO Tools</h5>
+          </div>
+          <p class="text-xs text-gray-600">Keyword checker, meta tag analyzer</p>
+        </a>
+        
+        <!-- JS Obfuscator -->
+        <a href="/tools/js-obfuscator/index.html" class="p-3 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors group">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="shield-off" class="h-4 w-4 text-yellow-600"></i>
+            <h5 class="font-medium text-gray-900">JS Obfuscator</h5>
+          </div>
+          <p class="text-xs text-gray-600">Protect your JavaScript code</p>
+        </a>
+        
+        <!-- Text Tools -->
+        <a href="/tools/text-and-utility-tools/index.html" class="p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="file-text" class="h-4 w-4 text-green-600"></i>
+            <h5 class="font-medium text-gray-900">Text Tools</h5>
+          </div>
+          <p class="text-xs text-gray-600">Word counter, case converter, more</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Blog Link -->
+  <a href="/blog" class="nav-link">Blog</a>
+  
+  <!-- CTA Button -->
+  <button class="cta-button ml-2">
+    Get Started Free
+  </button>
+</nav>
+
+      <!-- Mobile Search and Menu -->
+      <div class="flex items-center gap-4 lg:hidden">
+        <div class="search-container">
+          <form action="https://quizontal.vercel.app/" method="GET" target="_blank">
+            <i data-lucide="search" class="search-icon h-4 w-4"></i>
+            <input 
+              type="search" 
+              name="q"
+              placeholder="Search..." 
+              class="search-input"
+              required
+            >
+          </form>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-header">
+    <a href="/" class="flex items-center">
+      <img 
+        src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+        alt="Quizontal Logo" 
+        class="h-10 w-auto max-w-[160px]"
+        loading="eager"
+      >
+    </a>
+    <button class="mobile-menu-btn" id="closeMobileMenu">
+      <i data-lucide="x" class="h-6 w-6"></i>
+    </button>
+  </div>
+  
+  <div class="mobile-nav">
+    <!-- Stock Media Dropdown -->
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" data-dropdown="stock-media">
+        <span>Stock Media</span>
+        <i data-lucide="chevron-down" class="h-5 w-5"></i>
+      </button>
+      <div class="mobile-dropdown" id="stock-media-dropdown">
+        <div class="mobile-dropdown-content">
+          <h5 class="font-medium text-gray-900 mb-3 text-sm">Images</h5>
+          <div class="mobile-image-grid">
+            <a href="https://quizontal.vercel.app/image-gallery/?q=nature" target="_blank" class="mobile-image-item">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Nature">
+              <p>Nature</p>
+            </a>
+            <a href="https://quizontal.vercel.app/image-gallery/?q=abstract" target="_blank" class="mobile-image-item">
+              <img src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/abstract-nav-bar.jpg?raw=true?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Abstract">
+              <p>Abstract</p>
+            </a>
+            <a href="https://quizontal.vercel.app/image-gallery/?q=business" target="_blank" class="mobile-image-item">
+              <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Business">
+              <p>Business</p>
+            </a>
+            <a href="https://quizontal.vercel.app/image-gallery/?q=wallpapers" target="_blank" class="mobile-image-item">
+              <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Wallpapers">
+              <p>Wallpapers</p>
+            </a>
+          </div>
+          
+          <h5 class="font-medium text-gray-900 mb-2 text-sm mt-4">Videos</h5>
+          <div class="mobile-video-categories">
+            <a href="https://quizontal.vercel.app/video-gallery/?q=stock+videos" target="_blank" class="mobile-video-category">
+              <i data-lucide="video" class="h-4 w-4"></i>
+              <span class="text-sm">Stock Videos</span>
+            </a>
+            <a href="https://quizontal.vercel.app/video-gallery/?q=4k+videos" target="_blank" class="mobile-video-category">
+              <i data-lucide="tv" class="h-4 w-4"></i>
+              <span class="text-sm">4K Videos</span>
+            </a>
+            <a href="https://quizontal.vercel.app/video-gallery/?q=background+videos" target="_blank" class="mobile-video-category">
+              <i data-lucide="play-circle" class="h-4 w-4"></i>
+              <span class="text-sm">Background Videos</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- AI Tools Dropdown -->
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" data-dropdown="ai-tools">
+        <span>AI Tools</span>
+        <i data-lucide="chevron-down" class="h-5 w-5"></i>
+      </button>
+      <div class="mobile-dropdown" id="ai-tools-dropdown">
+        <div class="mobile-dropdown-content">
+          <h5 class="font-medium text-gray-900 mb-3 text-sm">Visual AI Tools</h5>
+          <div class="space-y-2 mb-4">
+            <a href="/ai-tools/ai-image-generator/index.html" class="mobile-dropdown-link flex items-center gap-2">
+              <i data-lucide="sparkles" class="h-4 w-4 text-purple-600"></i>
+              AI Image Generator
+            </a>
+            <a href="https://quizontal.vercel.app/ai-tools/removebg" aria-disabled="true" class="mobile-dropdown-link flex items-center gap-2">
+              <i data-lucide="scissors" class="h-4 w-4 text-green-600"></i>
+              Background Remover
+            </a>
+          </div>
+          
+          <h5 class="font-medium text-gray-900 mb-2 text-sm">Text AI Tools</h5>
+          <div class="space-y-2">
+            <a href="https://quizontal.vercel.app/ai-tools/paraphrase" class="mobile-dropdown-link flex items-center gap-2">
+              <i data-lucide="edit-3" class="h-4 w-4 text-blue-600"></i>
+              Text Paraphraser
+            </a>
+            <a href="https://quizontal.vercel.app/ai-tools/humanize" class="mobile-dropdown-link flex items-center gap-2">
+              <i data-lucide="user" class="h-4 w-4 text-green-600"></i>
+              Text Humanizer
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Downloaders Dropdown -->
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" data-dropdown="downloaders">
+        <span>Downloaders</span>
+        <i data-lucide="chevron-down" class="h-5 w-5"></i>
+      </button>
+      <div class="mobile-dropdown" id="downloaders-dropdown">
+        <div class="mobile-dropdown-content">
+          <div class="space-y-3">
+            <a href="https://quizontal.vercel.app/downloaders/youtube" class="mobile-video-category bg-red-50 border-red-200">
+              <i data-lucide="youtube" class="h-4 w-4 text-red-600"></i>
+              <span class="text-sm">YouTube Downloader</span>
+            </a>
+            <a href="https://quizontal.vercel.app/downloaders/facebook" class="mobile-video-category bg-blue-50 border-blue-200">
+              <i data-lucide="facebook" class="h-4 w-4 text-blue-600"></i>
+              <span class="text-sm">Facebook Downloader</span>
+            </a>
+            <a href="https://quizontal.vercel.app/downloaders/tiktok" class="mobile-video-category bg-pink-50 border-pink-200">
+              <i data-lucide="music" class="h-4 w-4 text-pink-600"></i>
+              <span class="text-sm">TikTok Downloader</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Utility Tools Dropdown -->
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" data-dropdown="utility">
+        <span>Utility Tools</span>
+        <i data-lucide="chevron-down" class="h-5 w-5"></i>
+      </button>
+      <div class="mobile-dropdown" id="utility-dropdown">
+        <div class="mobile-dropdown-content">
+          <div class="grid grid-cols-2 gap-2 mb-4">
+            <a href="/tools/calculator/index.html" class="bg-purple-50 border border-purple-200 rounded-lg p-3 text-center hover:bg-purple-100">
+              <i data-lucide="calculator" class="h-5 w-5 text-purple-600 mx-auto mb-1"></i>
+              <span class="text-xs font-medium">Calculators</span>
+            </a>
+            <a href="/tools/seo-tools/index.html" class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center hover:bg-blue-100">
+              <i data-lucide="search" class="h-5 w-5 text-blue-600 mx-auto mb-1"></i>
+              <span class="text-xs font-medium">SEO Tools</span>
+            </a>
+            <a href="/tools/js-obfuscator/index.html" class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center hover:bg-yellow-100">
+              <i data-lucide="shield-off" class="h-5 w-5 text-yellow-600 mx-auto mb-1"></i>
+              <span class="text-xs font-medium">JS Obfuscator</span>
+            </a>
+            <a href="/tools/text-and-utility-tools/index.html" class="bg-green-50 border border-green-200 rounded-lg p-3 text-center hover:bg-green-100">
+              <i data-lucide="file-text" class="h-5 w-5 text-green-600 mx-auto mb-1"></i>
+              <span class="text-xs font-medium">Text Tools</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Other Links -->
+    <a href="/blog" class="mobile-nav-link w-full justify-start">Blog</a>
+  </div>
+  
+  <div class="mobile-cta">
+    <button class="cta-button w-full" onclick="closeMobileMenu()">
+      Get Started Free
+    </button>
+  </div>
+</div>
+
+  <!-- Hero Section -->
+  <section class="terms-hero">
+    <div class="content-container">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-lg mb-6">
+          <i data-lucide="file-text" class="h-8 w-8 text-purple-600"></i>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Terms of Service
+        </h1>
+        <p class="text-xl text-gray-600 mb-6">
+          Legal agreement governing your use of Quizontal's creative tools and resources.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div class="flex items-center gap-2 text-gray-600">
+            <i data-lucide="calendar" class="h-5 w-5"></i>
+            <span>Effective: January 11, 2025</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-600">
+            <i data-lucide="clock" class="h-5 w-5"></i>
+            <span>Last Updated: January 11, 2025</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-600">
+            <i data-lucide="book-open" class="h-5 w-5"></i>
+            <span>Reading time: 12 minutes</span>
+          </div>
+        </div>
+        
+        <!-- Notice Box -->
+        <div class="notice-box max-w-3xl mx-auto mt-8">
+          <div class="flex items-start gap-3">
+            <i data-lucide="alert-circle" class="h-6 w-6 text-yellow-600 mt-0.5"></i>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-2">Important Legal Notice</h4>
+              <p class="text-gray-700">
+                By accessing or using Quizontal, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, please do not use our services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms Content -->
+  <section class="terms-content">
+    <div class="content-container">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Quick Navigation -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8 sticky top-24 z-50">
+          <h3 class="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <i data-lucide="navigation" class="h-5 w-5 text-purple-600"></i>
+            Quick Navigation
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <a href="#acceptance" class="toc-item">
+              <span class="toc-number">1</span>
+              <span>Acceptance</span>
+            </a>
+            <a href="#services" class="toc-item">
+              <span class="toc-number">2</span>
+              <span>Our Services</span>
+            </a>
+            <a href="#eligibility" class="toc-item">
+              <span class="toc-number">3</span>
+              <span>Eligibility</span>
+            </a>
+            <a href="#user-responsibilities" class="toc-item">
+              <span class="toc-number">4</span>
+              <span>Responsibilities</span>
+            </a>
+            <a href="#intellectual-property" class="toc-item">
+              <span class="toc-number">5</span>
+              <span>Intellectual Property</span>
+            </a>
+            <a href="#limitations" class="toc-item">
+              <span class="toc-number">6</span>
+              <span>Limitations</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 1. Acceptance of Terms -->
+        <div id="acceptance" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="check-circle" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">1. Acceptance of Terms</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            Welcome to <strong>Quizontal</strong> (accessible at <strong>quizontal.vercel.app</strong>). By accessing or using our website and services, you agree to be bound by these Terms of Service ("Terms"). These Terms constitute a legally binding agreement between you ("User") and Quizontal ("we," "us," or "our").
+          </p>
+          
+          <p class="text-gray-700 mb-4">
+            If you are accessing our services on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms.
+          </p>
+          
+          <div class="info-box">
+            <p class="text-gray-700">
+              <strong>Modification Right:</strong> We reserve the right to modify these Terms at any time. We will notify users of material changes via email (if provided) or by posting a notice on our website. Continued use of our services after changes constitutes acceptance of the modified Terms.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Description of Services -->
+        <div id="services" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="zap" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">2. Description of Services</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            Quizontal provides a comprehensive suite of creative and utility tools through our website. Our services include:
+          </p>
+          
+          <table class="service-table">
+            <thead>
+              <tr>
+                <th>Service Category</th>
+                <th>Description</th>
+                <th>Access</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Stock Media Library</strong></td>
+                <td>High-quality images, videos, and wallpapers from Pexels API and other sources</td>
+                <td>Free with limitations</td>
+              </tr>
+              <tr>
+                <td><strong>AI Tools</strong></td>
+                <td>AI Image Generator, Background Remover, Text Paraphraser, Text Humanizer</td>
+                <td>Free with usage limits</td>
+              </tr>
+              <tr>
+                <td><strong>Downloaders</strong></td>
+                <td>YouTube, Facebook, TikTok video downloaders (for personal use)</td>
+                <td>Free</td>
+              </tr>
+              <tr>
+                <td><strong>Utility Tools</strong></td>
+                <td>Calculators, SEO tools, JS Obfuscator, text utilities</td>
+                <td>Free</td>
+              </tr>
+              <tr>
+                <td><strong>Creative Resources</strong></td>
+                <td>Blog, tutorials, design resources</td>
+                <td>Free</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="notice-box mt-6">
+            <p class="text-gray-700">
+              <strong>Service Availability:</strong> We strive to maintain 99.9% uptime but do not guarantee uninterrupted service. We may temporarily suspend services for maintenance, upgrades, or security reasons without prior notice.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. User Eligibility -->
+        <div id="eligibility" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="user-check" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">3. User Eligibility</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            By using Quizontal, you represent and warrant that:
+          </p>
+          
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+            <li>You are at least <strong>13 years of age</strong> (or the age of digital consent in your country)</li>
+            <li>You have the legal capacity to enter into binding contracts</li>
+            <li>You are not prohibited from receiving our services under applicable laws</li>
+            <li>You will not use our services for any illegal or unauthorized purpose</li>
+            <li>All information you provide is accurate, current, and complete</li>
+          </ul>
+          
+          <div class="warning-box">
+            <div class="flex items-start gap-3">
+              <i data-lucide="alert-triangle" class="h-6 w-6 text-red-600 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Age Restriction</h4>
+                <p class="text-gray-700">
+                  If you are under 13, you may not use our services. If we learn that we have collected personal information from a child under 13, we will delete that information immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. User Accounts -->
+        <div id="user-accounts" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="key" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">4. User Accounts</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            While many features are available without registration, certain services may require account creation. When you create an account:
+          </p>
+          
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+            <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+            <li>You agree to immediately notify us of any unauthorized use of your account</li>
+            <li>You are responsible for all activities that occur under your account</li>
+            <li>We reserve the right to disable accounts that violate these Terms</li>
+          </ul>
+          
+          <div class="definition-list">
+            <h4 class="font-semibold text-gray-900 mb-3">Account Security Responsibilities:</h4>
+            <div class="definition-item">
+              <div class="definition-term">Password Protection</div>
+              <div class="definition-description">Use strong, unique passwords and enable two-factor authentication if available</div>
+            </div>
+            <div class="definition-item">
+              <div class="definition-term">Activity Monitoring</div>
+              <div class="definition-description">Regularly review account activity and report suspicious behavior</div>
+            </div>
+            <div class="definition-item">
+              <div class="definition-term">Session Management</div>
+              <div class="definition-description">Log out from shared devices and clear browser cache when using public computers</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. User Responsibilities -->
+        <div id="user-responsibilities" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="shield" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">5. User Responsibilities</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            As a user of Quizontal, you agree to:
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <h4 class="font-semibold">Comply with Laws</h4>
+              </div>
+              <p class="text-sm text-gray-600">Use services in accordance with all applicable laws and regulations</p>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <h4 class="font-semibold">Respect Copyright</h4>
+              </div>
+              <p class="text-sm text-gray-600">Only download and use content for permitted purposes</p>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <h4 class="font-semibold">Maintain Security</h4>
+              </div>
+              <p class="text-sm text-gray-600">Not attempt to bypass security measures or access unauthorized areas</p>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="check" class="h-5 w-5 text-green-600"></i>
+                <h4 class="font-semibold">Provide Accurate Info</h4>
+              </div>
+              <p class="text-sm text-gray-600">Supply accurate information when required</p>
+            </div>
+          </div>
+          
+          <!-- Prohibited Activities -->
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Prohibited Activities</h3>
+          <div class="prohibited-list">
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Using our services for illegal activities or promoting illegal content</span>
+            </div>
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Attempting to reverse engineer, decompile, or hack our services</span>
+            </div>
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Uploading viruses, malware, or harmful code</span>
+            </div>
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Scraping, crawling, or using automated tools to access our services</span>
+            </div>
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Impersonating others or providing false information</span>
+            </div>
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Interfering with or disrupting service functionality</span>
+            </div>
+            <div class="prohibited-item">
+              <i data-lucide="x-circle" class="h-5 w-5"></i>
+              <span>Using downloaders to violate platform terms of service</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Intellectual Property -->
+        <div id="intellectual-property" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="copyright" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">6. Intellectual Property Rights</h2>
+            <span class="legal-badge">Important</span>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            All intellectual property rights in our services and website content are owned by Quizontal or our licensors. This includes:
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="border border-gray-200 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="code" class="h-5 w-5 text-purple-600"></i>
+                <h4 class="font-semibold">Our Property</h4>
+              </div>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Website design and layout</li>
+                <li>• Original code and software</li>
+                <li>• Brand names and logos</li>
+                <li>• Documentation and tutorials</li>
+                <li>• AI algorithms and models</li>
+              </ul>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="image" class="h-5 w-5 text-blue-600"></i>
+                <h4 class="font-semibold">Third-Party Content</h4>
+              </div>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Stock images from Pexels API</li>
+                <li>• Videos from external sources</li>
+                <li>• Fonts and design assets</li>
+                <li>• Open-source libraries</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">License Grant</h3>
+          <p class="text-gray-700 mb-4">
+            We grant you a limited, non-exclusive, non-transferable, revocable license to:
+          </p>
+          
+          <div class="success-box">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="h-6 w-6 text-green-600 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Permitted Uses</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li>• Access and use our services for personal or commercial projects</li>
+                  <li>• Download and use stock media according to Pexels license terms</li>
+                  <li>• Generate AI content for your creative projects</li>
+                  <li>• Use utility tools for development and SEO purposes</li>
+                  <li>• Share content with proper attribution where required</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="warning-box mt-6">
+            <div class="flex items-start gap-3">
+              <i data-lucide="ban" class="h-6 w-6 text-red-600 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Restricted Uses</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li>• Reselling or redistributing our services or content</li>
+                  <li>• Using our brand or trademarks without permission</li>
+                  <li>• Creating derivative works from our source code</li>
+                  <li>• Using content for illegal or harmful purposes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Third-Party Services -->
+        <div id="third-party" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="globe" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">7. Third-Party Services and Content</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            Quizontal integrates with and uses various third-party services:
+          </p>
+          
+          <table class="service-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Purpose</th>
+                <th>Terms</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pexels API</strong></td>
+                <td>Stock images and videos</td>
+                <td><a href="https://www.pexels.com/license/" target="_blank" class="text-purple-600 hover:underline">Pexels License</a></td>
+              </tr>
+              <tr>
+                <td><strong>Google AdSense</strong></td>
+                <td>Advertising and monetization</td>
+                <td><a href="https://policies.google.com/technologies/ads" target="_blank" class="text-purple-600 hover:underline">AdSense Policy</a></td>
+              </tr>
+              <tr>
+                <td><strong>Vercel</strong></td>
+                <td>Hosting and deployment</td>
+                <td><a href="https://vercel.com/legal/terms" target="_blank" class="text-purple-600 hover:underline">Vercel Terms</a></td>
+              </tr>
+              <tr>
+                <td><strong>Social Media Platforms</strong></td>
+                <td>Downloader functionality</td>
+                <td>Respective platform terms</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="notice-box mt-6">
+            <p class="text-gray-700">
+              <strong>Disclaimer:</strong> We are not responsible for third-party content, services, or their terms. You use third-party services at your own risk. Downloaders are provided for personal use only and must comply with platform terms.
+            </p>
+          </div>
+        </div>
+
+        <!-- 8. Limitations of Liability -->
+        <div id="limitations" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="alert-octagon" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">8. Limitations of Liability</h2>
+            <span class="legal-badge">Legal Notice</span>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            To the maximum extent permitted by law:
+          </p>
+          
+          <div class="warning-box">
+            <div class="flex items-start gap-3">
+              <i data-lucide="shield-off" class="h-6 w-6 text-red-600 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Disclaimer of Warranties</h4>
+                <p class="text-gray-700">
+                  Our services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that:
+                </p>
+                <ul class="list-disc pl-6 text-gray-700 mt-2 space-y-1">
+                  <li>Services will be uninterrupted or error-free</li>
+                  <li>Results from AI tools will meet your expectations</li>
+                  <li>Content is accurate, complete, or reliable</li>
+                  <li>Services will be secure or free from viruses</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-box mt-6">
+            <div class="flex items-start gap-3">
+              <i data-lucide="scale" class="h-6 w-6 text-blue-600 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Limitation of Liability</h4>
+                <p class="text-gray-700">
+                  In no event shall Quizontal, its directors, employees, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:
+                </p>
+                <ul class="list-disc pl-6 text-gray-700 mt-2 space-y-1">
+                  <li>Your access to or use of or inability to access or use the services</li>
+                  <li>Any conduct or content of any third party on the services</li>
+                  <li>Any content obtained from the services</li>
+                  <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+            <p class="text-gray-700 text-sm">
+              <strong>Maximum Liability:</strong> Our total liability to you for all claims arising from or related to the services shall not exceed the amount you have paid us in the past six months, or $100 USD, whichever is greater.
+            </p>
+          </div>
+        </div>
+
+        <!-- 9. Indemnification -->
+        <div id="indemnification" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="shield" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">9. Indemnification</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            You agree to defend, indemnify, and hold harmless Quizontal and its affiliates, directors, officers, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation, reasonable legal and accounting fees, arising out of or in any way connected with:
+          </p>
+          
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Your access to or use of our services</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any third-party right, including intellectual property rights</li>
+            <li>Any content you submit, post, or transmit through our services</li>
+            <li>Your use of downloaded content in violation of license terms</li>
+            <li>Your use of AI-generated content in illegal or harmful ways</li>
+          </ul>
+        </div>
+
+        <!-- 10. Termination -->
+        <div id="termination" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="power" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">10. Termination</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            We may terminate or suspend your access to our services immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms.
+          </p>
+          
+          <p class="text-gray-700 mb-4">
+            Upon termination, your right to use our services will cease immediately. If you wish to terminate your account, you may simply discontinue using our services or contact us to delete your account data.
+          </p>
+          
+          <div class="info-box">
+            <p class="text-gray-700">
+              <strong>Survival:</strong> All provisions of these Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+            </p>
+          </div>
+        </div>
+
+        <!-- 11. Governing Law -->
+        <div id="governing-law" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="scale" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">11. Governing Law and Dispute Resolution</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            These Terms shall be governed and construed in accordance with the laws of Sri Lanka, without regard to its conflict of law provisions.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Informal Resolution</h4>
+              <p class="text-sm text-gray-600">We prefer to resolve disputes informally. Please contact us first with any concerns.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Arbitration</h4>
+              <p class="text-sm text-gray-600">Any disputes shall be resolved through binding arbitration in Sri Lanka.</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-700">
+            Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions will remain in effect.
+          </p>
+        </div>
+
+        <!-- 12. Contact Information -->
+        <div id="contact" class="terms-section">
+          <div class="section-title">
+            <i data-lucide="mail" class="h-6 w-6"></i>
+            <h2 class="text-2xl font-bold">12. Contact Information</h2>
+          </div>
+          
+          <p class="text-gray-700 mb-4">
+            For questions about these Terms of Service, please contact us:
+          </p>
+          
+          <div class="acceptance-card">
+            <h3 class="text-2xl font-bold mb-4">Quizontal Legal Department</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="text-left">
+                <h4 class="font-semibold mb-2 text-blue-100">Contact Details</h4>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="mail" class="h-5 w-5"></i>
+                    <span>quizontal.business@gmail.com</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="phone" class="h-5 w-5"></i>
+                    <span>+94 77 612 1326</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="globe" class="h-5 w-5"></i>
+                    <span>quizontal.vercel.app</span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-left">
+                <h4 class="font-semibold mb-2 text-blue-100">Response Time</h4>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="clock" class="h-5 w-5"></i>
+                    <span>Within 48 hours for legal inquiries</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="calendar" class="h-5 w-5"></i>
+                    <span>Business days: Monday - Friday</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-blue-100 text-sm">
+              For urgent legal matters, please include "URGENT LEGAL" in your email subject line.
+            </p>
+          </div>
+        </div>
+
+        <!-- Acceptance Section -->
+        <div class="acceptance-card mt-8">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <i data-lucide="check" class="h-8 w-8"></i>
+            <h3 class="text-2xl font-bold">Agreement Acceptance</h3>
+          </div>
+          <p class="mb-6">
+            By accessing or using Quizontal's services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="scrollToTop()" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Back to Top
+            </button>
+            <button onclick="window.print()" class="bg-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors">
+              Print Terms
+            </button>
+          </div>
+        </div>
+
+        <!-- Final Note -->
+        <div class="mt-8 text-center">
+          <p class="text-gray-600 text-sm">
+            These Terms of Service were last updated on January 11, 2025. Please review them periodically for updates.
+          </p>
+          <div class="flex items-center justify-center gap-4 mt-4">
+            <a href="/privacy-policy/index.html" class="text-purple-600 hover:underline text-sm">Privacy Policy</a>
+            <span class="text-gray-400">•</span>
+            <a href="/disclaimer/index.html" class="text-purple-600 hover:underline text-sm">Disclaimer</a>
+            <span class="text-gray-400">•</span>
+            <a href="/cookies/index.html" class="text-purple-600 hover:underline text-sm">Cookie Policy</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="content-container py-12">
+      <!-- Newsletter -->
+      <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-6 md:p-8 mb-8 md:mb-12 fade-in-up">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3">Stay Updated with Creative Insights</h3>
+            <p class="text-blue-100 text-sm md:text-base">
+              Subscribe to our newsletter for the latest design trends and AI tips.
+            </p>
+          </div>
+          <div>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="flex-1 px-4 md:px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm md:text-base"
+                required
+              >
+              <button 
+                type="submit" 
+                class="bg-white text-purple-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap text-sm md:text-base"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-xs md:text-sm text-blue-200 mt-2 md:mt-3">By subscribing, you agree to our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Links - FIXED MOBILE COLUMNS -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+        <!-- Logo and Social -->
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="inline-block mb-4">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true" 
+              alt="Quizontal Logo" 
+              class="footer-logo"
+              loading="lazy"
+            >
+          </a>
+          <p class="mt-2 md:mt-4 text-gray-400 text-sm mb-4 md:mb-6">
+            Quizontal is a free and easy-to-use platform that provides high-quality stock photos and HD videos for both personal and commercial use. Our collection includes a wide variety of images and videos suitable for blogs, websites, social media, presentations, and creative projects. 
+          </p>
+          <div class="flex space-x-3 md:space-x-4">
+            <a href="https://web.facebook.com/danuka.disanayaka.3701/" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="facebook" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="https://www.youtube.com/@quizontal" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="youtube" class="h-4 w-4 md:h-5 md:w-5"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/danuka-dissanayake-570803375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors">
+              <i data-lucide="linkedin" class="h-4 w-4 md:h-5 md:w-5"></i>
+            <a href="https://wa.me/94774915917" target="_blank"
+               class="bg-gray-800 hover:bg-purple-600 text-white p-2.5 md:p-3 rounded-full transition-colors flex items-center justify-center">
+            <!-- WhatsApp SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
+               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.671.149s-.768.966-.941 1.164c-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.297-.496.099-.198.05-.371-.025-.52-.074-.149-.671-1.611-.918-2.205-.242-.579-.487-.5-.671-.51-.173-.008-.371-.01-.57-.01s-.52.074-.792.372c-.273.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347zM12.004 2C6.478 2 2 6.477 2 12c0 2.12.666 4.09 1.822 5.722L2 22l4.358-1.114C7.902 21.338 9.912 22 12 22c5.523 0 10-4.477 10-10S17.527 2 12.004 2z"/>
+              </svg>
+            </a>
+
+            </a>
+          </div>
+        </div>
+        
+        <!-- Product Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">AI-Tools</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="/ai-tools/ai-image-generator/index.html" class="hover:text-white transition-colors block">AI Image Generator</a></li>
+            <li><a href="https://quizontal.vercel.app/ai-tools/removebg" class="hover:text-white transition-colors block">AI Background Remover</a></li>
+            <li><a href="https://quizontal.vercel.app/ai-tools/paraphrase" class="hover:text-white transition-colors block">AI Text Paraphraser</a></li>
+            <li><a href="https://quizontal.vercel.app/ai-tools/humanize" class="hover:text-white transition-colors block">AI Text Humanizer</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Downloaders</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="https://quizontal.vercel.app/downloaders/youtube" class="hover:text-white transition-colors block">Youtube Downloader</a></li>
+            <li><a href="https://quizontal.vercel.app/downloaders/facebook" class="hover:text-white transition-colors block">Facebook Downloader</a></li>
+            <li><a href="https://quizontal.vercel.app/downloaders/tiktok" class="hover:text-white transition-colors block">Tiktok Downloader</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Column -->
+        <div>
+          <h3 class="text-base md:text-lg font-semibold mb-4 text-white">Resources</h3>
+          <ul class="space-y-2 md:space-y-3 text-sm text-gray-400">
+            <li><a href="/image-gallery/index.html" class="hover:text-white transition-colors block">Stock images</a></li>
+            <li><a href="/video-gallery/index.html" class="hover:text-white transition-colors block">Stock videos</a></li>
+            <li><a href="/wallpaper-gallery/index.html" class="hover:text-white transition-colors block">Wallpapers</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-xs md:text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2025 Quizontal. All rights reserved.
+        </p>
+        <div class="flex space-x-4 md:space-x-6">
+          <a href="/privacy-policy/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Privacy Policy</a>
+          <a href="/terms-of-service/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Terms of Service</a>
+          <a href="/about-us/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">About us</a>
+          <a href="/contact-us/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Contact us</a>
+          <a href="/declaimer/index.html" class="text-gray-400 hover:text-white transition-colors text-xs md:text-sm">Declaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ========== MOBILE MENU FUNCTIONALITY ==========
+   const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Close all dropdowns when closing mobile menu
+      document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdownId = button.getAttribute('data-dropdown') + '-dropdown';
+        const dropdown = document.getElementById(dropdownId);
+        const icon = button.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+          if (d.id !== dropdownId) {
+            d.classList.remove('active');
+          }
+        });
+        
+        document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(link => {
+          if (link !== button) {
+            link.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+        button.classList.toggle('active');
+        
+        if (dropdown.classList.contains('active')) {
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-dropdown-link, .mobile-nav-link[href^="#"]').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // ========== NEWSLETTER FORM ==========
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
+      
+      if (!email) {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i data-lucide="loader" class="h-5 w-5 animate-spin mr-2"></i>Subscribing...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        alert('Thank you for subscribing to our newsletter!');
+        emailInput.value = '';
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 1500);
+    });
+
+    // ========== SMOOTH SCROLLING ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 120,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ========== LAST UPDATED DATE ==========
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    
+    // Update all last updated dates
+    document.querySelectorAll('.last-updated').forEach(el => {
+      el.textContent = `Last updated: ${formattedDate}`;
+    });
+
+    // ========== SCROLL TO TOP ==========
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // ========== PRINT FUNCTIONALITY ==========
+    function printTerms() {
+      window.print();
+    }
+
+    // ========== KEYBOARD SHORTCUTS ==========
+    document.addEventListener('keydown', (e) => {
+      // ESC to close mobile menu
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+      
+      // Ctrl+P to print
+      if (e.ctrlKey && e.key === 'p') {
+        e.preventDefault();
+        printTerms();
+      }
+    });
+
+    // ========== STICKY NAVIGATION HIGHLIGHT ==========
+    const sections = document.querySelectorAll('.terms-section');
+    const navLinks = document.querySelectorAll('.toc-item');
+    
+    function highlightCurrentSection() {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('bg-purple-50', 'text-purple-700', 'border-purple-200');
+        link.classList.add('text-gray-700');
+        
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.remove('text-gray-700');
+          link.classList.add('bg-purple-50', 'text-purple-700', 'border', 'border-purple-200');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', highlightCurrentSection);
+    
+    // Initial highlight
+    highlightCurrentSection();
+
+    // ========== AUTO-SCROLL TO SECTION ON LOAD ==========
+    window.addEventListener('load', function() {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const targetElement = document.querySelector(hash);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 120,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    });
+
+    // ========== COPY CONTACT INFO ==========
+    function copyContactInfo(type) {
+      let textToCopy = '';
+      
+      switch(type) {
+        case 'email':
+          textToCopy = 'quizontal.business@gmail.com';
+          break;
+        case 'phone':
+          textToCopy = '+94 77 612 1326';
+          break;
+        case 'website':
+          textToCopy = 'https://quizontal.vercel.app';
+          break;
+      }
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showCopyNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} copied to clipboard`);
+      });
+    }
+
+    function showCopyNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-1002 transform translate-y-full transition-transform duration-300 flex items-center gap-2';
+      notification.innerHTML = `
+        <i data-lucide="check-circle" class="h-5 w-5"></i>
+        <span>${message}</span>
+      `;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.transform = 'translateY(0)';
+      }, 10);
+      
+      setTimeout(() => {
+        notification.style.transform = 'translateY(100%)';
+        setTimeout(() => {
+          if (notification.parentElement) {
+            notification.remove();
+          }
+        }, 300);
+      }, 3000);
+      
+      lucide.createIcons();
+    }
+
+    // Add click handlers to contact info
+    document.querySelectorAll('[onclick^="copyContactInfo"]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.title = 'Click to copy';
+    });
+  </script>
+</body>
+</html>

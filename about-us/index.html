@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Copyright Free Videos - Quizontal | High-Quality Free Stock Videos</title>
-    <meta name="description" content="Discover millions of copyright-free videos and stock footage. Free downloads for personal and commercial use. No attribution required.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>About Us | Quizontal - Our Story, Mission & Team</title>
+  <meta name="description" content="Learn about Quizontal's journey, mission, and the team behind your favorite creative tools. Discover our story and vision for empowering creators worldwide.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About Us | Quizontal">
+  <meta property="og:description" content="Meet the team behind Quizontal - empowering creators with free stock media, AI tools, and creative utilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quizontal.vercel.app/about-us">
+  <meta property="og:image" content="https://github.com/danukaya123/quizontal-pro/blob/main/download%20(3).png?raw=true">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://quizontal.vercel.app/about-us">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ========== RESET & BASE STYLES ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    html {
+      scroll-behavior: smooth;
+    }
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #374151;
+      overflow-x: hidden;
+    }
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    /* ========== LAYOUT CONTAINERS ========== */
+    .content-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
     
-    <style>
-        /* ========== RESET & BASE STYLES ========== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        /* ========== LAYOUT CONTAINERS ========== */
-        .content-container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .content-container {
-                padding: 0 1.5rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .content-container {
-                padding: 0 2rem;
-            }
-        }
-        
-        /* ========== NAVIGATION - EXACT COPY FROM HOMEPAGE ========== */
+    @media (min-width: 640px) {
+      .content-container {
+        padding: 0 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .content-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* ========== NAVIGATION - EXACT COPY FROM HOMEPAGE ========== */
         header {
             width: 100%;
             background: white;
@@ -452,461 +464,447 @@
       position: sticky;
       bottom: 0;
     }
-        
-        /* ========== HERO SECTION WITH VIDEO BACKGROUND ========== */
-        .hero-section {
-            position: relative;
-            color: white;
-            overflow: hidden;
-            min-height: 400px;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        .video-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Fallback image in case video doesn't load */
-        .video-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            opacity: 0;
-            z-index: 1;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(0, 0, 0, 0.8) 0%, 
-                rgba(0, 0, 0, 0.6) 50%,
-                rgba(0, 0, 0, 0.4) 100%);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 2rem 0;
-        }
-        
-        /* Video Play/Pause Control */
-        .video-control {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            z-index: 3;
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .video-control:hover {
-            background: rgba(124, 58, 237, 0.9);
-            transform: scale(1.1);
-        }
-        
-        /* ========== GALLERY SECTION ========== */
-        .section-spacing {
-            padding: 3rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .section-spacing {
-                padding: 4rem 0;
-            }
-        }
-        
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Video Card - Enhanced Visuals */
-        .video-card {
-            position: relative;
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .video-card:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .video-thumbnail {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            cursor: pointer;
-        }
-        
-        .video-card:hover .video-thumbnail {
-            transform: scale(1.1);
-        }
-        
-        /* Play Button Overlay */
-        .video-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 250px;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .video-card:hover .video-play-overlay {
-            opacity: 1;
-        }
-        
-        .play-button {
-            width: 60px;
-            height: 60px;
-            background: rgba(124, 58, 237, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            transition: transform 0.3s ease;
-        }
-        
-        .video-card:hover .play-button {
-            transform: scale(1.1);
-        }
-        
-        /* Video Duration Badge */
-        .video-duration {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        /* Video Info */
-        .video-info {
-            padding: 1rem;
-            background: white;
-        }
-        
-        .video-author {
-            font-size: 0.875rem;
-            color: #374151;
-            font-weight: 500;
-        }
-        
-        .video-stats {
-            font-size: 0.75rem;
-            color: #6b7280;
-            margin-top: 4px;
-        }
-        
-        /* ========== FILTER & SORT ========== */
-        .filter-section {
-            background: white;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .filter-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .filter-tag {
-            background: #f3f4f6;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            color: #374151;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .filter-tag:hover,
-        .filter-tag.active {
-            background: #7c3aed;
-            color: white;
-        }
-        
-        /* ========== LOADING STATES ========== */
-        .loading-spinner {
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            border-top: 3px solid #7c3aed;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* ========== MOBILE MENU ========== */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: white;
-            z-index: 9999;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
-            display: none;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-            display: block;
-        }
-        
-        .mobile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        
-        .mobile-nav {
-            padding: 1rem;
-        }
-        
-        .mobile-nav-link {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem;
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: #374151;
-            font-size: 1rem;
-            font-weight: 500;
-            text-align: left;
-            cursor: pointer;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s ease;
-            margin-bottom: 0.25rem;
-        }
-        
-        .mobile-nav-link:hover,
-        .mobile-nav-link.active {
-            background-color: #f9fafb;
-            color: #7c3aed;
-        }
-        
-        .mobile-cta {
-            padding: 1rem;
-            border-top: 1px solid #e5e7eb;
-            background: #f9fafb;
-            position: sticky;
-            bottom: 0;
-        }
-        
-        /* ========== VIDEO MODAL - RESPONSIVE ========== */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1001;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            position: relative;
-            background: white;
-            margin: 2rem auto;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            max-width: 900px;
-            width: 95%;
-        }
-        
-        @media (max-width: 768px) {
-            .modal-content {
-                margin: 1rem auto;
-                padding: 1rem;
-                width: 98%;
-            }
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #6b7280;
-            cursor: pointer;
-            z-index: 1;
-            transition: all 0.2s ease;
-        }
-        
-        .modal-close:hover {
-            background: #f3f4f6;
-            color: #374151;
-        }
-        
-        .modal-video-container {
-            position: relative;
-            width: 100%;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .modal-video {
-            width: 100%;
-            max-height: 60vh;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        @media (max-width: 768px) {
-            .modal-video {
-                max-height: 50vh;
-            }
-        }
-        
-        /* ========== UTILITY CLASSES ========== */
-        .gradient-text {
-            background: linear-gradient(135deg, #7c3aed, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hover-lift {
-            transition: transform 0.2s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-4px);
-        }
-        
-        /* ========== FOOTER STYLES ========== */
-        .footer-logo {
-            height: 40px;
-            width: auto;
-            filter: brightness(0) invert(1);
-        }
-        
-        /* ========== VIDEO SPECIFIC STYLES ========== */
-        .video-quality-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(124, 58, 237, 0.9);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-        
-        /* ========== VIDEO LOADING STATE ========== */
-        .video-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 14px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 16px;
-            border-radius: 20px;
-            z-index: 2;
-        }
-    </style>
+    
+    /* ========== ABOUT US CONTENT ========== */
+    .about-hero {
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+      padding: 5rem 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      opacity: 0.1;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    @media (min-width: 768px) {
+      .about-hero {
+        padding: 7rem 0;
+      }
+    }
+    
+    .about-content {
+      padding: 4rem 0;
+      background: white;
+    }
+    
+    @media (min-width: 768px) {
+      .about-content {
+        padding: 6rem 0;
+      }
+    }
+    
+    .about-section {
+      margin-bottom: 5rem;
+    }
+    
+    .about-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      color: #1f2937;
+    }
+    
+    .section-title i {
+      color: #7c3aed;
+    }
+    
+    /* Mission Card */
+    .mission-card {
+      background: linear-gradient(135deg, #f3e8ff 0%, #dbeafe 100%);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mission-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7c3aed, #3b82f6);
+    }
+    
+    /* Founder Profile */
+    .founder-profile {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin: 3rem 0;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #7c3aed;
+      margin: 0 auto 2rem;
+      display: block;
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+    }
+    
+    @media (max-width: 640px) {
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .stat-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #7c3aed, #3b82f6);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 2rem;
+    }
+    
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #7c3aed;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px #7c3aed;
+    }
+    
+    /* Values Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    
+    @media (min-width: 768px) {
+      .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .value-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    
+    .value-card:hover {
+      border-color: #7c3aed;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.1);
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+      margin: 2rem 0;
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 4rem;
+      color: #7c3aed;
+      opacity: 0.1;
+      font-family: serif;
+    }
+    
+    /* CTA Section */
+    .about-cta {
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+      border-radius: 2rem;
+      margin: 4rem 0;
+    }
+    
+    /* ========== FOOTER STYLES ========== */
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    @media (max-width: 640px) {
+      .footer-logo {
+        height: 36px;
+        max-width: 140px;
+      }
+    }
+    
+    /* ========== MOBILE MENU STYLES ========== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: block;
+    }
+    
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .mobile-nav {
+      padding: 1.5rem;
+    }
+    
+    .mobile-nav-item {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #374151;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background-color: #f9fafb;
+    }
+    
+    .mobile-nav-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-nav-link.active i {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 1rem;
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .mobile-dropdown.active {
+      max-height: 2000px;
+    }
+    
+    .mobile-dropdown-content {
+      padding: 1rem;
+    }
+    
+    .mobile-dropdown-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #6b7280;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .mobile-dropdown-link:hover {
+      color: #7c3aed;
+      background-color: #f3f4f6;
+    }
+    
+    .mobile-cta {
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+      position: sticky;
+      bottom: 0;
+    }
+    
+    /* ========== UTILITY CLASSES ========== */
+    .gradient-text {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hover-lift {
+      transition: transform 0.2s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    
+    .social-link:hover {
+      background: #7c3aed;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .badge {
+      background: #7c3aed;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    
+    /* Animation Classes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Fixed Navigation - Exact Homepage Version -->
+  <!-- Fixed Navigation -->
   <header>
     <div class="nav-container">
       <!-- Logo -->
@@ -1358,131 +1356,330 @@
   </div>
 </div>
 
-    <!-- Hero Section with Video Background -->
-    <section class="hero-section">
-        <!-- Video Background -->
-        <div class="video-background">
-            <video id="hero-video" autoplay muted loop playsinline>
-                <source src="https://cdn.pixabay.com/video/2023/08/17/176521-855920743_large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-loading" id="video-loading">Loading background video...</div>
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="content-container relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in-up">
+          Empowering Creativity Worldwide
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-8 fade-in-up delay-1">
+          We're on a mission to make professional creative tools accessible to everyone, everywhere.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center fade-in-up delay-2">
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">Since 2023</span>
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">2M+ Creators Served</span>
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">10M+ Downloads</span>
         </div>
-        
-        <!-- Overlay -->
-        <div class="hero-overlay"></div>
-        
-        <!-- Video Control Button -->
-        <button class="video-control" id="video-control" onclick="toggleVideoPlayback()">
-            <i data-lucide="volume-x" class="h-6 w-6" id="volume-icon"></i>
-        </button>
-        
-        <!-- Content -->
-        <div class="content-container">
-            <div class="hero-content">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                        Free Stock Videos & Footage
-                    </h1>
-                    <p class="text-lg mb-6 text-gray-100 max-w-2xl mx-auto">
-                        Discover high-quality stock videos and HD footage. Free for commercial use. No attribution required.
-                    </p>
-                    
-                    <!-- Simple Search Bar -->
-                    <div class="max-w-2xl mx-auto">
-                        <div class="relative">
-                            <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 z-10"></i>
-                            <input 
-                                type="search" 
-                                id="hero-search-input"
-                                placeholder="Search for nature videos, business footage, travel videos..." 
-                                class="w-full pl-12 pr-4 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-lg"
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section-spacing bg-gray-50">
-        <div class="content-container">
-            <!-- Filter Section -->
-            <div class="filter-section">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-900">Free Stock Videos</h3>
-                        <p class="text-sm text-gray-600" id="total-results">Loading videos...</p>
-                    </div>
-                </div>
-                
-                <!-- Filter Tags -->
-                <div class="filter-tags">
-                    <button class="filter-tag active" onclick="setFilter('nature')">Nature</button>
-                    <button class="filter-tag" onclick="setFilter('business')">Business</button>
-                    <button class="filter-tag" onclick="setFilter('technology')">Technology</button>
-                    <button class="filter-tag" onclick="setFilter('travel')">Travel</button>
-                    <button class="filter-tag" onclick="setFilter('people')">People</button>
-                    <button class="filter-tag" onclick="setFilter('abstract')">Abstract</button>
-                </div>
-            </div>
-            
-            <!-- Video Gallery Grid -->
-            <div id="gallery-grid" class="gallery-grid">
-                <!-- Videos will be loaded here -->
-            </div>
-            
-            <!-- Loading Spinner -->
-            <div id="loading-spinner" class="flex justify-center py-8">
-                <div class="loading-spinner"></div>
-            </div>
-            
-            <!-- Load More Button -->
-            <div id="load-more-container" class="text-center mt-8 hidden">
-                <button id="load-more-btn" class="cta-button px-8" onclick="loadMoreVideos()">
-                    Load More Videos
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Modal -->
-    <div id="video-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">
-                <i data-lucide="x"></i>
-            </button>
-            
-            <div class="modal-video-container">
-                <video id="modal-video" class="modal-video" controls>
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <div class="mt-6">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div>
-                        <h3 id="modal-video-title" class="text-xl font-bold text-gray-900">Stock Video</h3>
-                        <p id="modal-author" class="text-gray-600"></p>
-                        <div class="flex items-center gap-4 mt-2">
-                            <span id="modal-duration" class="text-sm text-gray-500"></span>
-                            <span id="modal-resolution" class="text-sm text-gray-500"></span>
-                        </div>
-                    </div>
-                    <button id="download-btn" class="cta-button" onclick="downloadCurrentVideo()">
-                        <i data-lucide="download" class="h-4 w-4 mr-2"></i>
-                        Download Video
-                    </button>
-                </div>
-                <p class="text-sm text-gray-500 mt-4">
-                    Free to use for personal and commercial projects. No attribution required.
-                </p>
-            </div>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Footer -->
+  <!-- About Content -->
+  <section class="about-content">
+    <div class="content-container">
+      
+      <!-- Our Story -->
+      <div class="about-section fade-in-up">
+        <div class="section-title">
+          <i data-lucide="compass" class="h-6 w-6"></i>
+          <h2 class="text-2xl md:text-3xl font-bold">Our Story</h2>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="text-gray-700 mb-4">
+              Quizontal began in 2023 with a simple yet powerful vision: to democratize access to high-quality creative resources. As a solo developer and designer, I noticed that many creators struggled with expensive subscriptions and complex tools.
+            </p>
+            <p class="text-gray-700 mb-4">
+              What started as a small collection of free stock images has grown into a comprehensive creative platform serving millions of users worldwide. From students working on their first projects to established agencies needing quick assets, Quizontal has become the go-to destination for free creative tools.
+            </p>
+            <p class="text-gray-700">
+              Today, we continue to evolve, adding new AI tools, expanding our media library, and developing utilities that make the creative process faster, smarter, and more accessible than ever before.
+            </p>
+          </div>
+          <div class="relative">
+            <img 
+              src="https://github.com/danukaya123/quizontal-pro/blob/main/assets/hero-section.webp?raw=true" 
+              alt="Quizontal Workspace" 
+              class="rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
+              loading="lazy"
+            >
+            <div class="absolute -bottom-4 -right-4 bg-purple-600 text-white p-4 rounded-xl shadow-lg">
+              <div class="text-2xl font-bold">2M+</div>
+              <div class="text-sm">Happy Creators</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Card -->
+      <div class="mission-card fade-in-up delay-1">
+        <div class="max-w-3xl mx-auto">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-lg mb-6">
+            <i data-lucide="target" class="h-8 w-8 text-purple-600"></i>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Mission</h3>
+          <p class="text-xl text-gray-700 mb-6">
+            To empower every creator with professional-grade tools, resources, and knowledge – completely free of charge. We believe that creativity should never be limited by budget or technical barriers.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="h-5 w-5 text-green-500"></i>
+              <span>Free access for everyone</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="h-5 w-5 text-green-500"></i>
+              <span>No hidden costs</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="h-5 w-5 text-green-500"></i>
+              <span>Constant innovation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Profile -->
+      <div class="founder-profile fade-in-up delay-2">
+        <div class="text-center">
+          <img 
+            src="https://github.com/danukaya123/Quizontal/blob/main/assets/profile.jpeg?raw=true" 
+            alt="Danuka Dissanayake - Founder of Quizontal" 
+            class="profile-image"
+            loading="lazy"
+          >
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Danuka Dissanayake</h3>
+          <p class="text-lg text-purple-600 mb-4">Founder & Lead Developer</p>
+          <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+            As a passionate developer and designer, I built Quizontal to solve the problems I faced in my own creative journey. With expertise in web development, AI technologies, and UX design, I'm committed to making powerful creative tools accessible to everyone.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 justify-center mb-6">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-gray-900">5+</div>
+              <div class="text-sm text-gray-600">Years Experience</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-gray-900">50+</div>
+              <div class="text-sm text-gray-600">Projects Built</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-gray-900">2M+</div>
+              <div class="text-sm text-gray-600">Users Served</div>
+            </div>
+          </div>
+          
+          <div class="flex justify-center gap-4">
+            <a href="https://www.linkedin.com/in/danuka-dissanayake-570803375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+               target="_blank" 
+               class="social-link hover-lift">
+              <i data-lucide="linkedin" class="h-5 w-5"></i>
+            </a>
+            <a href="https://github.com/danukaya123" 
+               target="_blank" 
+               class="social-link hover-lift">
+              <i data-lucide="github" class="h-5 w-5"></i>
+            </a>
+            <a href="https://web.facebook.com/danuka.disanayaka.3701/" 
+               target="_blank" 
+               class="social-link hover-lift">
+              <i data-lucide="facebook" class="h-5 w-5"></i>
+            </a>
+            <a href="mailto:quizontal.business@gmail.com" 
+               class="social-link hover-lift">
+              <i data-lucide="mail" class="h-5 w-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Values -->
+      <div class="about-section fade-in-up delay-3">
+        <div class="section-title">
+          <i data-lucide="heart" class="h-6 w-6"></i>
+          <h2 class="text-2xl md:text-3xl font-bold">Our Core Values</h2>
+        </div>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+              <i data-lucide="unlock" class="h-6 w-6 text-purple-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Accessibility</h4>
+            <p class="text-gray-600">
+              We believe everyone deserves access to quality creative tools, regardless of their budget or technical skills.
+            </p>
+          </div>
+          
+          <div class="value-card">
+            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+              <i data-lucide="zap" class="h-6 w-6 text-blue-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Innovation</h4>
+            <p class="text-gray-600">
+              We constantly explore new technologies and approaches to make creative work faster and more efficient.
+            </p>
+          </div>
+          
+          <div class="value-card">
+            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+              <i data-lucide="users" class="h-6 w-6 text-green-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Community</h4>
+            <p class="text-gray-600">
+              Our users inspire our development. We listen, adapt, and grow together with our creative community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Journey -->
+      <div class="about-section fade-in-up">
+        <div class="section-title">
+          <i data-lucide="trending-up" class="h-6 w-6"></i>
+          <h2 class="text-2xl md:text-3xl font-bold">Our Journey</h2>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="badge mb-2">2023</div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">The Beginning</h4>
+            <p class="text-gray-600">
+              Quizontal was born as a simple collection of free stock images, serving the first 1,000 users within the first month.
+            </p>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="badge mb-2">Early 2024</div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">AI Tools Launch</h4>
+            <p class="text-gray-600">
+              Introduced our first AI tools - Image Generator and Background Remover, reaching 100,000 monthly users.
+            </p>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="badge mb-2">Mid 2024</div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Platform Expansion</h4>
+            <p class="text-gray-600">
+              Added social media downloaders and utility tools, becoming a comprehensive creative platform serving 500,000+ users.
+            </p>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="badge mb-2">Present</div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Global Impact</h4>
+            <p class="text-gray-600">
+              Serving 2M+ creators worldwide with 10+ AI tools, millions of stock assets, and continuous innovation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="about-section fade-in-up delay-1">
+        <div class="section-title">
+          <i data-lucide="bar-chart" class="h-6 w-6"></i>
+          <h2 class="text-2xl md:text-3xl font-bold">By The Numbers</h2>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon bg-purple-100">
+              <i data-lucide="users" class="h-6 w-6 text-purple-600"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">2M+</div>
+            <div class="text-gray-600">Creative Users</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon bg-blue-100">
+              <i data-lucide="download" class="h-6 w-6 text-blue-600"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">10M+</div>
+            <div class="text-gray-600">Assets Downloaded</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon bg-green-100">
+              <i data-lucide="image" class="h-6 w-6 text-green-600"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">500K+</div>
+            <div class="text-gray-600">AI Images Generated</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon bg-orange-100">
+              <i data-lucide="globe" class="h-6 w-6 text-orange-600"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">150+</div>
+            <div class="text-gray-600">Countries Served</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="about-section fade-in-up delay-2">
+        <div class="section-title">
+          <i data-lucide="message-square" class="h-6 w-6"></i>
+          <h2 class="text-2xl md:text-3xl font-bold">What Creators Say</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="testimonial-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                <span class="font-semibold text-purple-600">JD</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">James D.</h4>
+                <p class="text-sm text-gray-600">Freelance Designer</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "Quizontal has transformed my workflow. The AI tools save me hours every week, and the stock library is incredible for quick projects."
+            </p>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                <span class="font-semibold text-blue-600">MS</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Maria S.</h4>
+                <p class="text-sm text-gray-600">Content Creator</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "As a small business owner, I can't afford expensive design tools. Quizontal gives me professional resources completely free. It's a game-changer!"
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="about-cta fade-in-up delay-3">
+        <div class="max-w-3xl mx-auto">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">Join Our Creative Community</h3>
+          <p class="text-xl text-white/90 mb-8">
+            Start creating with professional tools today. No signup required, no hidden costs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/" class="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
+              Start Creating Free
+            </a>
+            <a href="/contact-us/index.html" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/30 transition-colors border border-white/30">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white">
     <div class="content-container py-12">
       <!-- Newsletter -->
@@ -1599,195 +1796,10 @@
     </div>
   </footer>
 
-    <!-- JavaScript -->
-<script>
+  <script>
     // Initialize Lucide icons
     lucide.createIcons();
 
-    // ========== VIDEO BACKGROUND MANAGEMENT ==========
-    function initVideoBackground() {
-        const video = document.getElementById('hero-video');
-        const videoControl = document.getElementById('video-control');
-        const volumeIcon = document.getElementById('volume-icon');
-        const videoLoading = document.getElementById('video-loading');
-
-        // Video loaded successfully
-        video.addEventListener('loadeddata', function() {
-            videoLoading.style.display = 'none';
-            console.log('Background video loaded successfully');
-        });
-
-        // Video error handling
-        video.addEventListener('error', function() {
-            videoLoading.textContent = 'Video failed to load. Using fallback background.';
-            videoLoading.style.background = 'rgba(124, 58, 237, 0.8)';
-            setTimeout(() => {
-                videoLoading.style.display = 'none';
-            }, 3000);
-            console.error('Background video failed to load');
-        });
-
-        // Video playback ended - loop
-        video.addEventListener('ended', function() {
-            video.currentTime = 0;
-            video.play();
-        });
-
-        // Set initial state
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-
-        // Play video
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.log('Autoplay prevented:', error);
-                video.muted = true;
-                video.play();
-            });
-        }
-    }
-
-    function toggleVideoPlayback() {
-        const video = document.getElementById('hero-video');
-        const volumeIcon = document.getElementById('volume-icon');
-        
-        if (video.muted) {
-            // Unmute and play
-            video.muted = false;
-            volumeIcon.setAttribute('data-lucide', 'volume-2');
-            showNotification('Sound turned on', 'info');
-        } else {
-            // Mute
-            video.muted = true;
-            volumeIcon.setAttribute('data-lucide', 'volume-x');
-            showNotification('Sound turned off', 'info');
-        }
-        
-        // Update icon
-        lucide.createIcons();
-    }
-
-    // ========== PEXELS VIDEOS API CONFIGURATION ==========
-    const PEXELS_API_KEY = 'BaCBEeB2Y1gNaCYddJaRoFaVgCdDNhYu51qQe5JMUcPU56RMiJ5M3FOZ';
-    const PEXELS_VIDEOS_API_URL = 'https://api.pexels.com/videos/';
-    const VIDEOS_PER_PAGE = 32;
-
-    // ========== APP STATE ==========
-    let currentQuery = 'travel';
-    let currentPage = 1;
-    let isLoading = false;
-    let currentVideo = null;
-    let totalResults = 0;
-
-    // ========== DOM ELEMENTS ==========
-    const galleryGrid = document.getElementById('gallery-grid');
-    const loadingSpinner = document.getElementById('loading-spinner');
-    const loadMoreContainer = document.getElementById('load-more-container');
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const totalResultsEl = document.getElementById('total-results');
-
-    // ========== URL PARAMETER HANDLING ==========
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    function getSearchQueryFromURL() {
-        // Try different parameter names
-        const query = getQueryParam('q') || 
-                      getQueryParam('query') || 
-                      getQueryParam('search') || 
-                      getQueryParam('s');
-        
-        return query ? decodeURIComponent(query) : null;
-    }
-
-    function updateURLWithSearch(query) {
-        if (!query.trim()) return;
-        
-        // Update URL without page reload
-        const newUrl = `${window.location.origin}${window.location.pathname}?q=${encodeURIComponent(query)}`;
-        window.history.pushState({ path: newUrl }, '', newUrl);
-    }
-
-    // ========== INITIALIZATION ==========
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize video background
-        initVideoBackground();
-        
-        // Check for URL search parameter
-        const urlQuery = getSearchQueryFromURL();
-        
-        if (urlQuery) {
-            // Set the search input value
-            const searchInput = document.getElementById('hero-search-input');
-            if (searchInput) {
-                searchInput.value = urlQuery;
-            }
-            
-            // Load videos based on URL query
-            searchVideos(urlQuery);
-        } else {
-            // Load default videos
-            loadVideos();
-        }
-        
-        // Setup search input
-        const searchInput = document.getElementById('hero-search-input');
-        if (searchInput) {
-            searchInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const query = this.value.trim();
-                    searchVideos(query);
-                    
-                    // Update URL without reloading page
-                    updateURLWithSearch(query);
-                }
-            });
-        }
-        
-        // Setup newsletter form
-        const newsletterForm = document.getElementById('newsletterForm');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                if (email) {
-                    alert('Thank you for subscribing!');
-                    this.reset();
-                }
-            });
-        }
-        
-        // Listen for browser back/forward navigation
-        window.addEventListener('popstate', function() {
-            const urlQuery = getSearchQueryFromURL();
-            
-            if (urlQuery) {
-                const searchInput = document.getElementById('hero-search-input');
-                if (searchInput) {
-                    searchInput.value = urlQuery;
-                }
-                searchVideos(urlQuery);
-            } else {
-                // Load default if no query
-                currentQuery = 'travel';
-                currentPage = 1;
-                galleryGrid.innerHTML = '';
-                loadingSpinner.classList.remove('hidden');
-                loadVideos();
-                
-                // Clear search input
-                const searchInput = document.getElementById('hero-search-input');
-                if (searchInput) {
-                    searchInput.value = '';
-                }
-            }
-        });
-    });
     // ========== MOBILE MENU FUNCTIONALITY ==========
    const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1852,411 +1864,183 @@
       link.addEventListener('click', closeMobileMenu);
     });
 
-    // ========== DESKTOP DROPDOWN FIXES ==========
-    // Ensure dropdowns stay open when hovering over them
-    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-      dropdown.addEventListener('mouseenter', () => {
-        dropdown.style.opacity = '1';
-        dropdown.style.visibility = 'visible';
-        dropdown.style.transform = 'translateY(0)';
-      });
+    // ========== NEWSLETTER FORM ==========
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
       
-      dropdown.addEventListener('mouseleave', () => {
-        dropdown.style.opacity = '0';
-        dropdown.style.visibility = 'hidden';
-        dropdown.style.transform = 'translateY(10px)';
-      });
+      if (!email) {
+        showNotification('Please enter a valid email address', 'error');
+        return;
+      }
+      
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i data-lucide="loader" class="h-5 w-5 animate-spin mr-2"></i>Subscribing...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        showNotification('Thank you for subscribing to our newsletter!', 'success');
+        emailInput.value = '';
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 1500);
     });
 
-    // ========== PEXELS VIDEOS API FUNCTIONS ==========
-    async function fetchFromPexelsVideos(query, page = 1) {
-        try {
-            const url = `${PEXELS_VIDEOS_API_URL}search?query=${encodeURIComponent(query)}&per_page=${VIDEOS_PER_PAGE}&page=${page}`;
-            
-            const response = await fetch(url, {
-                headers: {
-                    'Authorization': PEXELS_API_KEY
-                }
-            });
-            
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            return {
-                videos: data.videos || [],
-                total_results: data.total_results || 0
-            };
-            
-        } catch (error) {
-            console.error('Error fetching from Pexels Videos API:', error);
-            throw error;
+    // ========== ANIMATION ON SCROLL ==========
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.fade-in-up');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
         }
+      });
     }
 
-    // ========== VIDEO FUNCTIONS ==========
-    async function loadVideos() {
-        if (isLoading) return;
-        
-        isLoading = true;
-        
-        try {
-            const data = await fetchFromPexelsVideos(currentQuery, currentPage);
-            
-            totalResults = data.total_results;
-            totalResultsEl.textContent = `${totalResults.toLocaleString()} videos found`;
-            
-            if (data.videos.length > 0) {
-                displayVideos(data.videos);
-                
-                // Show load more button if there are more videos
-                if (data.videos.length === VIDEOS_PER_PAGE) {
-                    loadMoreContainer.classList.remove('hidden');
-                }
-            } else {
-                galleryGrid.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <i data-lucide="video" class="h-16 w-16 text-gray-400 mx-auto mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">No videos found</h3>
-                        <p class="text-gray-600">Try a different search term</p>
-                    </div>
-                `;
-            }
-            
-        } catch (error) {
-            showError();
-        } finally {
-            loadingSpinner.classList.add('hidden');
-            isLoading = false;
-        }
-    }
+    // Set initial state for animation elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
 
-    async function loadMoreVideos() {
-        if (isLoading) return;
-        
-        isLoading = true;
-        loadMoreBtn.disabled = true;
-        loadMoreBtn.innerHTML = '<i data-lucide="loader" class="h-5 w-5 mr-2 animate-spin"></i>Loading...';
-        
-        currentPage++;
-        
-        try {
-            const data = await fetchFromPexelsVideos(currentQuery, currentPage);
-            
-            if (data.videos.length > 0) {
-                displayVideos(data.videos);
-                    
-                // Hide load more button if no more videos
-                if (data.videos.length < VIDEOS_PER_PAGE) {
-                    loadMoreContainer.classList.add('hidden');
-                }
-            } else {
-                loadMoreContainer.classList.add('hidden');
-            }
-            
-        } catch (error) {
-            console.error('Error loading more videos:', error);
-            loadMoreContainer.classList.add('hidden');
-        } finally {
-            loadMoreBtn.disabled = false;
-            loadMoreBtn.innerHTML = 'Load More Videos';
-            isLoading = false;
-        }
-    }
-
-    function displayVideos(videos) {
-        if (!videos || videos.length === 0) return;
-        
-        videos.forEach((video) => {
-            const card = document.createElement('div');
-            card.className = 'video-card';
-            
-            // Get highest quality thumbnail
-            const thumbnailUrl = video.image || video.video_pictures[0]?.picture || 'https://images.pexels.com/videos/855015/free-video-855015.jpg';
-            
-            // Find HD video file
-            const hdVideo = video.video_files.find(f => f.quality === 'hd' || f.quality === 'sd') || video.video_files[0];
-            
-            // Format duration
-            const duration = formatDuration(video.duration);
-            
-            card.innerHTML = `
-                <div class="relative">
-                    <img src="${thumbnailUrl}" alt="Video by ${video.user.name}" class="video-thumbnail" loading="lazy">
-                    <div class="video-play-overlay" onclick="viewVideo(${JSON.stringify(video).replace(/"/g, '&quot;')})">
-                        <div class="play-button">
-                            <i data-lucide="play" class="h-6 w-6 ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="video-duration">${duration}</div>
-                    <div class="video-quality-badge">HD</div>
-                </div>
-                <div class="video-info">
-                    <div class="video-author">${video.user.name}</div>
-                    <div class="video-stats">
-                        <span>${video.width}x${video.height}</span>
-                        •
-                        <span>${formatFileSize(hdVideo?.file_size || 0)}</span>
-                    </div>
-                </div>
-            `;
-            galleryGrid.appendChild(card);
-        });
-        
-        // Update Lucide icons for new content
-        lucide.createIcons();
-    }
-
-    function formatDuration(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    function formatFileSize(bytes) {
-        if (bytes === 0) return '0 B';
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
-    }
-
-    function searchVideos(query) {
-        if (!query.trim()) return;
-        
-        currentQuery = query;
-        currentPage = 1;
-        
-        // Update URL
-        updateURLWithSearch(query);
-        
-        // Clear gallery
-        galleryGrid.innerHTML = '';
-        loadingSpinner.classList.remove('hidden');
-        loadMoreContainer.classList.add('hidden');
-        
-        // Update filter buttons
-        document.querySelectorAll('.filter-tag').forEach(btn => {
-            btn.classList.toggle('active', btn.textContent.toLowerCase() === query.toLowerCase());
-        });
-        
-        // Load videos
-        loadVideos();
-    }
-
-    function setFilter(query) {
-        const searchInput = document.getElementById('hero-search-input');
-        if (searchInput) {
-            searchInput.value = query;
-        }
-        searchVideos(query);
-    }
-
-    function showError() {
-        galleryGrid.innerHTML = `
-            <div class="col-span-full text-center py-12">
-                <i data-lucide="wifi-off" class="h-16 w-16 text-gray-400 mx-auto mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">Connection Error</h3>
-                <p class="text-gray-600 mb-4">Unable to load videos. Please check your connection.</p>
-                <button onclick="loadVideos()" class="cta-button">Retry</button>
-            </div>
-        `;
-        loadingSpinner.classList.add('hidden');
-    }
-
-    // ========== VIDEO MODAL FUNCTIONS ==========
-    function viewVideo(video) {
-        currentVideo = video;
-        
-        const modal = document.getElementById('video-modal');
-        const modalVideo = document.getElementById('modal-video');
-        const modalAuthor = document.getElementById('modal-author');
-        const modalDuration = document.getElementById('modal-duration');
-        const modalResolution = document.getElementById('modal-resolution');
-        const modalVideoTitle = document.getElementById('modal-video-title');
-        
-        // Find HD video file
-        const hdVideo = video.video_files.find(f => f.quality === 'hd') || 
-                       video.video_files.find(f => f.quality === 'sd') || 
-                       video.video_files[0];
-        
-        modalVideo.src = hdVideo?.link || video.video_files[0]?.link;
-        modalAuthor.textContent = `By ${video.user.name}`;
-        modalDuration.textContent = `Duration: ${formatDuration(video.duration)}`;
-        modalResolution.textContent = `Resolution: ${video.width}x${video.height}`;
-        modalVideoTitle.textContent = `Stock Video`;
-        
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        
-        // Play video automatically
-        setTimeout(() => {
-            modalVideo.play().catch(e => console.log('Auto-play prevented:', e));
-        }, 300);
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('video-modal');
-        const modalVideo = document.getElementById('modal-video');
-        
-        // Pause video
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
-        
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    // ========== VIDEO DOWNLOAD FUNCTION ==========
-    function downloadCurrentVideo() {
-        if (!currentVideo) return;
-        
-        // Find the best quality video for download
-        const hdVideo = currentVideo.video_files.find(f => f.quality === 'hd') || 
-                       currentVideo.video_files.find(f => f.quality === 'sd') || 
-                       currentVideo.video_files[0];
-        
-        if (!hdVideo || !hdVideo.link) {
-            showNotification('Download link not available', 'error');
-            return;
-        }
-        
-        const downloadUrl = hdVideo.link;
-        const fileName = `quizontal-video-${currentVideo.id}.mp4`;
-        
-        downloadVideoDirect(downloadUrl, fileName);
-    }
-
-    function downloadVideoDirect(url, filename) {
-        try {
-            // Create a progress notification
-            showNotification('Starting download...', 'info');
-            
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    return response.blob();
-                })
-                .then(blob => {
-                    const blobUrl = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = blobUrl;
-                    a.download = filename;
-                    a.style.display = 'none';
-                    
-                    document.body.appendChild(a);
-                    a.click();
-                    
-                    // Clean up
-                    setTimeout(() => {
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(blobUrl);
-                    }, 100);
-                    
-                    showNotification('Download started!', 'success');
-                })
-                .catch(error => {
-                    console.warn('Blob download failed, trying direct method:', error);
-                    downloadUsingAnchor(url, filename);
-                });
-        } catch (error) {
-            console.error('Download error:', error);
-            downloadUsingAnchor(url, filename);
-        }
-    }
-
-    function downloadUsingAnchor(url, filename) {
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.style.display = 'none';
-        a.setAttribute('target', '_blank');
-        
-        document.body.appendChild(a);
-        
-        setTimeout(() => {
-            try {
-                a.click();
-                showNotification('Download started! Video will open in new tab.', 'info');
-            } catch (e) {
-                console.error('Click failed:', e);
-                window.open(url, '_blank');
-                showNotification('Video opened in new tab. Right-click to save.', 'info');
-            }
-            
-            setTimeout(() => {
-                if (document.body.contains(a)) {
-                    document.body.removeChild(a);
-                }
-            }, 1000);
-        }, 100);
-    }
+    // Run on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
 
     // ========== NOTIFICATION FUNCTION ==========
     function showNotification(message, type = 'success') {
-        const colors = {
-            success: 'bg-green-500',
-            error: 'bg-red-500',
-            info: 'bg-blue-500'
-        };
-        
-        const icons = {
-            success: 'check-circle',
-            error: 'x-circle',
-            info: 'info'
-        };
-        
-        // Remove existing notifications
-        document.querySelectorAll('.download-notification').forEach(n => n.remove());
-        
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `download-notification fixed top-4 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-1002 transform translate-x-full transition-transform duration-300`;
-        notification.innerHTML = `
-            <div class="flex items-center gap-2">
-                <i data-lucide="${icons[type]}" class="h-5 w-5"></i>
-                <span>${message}</span>
-            </div>
-        `;
-        
-        document.body.appendChild(notification);
-        
-        // Animate in
+      const colors = {
+        success: 'bg-green-500',
+        error: 'bg-red-500',
+        info: 'bg-blue-500'
+      };
+      
+      const icons = {
+        success: 'check-circle',
+        error: 'alert-circle',
+        info: 'info'
+      };
+      
+      // Remove existing notifications
+      document.querySelectorAll('.custom-notification').forEach(n => n.remove());
+      
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `custom-notification fixed top-4 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-1002 transform translate-x-full transition-transform duration-300 flex items-center gap-2`;
+      notification.innerHTML = `
+        <i data-lucide="${icons[type]}" class="h-5 w-5"></i>
+        <span>${message}</span>
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Animate in
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 10);
+      
+      // Animate out after 3 seconds
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 10);
-        
-        // Animate out after 3 seconds
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                if (document.body.contains(notification)) {
-                    document.body.removeChild(notification);
-                }
-            }, 300);
-        }, 3000);
-        
-        // Update icons
-        lucide.createIcons();
+          if (notification.parentElement) {
+            notification.remove();
+          }
+        }, 300);
+      }, 3000);
+      
+      // Update icons
+      lucide.createIcons();
     }
 
+    // ========== SMOOTH SCROLLING ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ========== STATS COUNTER ANIMATION ==========
+    function animateStats() {
+      const statElements = document.querySelectorAll('.stat-card .text-3xl');
+      
+      statElements.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        let current = 0;
+        const increment = target / 50;
+        const duration = 1500;
+        const stepTime = duration / 50;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = Math.floor(current).toLocaleString() + '+';
+        }, stepTime);
+      });
+    }
+
+    // Start counter animation when stats are in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Observe the stats section
+    const statsSection = document.querySelector('.stats-grid');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+
+    // ========== PROFILE IMAGE HOVER EFFECT ==========
+    const profileImage = document.querySelector('.profile-image');
+    if (profileImage) {
+      profileImage.addEventListener('mouseenter', () => {
+        profileImage.style.transform = 'scale(1.05)';
+        profileImage.style.transition = 'transform 0.3s ease';
+      });
+      
+      profileImage.addEventListener('mouseleave', () => {
+        profileImage.style.transform = 'scale(1)';
+      });
+    }
 
     // ========== KEYBOARD SHORTCUTS ==========
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
-            closeMobileMenu();
-        }
+      // ESC to close mobile menu
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
     });
 
-    // Close modal when clicking outside
-    window.addEventListener('click', (e) => {
-        const modal = document.getElementById('video-modal');
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-</script>
+    // ========== CURRENT YEAR ==========
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
