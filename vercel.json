@@ -22,7 +22,8 @@
     },
     {
       "source": "/ai-tools/removebg/:path*",
-      "destination": "https://background-remove-website.vercel.app/:path*"
+      "destination": "https://background-remove-website.vercel.app/:path*",
+      "permanent": false
     }
   ]
 }
