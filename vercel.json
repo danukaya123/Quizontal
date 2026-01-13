@@ -15,14 +15,15 @@
     {
       "source": "/downloaders/facebook/:path*",
       "destination": "https://fb-web-psi.vercel.app/:path*"
-    },
-    {
-      "source": "/downloaders/tiktok/:path*",
-      "destination": "https://tiktok-web-one.vercel.app/:path*"
     }
   ],
 
   "redirects": [
+    {
+      "source": "/downloaders/tiktok/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/:path*",
+      "permanent": false
+    },
     {
       "source": "/ai-tools/removebg/:path*",
       "destination": "https://background-remove-website.vercel.app/:path*",
@@ -32,7 +33,7 @@
 
   "headers": [
     {
-      "source": "/public/sitemap.xml",
+      "source": "/sitemap.xml",
       "headers": [
         { "key": "Content-Type", "value": "application/xml" }
       ]
