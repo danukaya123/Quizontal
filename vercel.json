@@ -8,22 +8,63 @@
       "source": "/ai-tools/humanize/:path*",
       "destination": "https://humanize-web.vercel.app/:path*"
     },
+
+    /* ------------------- YOUTUBE DOWNLOADER ------------------- */
     {
       "source": "/downloaders/youtube/:path*",
       "destination": "https://yt-web-six.vercel.app/:path*"
     },
     {
+      "source": "/downloaders/youtube/api/:path*",
+      "destination": "https://yt-web-six.vercel.app/api/:path*"
+    },
+    {
+      "source": "/downloaders/youtube/_next/:path*",
+      "destination": "https://yt-web-six.vercel.app/_next/:path*"
+    },
+    {
+      "source": "/downloaders/youtube/static/:path*",
+      "destination": "https://yt-web-six.vercel.app/static/:path*"
+    },
+
+    /* ------------------- FACEBOOK DOWNLOADER ------------------- */
+    {
       "source": "/downloaders/facebook/:path*",
       "destination": "https://fb-web-psi.vercel.app/:path*"
+    },
+    {
+      "source": "/downloaders/facebook/api/:path*",
+      "destination": "https://fb-web-psi.vercel.app/api/:path*"
+    },
+    {
+      "source": "/downloaders/facebook/_next/:path*",
+      "destination": "https://fb-web-psi.vercel.app/_next/:path*"
+    },
+    {
+      "source": "/downloaders/facebook/static/:path*",
+      "destination": "https://fb-web-psi.vercel.app/static/:path*"
+    },
+
+    /* ------------------- TIKTOK DOWNLOADER ------------------- */
+    {
+      "source": "/downloaders/tiktok/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/:path*"
+    },
+    {
+      "source": "/downloaders/tiktok/api/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/api/:path*"
+    },
+    {
+      "source": "/downloaders/tiktok/_next/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/_next/:path*"
+    },
+    {
+      "source": "/downloaders/tiktok/static/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/static/:path*"
     }
   ],
 
   "redirects": [
-    {
-      "source": "/downloaders/tiktok/:path*",
-      "destination": "https://tiktok-web-one.vercel.app/:path*",
-      "permanent": false
-    },
     {
       "source": "/ai-tools/removebg/:path*",
       "destination": "https://background-remove-website.vercel.app/:path*",
