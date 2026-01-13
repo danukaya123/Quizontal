@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    // AI Tools
     {
       "source": "/ai-tools/paraphrase/:path*",
       "destination": "https://pharaphrase-web.vercel.app/:path*"
@@ -8,7 +9,8 @@
       "source": "/ai-tools/humanize/:path*",
       "destination": "https://humanize-web.vercel.app/:path*"
     },
-
+    
+    // YouTube Downloader
     {
       "source": "/downloaders/youtube/api/:path*",
       "destination": "https://yt-web-six.vercel.app/api/:path*"
@@ -17,7 +19,13 @@
       "source": "/downloaders/youtube/:path*",
       "destination": "https://yt-web-six.vercel.app/:path*"
     },
-
+    // ADD THIS - Catch /api/youtube calls
+    {
+      "source": "/api/youtube/:path*",
+      "destination": "https://yt-web-six.vercel.app/api/:path*"
+    },
+    
+    // Facebook Downloader
     {
       "source": "/downloaders/facebook/api/:path*",
       "destination": "https://fb-web-psi.vercel.app/api/:path*"
@@ -26,7 +34,13 @@
       "source": "/downloaders/facebook/:path*",
       "destination": "https://fb-web-psi.vercel.app/:path*"
     },
-
+    // ADD THIS - Catch /api/facebook calls
+    {
+      "source": "/api/facebook/:path*",
+      "destination": "https://fb-web-psi.vercel.app/api/:path*"
+    },
+    
+    // TikTok Downloader - FIXED
     {
       "source": "/downloaders/tiktok/api/:path*",
       "destination": "https://tiktok-web-one.vercel.app/api/:path*"
@@ -34,9 +48,18 @@
     {
       "source": "/downloaders/tiktok/:path*",
       "destination": "https://tiktok-web-one.vercel.app/:path*"
+    },
+    // ADD THESE TWO - This is the fix!
+    {
+      "source": "/api/tiktok/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/api/:path*"
+    },
+    {
+      "source": "/api/tiktok",
+      "destination": "https://tiktok-web-one.vercel.app/api/tiktok"
     }
   ],
-
+  
   "redirects": [
     {
       "source": "/ai-tools/removebg/:path*",
@@ -44,12 +67,15 @@
       "permanent": true
     }
   ],
-
+  
   "headers": [
     {
       "source": "/public/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
       ]
     }
   ]
