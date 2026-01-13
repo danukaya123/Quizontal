@@ -44,12 +44,12 @@
       "destination": "https://tiktok-web-one.vercel.app/:path*"
     },
     {
-      "source": "/api/tiktok/:path*",
-      "destination": "https://tiktok-web-one.vercel.app/api/:path*"
+      "source": "/api/tiktok",
+      "destination": "https://tiktok-web-one.vercel.app/api/tiktok-info"
     },
     {
-      "source": "/api/tiktok",
-      "destination": "https://tiktok-web-one.vercel.app/api/tiktok"
+      "source": "/api/tiktok/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/api/tiktok-:path*"
     }
   ],
   
