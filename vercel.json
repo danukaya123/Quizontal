@@ -10,54 +10,30 @@
     },
 
     {
-      "source": "/downloaders/youtube/:path*",
-      "destination": "https://yt-web-six.vercel.app/:path*"
-    },
-    {
       "source": "/downloaders/youtube/api/:path*",
       "destination": "https://yt-web-six.vercel.app/api/:path*"
     },
     {
-      "source": "/downloaders/youtube/_next/:path*",
-      "destination": "https://yt-web-six.vercel.app/_next/:path*"
-    },
-    {
-      "source": "/downloaders/youtube/static/:path*",
-      "destination": "https://yt-web-six.vercel.app/static/:path*"
+      "source": "/downloaders/youtube/:path*",
+      "destination": "https://yt-web-six.vercel.app/:path*"
     },
 
-    {
-      "source": "/downloaders/facebook/:path*",
-      "destination": "https://fb-web-psi.vercel.app/:path*"
-    },
     {
       "source": "/downloaders/facebook/api/:path*",
       "destination": "https://fb-web-psi.vercel.app/api/:path*"
     },
     {
-      "source": "/downloaders/facebook/_next/:path*",
-      "destination": "https://fb-web-psi.vercel.app/_next/:path*"
-    },
-    {
-      "source": "/downloaders/facebook/static/:path*",
-      "destination": "https://fb-web-psi.vercel.app/static/:path*"
+      "source": "/downloaders/facebook/:path*",
+      "destination": "https://fb-web-psi.vercel.app/:path*"
     },
 
-    {
-      "source": "/downloaders/tiktok/:path*",
-      "destination": "https://tiktok-web-one.vercel.app/:path*"
-    },
     {
       "source": "/downloaders/tiktok/api/:path*",
       "destination": "https://tiktok-web-one.vercel.app/api/:path*"
     },
     {
-      "source": "/downloaders/tiktok/_next/:path*",
-      "destination": "https://tiktok-web-one.vercel.app/_next/:path*"
-    },
-    {
-      "source": "/downloaders/tiktok/static/:path*",
-      "destination": "https://tiktok-web-one.vercel.app/static/:path*"
+      "source": "/downloaders/tiktok/:path*",
+      "destination": "https://tiktok-web-one.vercel.app/:path*"
     }
   ],
 
@@ -71,7 +47,7 @@
 
   "headers": [
     {
-      "source": "/sitemap.xml",
+      "source": "/public/sitemap.xml",
       "headers": [
         { "key": "Content-Type", "value": "application/xml" }
       ]
