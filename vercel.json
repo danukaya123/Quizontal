@@ -9,7 +9,6 @@
       "destination": "https://humanize-web.vercel.app/:path*"
     },
 
-    /* ------------------- YOUTUBE DOWNLOADER ------------------- */
     {
       "source": "/downloaders/youtube/:path*",
       "destination": "https://yt-web-six.vercel.app/:path*"
@@ -27,7 +26,6 @@
       "destination": "https://yt-web-six.vercel.app/static/:path*"
     },
 
-    /* ------------------- FACEBOOK DOWNLOADER ------------------- */
     {
       "source": "/downloaders/facebook/:path*",
       "destination": "https://fb-web-psi.vercel.app/:path*"
@@ -45,7 +43,6 @@
       "destination": "https://fb-web-psi.vercel.app/static/:path*"
     },
 
-    /* ------------------- TIKTOK DOWNLOADER ------------------- */
     {
       "source": "/downloaders/tiktok/:path*",
       "destination": "https://tiktok-web-one.vercel.app/:path*"
